@@ -1,0 +1,40 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="trainBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#36d1dc"/>
+      <stop offset="100%" stop-color="#5b86e5"/>
+    </linearGradient>
+
+    <linearGradient id="trainBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e3f2fd"/>
+    </linearGradient>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect x="10" y="10" width="100" height="100" rx="24" fill="url(#trainBg)"/>
+
+  <!-- train -->
+  <g filter="url(#shadow)">
+    <rect x="35" y="30" width="50" height="60" rx="14" fill="url(#trainBody)"/>
+  </g>
+
+  <!-- windows -->
+  <rect x="42" y="40" width="12" height="10" rx="3" fill="#90caf9"/>
+  <rect x="66" y="40" width="12" height="10" rx="3" fill="#90caf9"/>
+
+  <!-- door -->
+  <rect x="52" y="55" width="16" height="20" rx="4" fill="#bbdefb"/>
+
+  <!-- lights -->
+  <circle cx="45" cy="80" r="3" fill="#ff5252"/>
+  <circle cx="75" cy="80" r="3" fill="#ff5252"/>
+
+  <!-- rails -->
+  <line x1="40" y1="95" x2="80" y2="95" stroke="#444" stroke-width="3" stroke-linecap="round"/>
+  <line x1="45" y1="100" x2="75" y2="100" stroke="#666" stroke-width="2" stroke-linecap="round"/>
+</svg>
