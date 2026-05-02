@@ -17,18 +17,31 @@ function showHome() {
     main.innerHTML = `
     <h1>Home Page</h1>
         <section class="links">
-            <button onclick="showHome()">Home Page</button>
-            <br>
-            <button onclick="showConnectionTypes()">Connection Types</button>
-            <br>
-            <button onclick="showVehicles()">Vehicles</button>
-            <br>
-            <button onclick="showFare()">Fare</button>
-            <br>
-            <button onclick="showAbout()">About</button>
-            <br>
-            <button onclick="showTechnicalDetails()">Technical Details</button>
-        </section>
+                <button onclick="showHome()">
+                    <img src="img/links-icons/home-page.svg" alt="">
+                    <span>Home Page</span>
+                </button>
+                <button onclick="showConnectionTypes()">
+                    <img src="img/links-icons/connection-types.svg" alt="">
+                    <span>Connection Types</span>
+                </button>
+                <button onclick="showVehicles()">
+                    <img src="img/links-icons/vehicles.svg" alt="">
+                    <span>Vehicles</span>
+                </button>
+                <button onclick="showFare()">
+                    <img src="img/links-icons/fare.svg" alt="">
+                    <span>Fare</span>
+                </button>
+                <button onclick="showAbout()">
+                    <img src="img/links-icons/about.svg" alt="">
+                    <span>About</span>
+                </button>
+                <button onclick="showTechnicalDetails()">
+                    <img src="img/links-icons/technical-details.svg" alt="">
+                    <span>Technical Details</span>
+                </button>
+            </section>
     `
 }
 
