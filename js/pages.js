@@ -1,58 +1,211 @@
+const main = document.querySelector("main");
+
+const i18n = {
+    en: {
+        /* Titles */
+        home_title: "Home Page - SRT",
+        connection_types_title: "Connection Types - SRT",
+        vehicles_title: "Vehicles - SRT",
+        fare_title: "Fare - SRT",
+        about_title: "About - SRT",
+        technical_details_title: "Technical Details - SRT",
+
+        /* Page Headings */
+        home: "Home Page",
+        connection_types: "Connection Types",
+        vehicles: "Vehicles",
+        fare: "Fare",
+        about: "About",
+        technical_details: "Technical Details",
+
+        /* Connection Types */
+        regional_bahn_train: "Regional Bahn Train",
+        regional_express_train: "Regional Express Train",
+        interregio_train: "InterRegio Train",
+        intercity_train: "InterCity Train",
+        eurocity_train: "Eurocity Train",
+        u_bahn: "U-Bahn",
+        tram: "Tram",
+        local_bus: "Local Bus",
+
+        stops_at: "Stops At",
+        route_type: "Route Type",
+
+        /* Vehicles */
+        cars_2: "2 cars",
+        cars_3: "3 cars",
+        cars_4: "4 cars",
+        cars_5: "5 cars",
+        cars_9: "9 cars",
+
+        class: "Class",
+        maximum_speed: "Maximum Speed",
+
+        /* Fare */
+        tickets: "Tickets",
+        tickets_types: "Tickets Types",
+
+        zone: "Zone",
+        zones: "Zones",
+
+
+
+
+    },
+    cs: {
+        /* Titles */
+        home_title: "Domovská Stránka - SRT",
+        connection_types_title: "Typy Spojení - SRT",
+        vehicles_title: "Vozidla - SRT",
+        fare_title: "Tarif - SRT",
+        about_title: "O nás - SRT",
+        technical_details_title: "Technické detaily - SRT",
+
+        /* Page Headings */
+        home: "Domovská stránka",
+        connection_types: "Typy spojení",
+        vehicles: "Vozidla",
+        fare: "Tarif",
+        about: "O nás",
+        technical_details: "Technické detaily",
+
+        /* Connection Types */
+        regional_bahn_train: "Regionální vlak",
+        regional_express_train: "Regionální expres",
+        interregio_train: "Inter-Regionální vlak",
+        intercity_train: "InterCity vlak",
+        eurocity_train: "EuroCity vlak",
+        u_bahn: "Metro",
+        tram: "Tramvaj",
+        local_bus: "Místní autobus",
+
+        stops_at: "Zastavuje v",
+        route_type: "Typ trasy",
+
+        /* Vehicles */
+        cars_2: "2 vozy",
+        cars_3: "3 vozy",
+        cars_4: "4 vozy",
+        cars_5: "5 vozů",
+        cars_9: "9 vozů",
+
+        class: "Řada",
+        maximum_speed: "Maximalní Rychlost",
+
+        /* Fare */
+        tickets: "Jízdenky",
+        tickets_types: "Typy jízdenek",
+
+        zones_valid: "Zónová Platnost",
+        time_valid: "Časová Platnost",
+        full_2nd_class: "Plnocenný (2. třída)",
+        full_1st_class: "Plnocenný (1. třída)",
+        discounted_2nd_class: "Zlevněný (2. třída)",
+        discounted_1st_class: "Zlevněný (1. třída)",
+    }
+};
+
+const lang = navigator.language.slice(0, 2);
+const t = i18n[lang] || i18n.en;
+
 document.querySelector("header").innerHTML = `
 <button onclick="showHome()">
     <img src="img/icons/logo.svg" alt="">
 </button>
-<button onclick="showHome()">Home Page</button>
-<button onclick="showConnectionTypes()">Connection Types</button>
-<button onclick="showVehicles()">Vehicles</button>
-<button onclick="showFare()">Fare</button>
-<button onclick="showAbout()">About</button>
-<button onclick="showTechnicalDetails()">Technical Details</button>
+<button onclick="showHome()">${t.home}</button>
+<button onclick="showConnectionTypes()">${t.connection_types}</button>
+<button onclick="showVehicles()">${t.vehicles}</button>
+<button onclick="showFare()">${t.fare}</button>
+<button onclick="showAbout()">${t.about}</button>
+<button onclick="showTechnicalDetails()">${t.technical_details}</button>
 `;
 
-const main = document.querySelector("main");
-
-function showHome() {
-    document.title = "Home Page - SRT"
-    main.innerHTML = `
-    <h1>Home Page</h1>
-        <section class="links">
-                <button onclick="showHome()">
+document.querySelector("footer").innerHTML = `
+<button onclick="showHome()">
                     <img src="img/links-icons/home-page.svg" alt="">
-                    <span>Home Page</span>
                 </button>
                 <button onclick="showConnectionTypes()">
                     <img src="img/links-icons/connection-types.svg" alt="">
-                    <span>Connection Types</span>
                 </button>
                 <button onclick="showVehicles()">
                     <img src="img/links-icons/vehicles.svg" alt="">
-                    <span>Vehicles</span>
                 </button>
                 <button onclick="showFare()">
                     <img src="img/links-icons/fare.svg" alt="">
-                    <span>Fare</span>
                 </button>
                 <button onclick="showAbout()">
                     <img src="img/links-icons/about.svg" alt="">
-                    <span>About</span>
                 </button>
                 <button onclick="showTechnicalDetails()">
                     <img src="img/links-icons/technical-details.svg" alt="">
-                    <span>Technical Details</span>
                 </button>
+`
+
+function showHome() {
+    document.title = t.home_title;
+    main.innerHTML = `
+    <h1>${t.home}</h1>
+        <section class="links">
+                
+            </section>
+    `
+}
+
+function showConnectionTypes() {
+    document.title = t.connection_types_title;
+    main.innerHTML = `
+    <h1>${t.connection_types}</h1>
+            <section>
+                <h2>${t.regional_bahn_train}</h2>
+                <p>${t.stops_at}: Every station</p>
+                <p>${t.route_type}: Domestic/Interstate</p>
+            </section>
+            <section>
+                <h2>${t.regional_express_train}</h2>
+                <p>${t.stops_at}: Some stations and stops</p>
+                <p>${t.route_type}: Domestic/Interstate</p>
+            </section>
+            <section>
+                <h2>${t.interregio_train}</h2>
+                <p>${t.stops_at}: Important stations</p>
+                <p>${t.route_type}: Domestic/Interstate</p>
+            </section>
+            <section>
+                <h2>${t.intercity_train}</h2>
+                <p>${t.stops_at}: Most Important stations</p>
+                <p>${t.route_type}: Domestic</p>
+            </section>
+            <section>
+                <h2>${t.eurocity_train}</h2>
+                <p>${t.stops_at}: Most Important stations</p>
+                <p>${t.route_type}: Interstate</p>
+            </section>
+            <section>
+                <h2>${t.u_bahn}</h2>
+                <p>${t.stops_at}: Every station</p>
+                <p>${t.route_type}: Urban/Suburban</p>
+            </section>
+            <section>
+                <h2>${t.tram}</h2>
+                <p>${t.stops_at}: Every station</p>
+                <p>${t.route_type}: Urban/Suburban</p>
+            </section>
+            <section>
+                <h2>${t.local_bus}</h2>
+                <p>${t.stops_at}: Every station</p>
+                <p>${t.route_type}: Urban/Suburban</p>
             </section>
     `
 }
 
 function showVehicles() {
-    document.title = "Vehicles - SRT"
+    document.title = t.vehicles_title;
     main.innerHTML = `
     <h1>Vehicles</h1>
         <section>
-            <h2>Skoda 18Ev (2 cars)</h2>
-            <p>Class: EU 1000</p>
-            <p>Maximum speed: 160 km/h</p>
+            <h2>Skoda 18Ev ${t.cars_2}</h2>
+            <p>${t.class}: EU 1000</p>
+            <p>${t.maximum_speed}: 160 km/h</p>
             <br>
             <img src="img/services/001-2nd-class-icon.png" alt="">
             <img src="img/services/005-bicycle-icon.png" alt="">
@@ -73,8 +226,8 @@ function showVehicles() {
         </section>
         <section>
             <h2>Skoda 18Ev (3 cars)</h2>
-            <p>Class: EU 1010</p>
-            <p>Maximum speed: 160 km/h</p>
+            <p>${t.class}: EU 1010</p>
+            <p>${t.maximum_speed}: 160 km/h</p>
             <br>
             <img src="img/services/001-2nd-class-icon.png" alt="">
             <img src="img/services/005-bicycle-icon.png" alt="">
@@ -98,8 +251,8 @@ function showVehicles() {
         </section>
         <section>
             <h2>Skoda 18Ev (4 cars)</h2>
-            <p>Class: EU 1020</p>
-            <p>Maximum speed: 160 km/h</p>
+            <p>${t.class}: EU 1020</p>
+            <p>${t.maximum_speed}: 160 km/h</p>
             <br>
             <img src="img/services/001-2nd-class-icon.png" alt="">
             <img src="img/services/005-bicycle-icon.png" alt="">
@@ -126,8 +279,8 @@ function showVehicles() {
         </section>
         <section>
             <h2>Skoda 26Ev</h2>
-            <p>Class EU 1030</p>
-            <p>Maximum speed: 200 km/h</p>
+            <p>${t.class}: EU 1030</p>
+            <p>${t.maximum_speed}: 200 km/h</p>
             <br>
             <img src="img/services/001-2nd-class-icon.png" alt="">
             <img src="img/services/002-1st-class-icon.png" alt="">
@@ -158,8 +311,8 @@ function showVehicles() {
         </section>
         <section>
             <h2>Siemens Viaggio Comfort</h2>
-            <p>Class 1000</p>
-            <p>Maximum speed: 230 km/h</p>
+            <p>${t.class}: 1000</p>
+            <p>${t.maximum_speed}: 230 km/h</p>
             <br>
             <img src="img/services/001-2nd-class-icon.png" alt="">
             <img src="img/services/002-1st-class-icon.png" alt="">
@@ -206,8 +359,8 @@ function showVehicles() {
         </section>
         <section>
             <h2>81-71 M</h2>
-            <p>Class 1040</p>
-            <p>Maximum speed: 80 km/h</p>
+            <p>${t.class} 1040</p>
+            <p>${t.maximum_speed}: 80 km/h</p>
             <br>
             <img src="img/services/001-2nd-class-icon.png" alt="">
             <img src="img/services/005-bicycle-icon.png" alt="">
@@ -237,8 +390,8 @@ function showVehicles() {
         </section>
         <section>
             <h2>M1</h2>
-            <p>Class EU 1050</p>
-            <p>Maximum speed: 80 km/h</p>
+            <p>${t.class} EU 1050</p>
+            <p>${t.maximum_speed}: 80 km/h</p>
             <br>
             <img src="img/services/001-2nd-class-icon.png" alt="">
             <img src="img/services/005-bicycle-icon.png" alt="">
@@ -268,8 +421,8 @@ function showVehicles() {
         </section>
         <section>
             <h2>Skoda 40T</h2>
-            <p>Class EU 1060</p>
-            <p>Maximum speed: 70 km/h</p>
+            <p>${t.class} EU 1060</p>
+            <p>${t.maximum_speed}: 70 km/h</p>
             <br>
             <img src="img/services/001-2nd-class-icon.png" alt="">
             <img src="img/services/005-bicycle-icon.png" alt="">
@@ -293,8 +446,8 @@ function showVehicles() {
         </section>
         <section>
             <h2>Skoda 45T</h2>
-            <p>Class EU 1070</p>
-            <p>Maximum speed: 70 km/h</p>
+            <p>${t.class} EU 1070</p>
+            <p>${t.maximum_speed}: 70 km/h</p>
             <br>
             <img src="img/services/001-2nd-class-icon.png" alt="">
             <img src="img/services/005-bicycle-icon.png" alt="">
@@ -318,68 +471,22 @@ function showVehicles() {
         </section>
     `
 }
-function showConnectionTypes() {
-    document.title = "Connection Types - SRT"
-    main.innerHTML = `
-    <h1>Connection Types</h1>
-            <section>
-                <h2>Regional Bahn Train</h2>
-                <p>Stops at: Every station</p>
-                <p>Route type: Domestic/Interstate</p>
-            </section>
-            <section>
-                <h2>Regional Express Train</h2>
-                <p>Stops at: Some stations and stops</p>
-                <p>Route Type: Domestic/Interstate</p>
-            </section>
-            <section>
-                <h2>InterRegio Train</h2>
-                <p>Stops at: Important stations</p>
-                <p>Route type: Domestic/Interstate</p>
-            </section>
-            <section>
-                <h2>InterCity Train</h2>
-                <p>Stops at: Most Important stations</p>
-                <p>Route type: Domestic</p>
-            </section>
-            <section>
-                <h2>Eurocity Train</h2>
-                <p>Stops at: Most Important stations</p>
-                <p>Route type: Interstate</p>
-            </section>
-            <section>
-                <h2>U-Bahn</h2>
-                <p>Stops at: Every station</p>
-                <p>Route type: Urban/Suburban</p>
-            </section>
-            <section>
-                <h2>Tram</h2>
-                <p>Stops at: Every station</p>
-                <p>Route type: Urban/Suburban</p>
-            </section>
-            <section>
-                <h2>Local Bus</h2>
-                <p>Stops at: Every station</p>
-                <p>Route type: Urban/Suburban</p>
-            </section>
-    `
-}
 
 function showFare() {
     document.title = "Fare - SRT"
     main.innerHTML = `
-    <h1>Fare</h1>
+    <h1>${t.fare}</h1>
             <section id="tickets">
-                <h2>Tickets</h2>
+                <h2>${t.tickets}</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Zones</th>
-                            <th>Valid for</th>
-                            <th>Full (2nd class)</th>
-                            <th>Full (1st class)</th>
-                            <th>Discounted (2nd class)</th>
-                            <th>Discounted (1st class)</th>
+                            <th>${t.zones_valid}</th>
+                            <th>${t.time_valid}</th>
+                            <th>${t.full_2nd_class}</th>
+                            <th>${t.full_1st_class}</th>
+                            <th>${t.discounted_2nd_class}</th>
+                            <th>${t.discounted_1st_class}</th>
                     </thead>
                     <tbody>
                         <tr>
