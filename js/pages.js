@@ -29,9 +29,17 @@ const i18n = {
         local_bus: "Local Bus",
 
         stops_at: "Stops At",
+        every_station: "Every Station",
+        some_stations: "Some Stations",
+        important_stations: "Important Stations",
+        most_important_stations: "Most Important Stations",
+
         route_type: "Route Type",
+        domestic: "Domestic",
+        interstate: "Interstate",
 
         /* Vehicles */
+        cars_1: "(1 car)",
         cars_2: "(2 cars)",
         cars_3: "(3 cars)",
         cars_4: "(4 cars)",
@@ -85,7 +93,8 @@ const i18n = {
         ticket_type: "Ticket Type",
         note: "Note",
 
-        kid_senior: "Kid 0 - 18, Senior 60 - 99",
+        kid: "Kid 0 - 18",
+        senior: "Senior 60 - 99",
         adult: "Adult 18 - 60",
         student: "Student",
         edc: "EDC/EDC With Guide",
@@ -98,25 +107,36 @@ const i18n = {
         id_card_needed: "ID card needed",
         isic_card_required: "ISIC card required",
         edc_card_required: "EDC card required",
-        edc_guide_note: "EDC guide must be with the passenger and show the EDC card of the passenger to get the free ticket.",
+        edc_guide_note: "EDC guide must be with the EDC passenger",
 
         /* About */
         what_is_srt: "What Is SRT",
+
         founded: "Founded in November 2024.",
-        transport_system: "Transport system for the entire Sigma Republic",
+        transport_system: "Transportation system of the sigma republic",
         national_operator: "National operator of Railway, metro, and tram tracks, depots and public roads",
         national_carrier: "National Carrier of trains, u-bahns, trams and buses",
         anything_else: "Anything else except SRT vehicles is NOT real.",
 
         /* Technical Details */
-        electric_locomotives: "Electric locomotives",
-        electric_units: "Electric units",
-        non_traction : "Non-traction vehicles",
-
         rolling_stock_classes: "Rolling Stock Classes",
+
         type_of_vehicle: "Type of vehicle",
         designation_from: "Designation from",
         designation_to: "Designation to",
+
+        electric_locomotives: "Electric locomotives",
+        electric_units: "Electric units",
+        non_traction: "Non-traction vehicles",
+
+        announcements: "Announcements",
+
+        next_station: "Next station",
+        next_station_request: "Next station (request)",
+        next_station_requested: "Next station (requested)",
+        next_station_terminus: "Next station (terminus)",
+        this_station: "This station",
+        this_station_terminus: "This Station Terminus"
     },
     cs: {
         /* Titles */
@@ -145,10 +165,20 @@ const i18n = {
         tram: "Tramvaj",
         local_bus: "Místní autobus",
 
-        stops_at: "Zastavuje v",
+        stops_at: "Zastaví na",
+        every_station: "Každé stanici",
+        some_stations: "Nekterých stanicích",
+        important_stations: "Důležitých stanicích",
+        most_important_stations: "Nejvíce důležitých stanicích",
+
         route_type: "Typ trasy",
+        domestic: "Vnitrostátní",
+        interstate: "Mezistatátní",
+        urban: "Městská",
+        suburban: "Meziměstská",
 
         /* Vehicles */
+        cars_1: "(1 vůz)",
         cars_2: "(2 vozy)",
         cars_3: "(3 vozy)",
         cars_4: "(4 vozy)",
@@ -156,7 +186,7 @@ const i18n = {
         cars_9: "(9 vozů)",
 
         class: "Řada",
-        maximum_speed: "Maximalní Rychlost",
+        maximum_speed: "Maximální Rychlost",
 
         /* Fare */
         tickets: "Jízdenky",
@@ -198,11 +228,12 @@ const i18n = {
         time_5: "5 hodin",
         time_24: "24 hodin",
 
-        passenger: "cestující",
+        passenger: "Cestující",
         ticket_type: "Typ jízdenky",
         note: "Poznámka",
 
-        kid_senior: "Dítě 0 - 18, Senior 60 - 99",
+        kid: "Dítě 0 - 18",
+        senior: "Senior 60 - 99",
         adult: "Dospělý 18 - 60",
         student: "Student",
         edc: "EDC/EDC s průvodcem",
@@ -215,23 +246,36 @@ const i18n = {
         id_card_needed: "Je potřeba občanský průkaz",
         isic_card_required: "Je potřeba ISIC karta",
         edc_card_required: "Je potřeba EDC karta",
-        edc_guide_note: "EDC průvodce musí být s cestujícím a ukázat EDC kartu cestujícího, aby získal bezplatnou jízdenku.",
+        edc_guide_note: "EDC průvodce musí být s EDC cestujícím",
 
+        /* About */
         what_is_srt: "Co je SRT",
         founded: "Založeno v listopadu 2024.",
-        transport_system: "Transportní systém pro celou Sigma republiku",
-        national_operator: "Národní operátor železničních, metra a tramvajových tratí, depa a veřejných komunikací",
-        national_carrier: "Národní dopravce vlaků, u-bahnů, tramvají a autobusů",
+        transport_system: "Dopravní systém Sigma republiky",
+        national_operator: "Národní provozovatel železničních, metra a tramvajových tratí, depa a veřejných komunikací",
+        national_carrier: "Národní dopravce vlaků, metra, tramvají a autobusů",
         anything_else: "Cokoliv jiného kromě vozidel SRT není skutečné.",
 
         electric_locomotives: "Elektrické lokomotivy",
         electric_units: "Elektrické jednotky",
-        non_traction : "Není tahové vozidla",
+        non_traction: "Netrakční vozidla",
 
-        rolling_stock_classes: "Třídy kolejového skladu",
+        /* Technical Details */
+        rolling_stock_classes: "Třídy kolejových vozidel",
         type_of_vehicle: "Typ vozidla",
         designation_from: "Značení od",
         designation_to: "Značení do",
+
+        push_pull_locomotives: "Push-Pull Lokomotivy",
+
+        announcements: "Hlášení",
+
+        next_station: "Příští stanice",
+        next_station_request: "Příští stanice (na znamení)",
+        next_station_requested: "Příští stanice (Požádano o zastavení)",
+        next_station_terminus: "Příští stanice (terminus)",
+        this_station: "Tato stanice (Konečná)",
+        this_station_terminus: "Tato stanice (Konečná)"
     }
 };
 
@@ -284,43 +328,43 @@ function showConnectionTypes() {
     <h1>${t.connection_types}</h1>
             <section>
                 <h2>${t.regional_bahn_train}</h2>
-                <p>${t.stops_at}: Every station</p>
-                <p>${t.route_type}: Domestic/Interstate</p>
+                <p>${t.stops_at}: ${t.every_station}</p>
+                <p>${t.route_type}: ${t.domestic}/${t.interstate}</p>
             </section>
             <section>
                 <h2>${t.regional_express_train}</h2>
-                <p>${t.stops_at}: Some stations and stops</p>
-                <p>${t.route_type}: Domestic/Interstate</p>
+                <p>${t.stops_at}: ${t.some_stations}</p>
+                <p>${t.route_type}: ${t.domestic}/${t.interstate}</p>
             </section>
             <section>
                 <h2>${t.interregio_train}</h2>
-                <p>${t.stops_at}: Important stations</p>
-                <p>${t.route_type}: Domestic/Interstate</p>
+                <p>${t.stops_at}: ${t.important_stations}</p>
+                <p>${t.route_type}: ${t.domestic}/${t.interstate}</p>
             </section>
             <section>
                 <h2>${t.intercity_train}</h2>
-                <p>${t.stops_at}: Most Important stations</p>
-                <p>${t.route_type}: Domestic</p>
+                <p>${t.stops_at}: ${t.most_important_stations}</p>
+                <p>${t.route_type}: ${t.domestic}</p>
             </section>
             <section>
                 <h2>${t.eurocity_train}</h2>
-                <p>${t.stops_at}: Most Important stations</p>
-                <p>${t.route_type}: Interstate</p>
+                <p>${t.stops_at}: ${t.most_important_stations}</p>
+                <p>${t.route_type}: ${t.interstate}</p>
             </section>
             <section>
                 <h2>${t.u_bahn}</h2>
-                <p>${t.stops_at}: Every station</p>
-                <p>${t.route_type}: Urban/Suburban</p>
+                <p>${t.stops_at}: ${t.every_station}</p>
+                <p>${t.route_type}: ${t.urban}/${t.suburban}<</p>
             </section>
             <section>
                 <h2>${t.tram}</h2>
-                <p>${t.stops_at}: Every station</p>
-                <p>${t.route_type}: Urban/Suburban</p>
+                <p>${t.stops_at}: ${t.every_station}</p>
+                <p>${t.route_type}: ${t.urban}/${t.suburban}</p>
             </section>
             <section>
                 <h2>${t.local_bus}</h2>
-                <p>${t.stops_at}: Every station</p>
-                <p>${t.route_type}: Urban/Suburban</p>
+                <p>${t.stops_at}: ${t.every_station}</p>
+                <p>${t.route_type}: ${t.urban}/${t.suburban}</p>
             </section>
     `
 }
@@ -498,7 +542,7 @@ function showVehicles() {
         </section>
         <section>
             <h2>81-71 M ${t.cars_5}</h2>
-            <p>${t.class}:   1040</p>
+            <p>${t.class}: EU 1040</p>
             <p>${t.maximum_speed}: 80 km/h</p>
             <br>
             <img src="img/services/001-2nd-class-icon.png" alt="">
@@ -608,11 +652,21 @@ function showVehicles() {
                 </span>
             </div>
         </section>
+        <section>
+            <h2>Siemens Vectron ${t.cars_1}</h2>
+            <p>${t.class}: EL 1000</p>
+            <p>${t.maximum_speed}: 230 km/h</p>
+            <br>
+            <div class="formation">
+                <span class="locomotive">
+                    <p>EL 1000</p>
+                </span>
+        </section>
     `
 }
 
 function showFare() {
-    document.title = "Fare - SRT"
+    document.title = t.fare_title;
     main.innerHTML = `
     <h1>${t.fare}</h1>
             <section id="tickets">
@@ -731,7 +785,12 @@ function showFare() {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>${t.kid_senior}</td>
+                            <td>${t.kid}</td>
+                            <td>${t.free}</td>
+                            <td>${t.id_card_needed}</td>
+                        </tr>
+                        <tr>
+                            <td>${t.senior}</td>
                             <td>${t.free}</td>
                             <td>${t.id_card_needed}</td>
                         </tr>
@@ -760,6 +819,7 @@ function showFare() {
             </section>
     `
 }
+
 function showAbout() {
     document.title = t.about_title;
     main.innerHTML = `
@@ -809,45 +869,22 @@ function showTechnicalDetails() {
                 </table>
             </section>
             <section>
-                <h2>Push-Pull Locomotives</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Vehicle Type</th>
-                            <th>Maximum speed</th>
-                            <th>Class</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Siemens Vectron<br>(1 car)</td>
-                            <td>200 km/h</td>
-                            <td>EL 1000</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section>
                 <h2>Announcements</h2>
-                <!-- <table>
-                    <thead>
-                        <tr>
-                            <th>Type of stop</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                </table> -->
                 <p>Next station</p>
                 <li>{gong} Next station {station name}.</li>
+                <br>
                 <p>Next station (Request)</p>
                 <li>{gong} Next station {station name} request stop press button for exit.</li>
+                <br>
                 <p>Next stop (Requested)</p>
                 <li>{gong} Next station {station name} the vehicle will stop.</li>
+                <br>
                 <p>Next station (Terminus)</p>
                 <li>{gong} Next station {station name} terminus station.</li>
+                <br>
                 <p>This station</p>
                 <li>{gong} {station name}.</li>
+                <br>
                 <p>This station (Terminus)</p>
                 <li>{gong} {station name} terminus station please exit the vehicle.</li>
             </section>

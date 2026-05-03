@@ -61,9 +61,11 @@ footer {
 
 footer button {
     display: flex;
-    flex-direction: column; /* obrazek nahore, text dole */
-    align-items: center;    /* zarovnani na stred */
-    gap: 5px;               /* mezera mezi obrazkem a textem */
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease
 }
 
 footer button img {
