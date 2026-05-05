@@ -1,2 +1,0 @@
-# Task: Refactor showAccount() in js/logic.js\n\n## Steps:\n- [x] Step 1: Create TODO.md \n- [x] Step 2: Add new functions showAccountSignedIn() and showAccountSignedOut() to js/logic.js\n- [ ] Step 3: Refactor showAccount() to call the new functions based on login status\n- [ ] Step 4: Update TODO.md with completion status\n- [ ] Step 5: Test the changes\n- [ ] Step 6: Attempt completion\n\n**Status:** Step 2 completed - new functions added. Step 3 pending (refactor showAccount body).
-
