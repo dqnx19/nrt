@@ -1,3 +1,4 @@
+const body = document.body;
 const main = document.querySelector("main");
 
 const i18n = {
@@ -937,7 +938,7 @@ async function sha256(str) {
 }
 
 // --- LOGIN OR REGISTER ---
-window.logic.loginOrRegister = async function(username, password) {
+window.logic.loginOrRegister = async function (username, password) {
     const passwordHash = await sha256(password);
 
     const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
@@ -1008,7 +1009,7 @@ async function saveUser(user) {
 }
 
 // --- ADD MONEY ---
-window.logic.addMoney = async function() {
+window.logic.addMoney = async function () {
     if (!window.logic.currentUser) {
         alert("Login first!");
         return;
@@ -1041,7 +1042,7 @@ function calculatePrice(zones, type) {
 }
 
 // --- BUY TICKET ---
-window.logic.buyTicket = async function(e) {
+window.logic.buyTicket = async function (e) {
     e.preventDefault();
 
     if (!window.logic.currentUser) {
@@ -1174,7 +1175,7 @@ function initEvents() {
     const buyForm = document.getElementById("buy-ticket");
 
     if (loginForm) {
-        loginForm.addEventListener("submit", function(e) {
+        loginForm.addEventListener("submit", function (e) {
             e.preventDefault();
             const username = this.querySelector('input[type="text"]').value;
             const password = this.querySelector('input[type="password"]').value;
@@ -1187,4 +1188,17 @@ function initEvents() {
     }
 }
 
-showHome();
+document.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && event.altKey && event.shiftKey) {
+        showSetupWarning();
+    }
+});
+
+function showSetupWarning() {
+    body.innerHTML = `
+        <h1>Setup Warning</h1>
+        <p>Are you sure you want to setup the app?</p>
+        <button onclick="showSetup()">Yes</button>
+        <button onclick="showHome()">No</button>
+    `
+}
