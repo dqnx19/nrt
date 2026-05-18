@@ -3,7 +3,9 @@ function checkLoadingPreference() {
         showSetup();
     } else {
         if (localStorage.getItem("lastPage") === "home") {
-            showSetupWarning();
+            showHome();
+        } else if (localStorage.getItem("lastPage") === "s") {
+            showSetup();
         } else {
             showHome();
         }
