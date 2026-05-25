@@ -1,10 +1,14 @@
-const header =  document.createElement("header")
-const main =    document.createElement("main")
-const footer =  document.createElement("footer")
+/*const header = document.createElement("header")
+const main = document.createElement("main")
+const footer = document.createElement("footer")
 
 document.body.appendChild(header)
 document.body.appendChild(main)
-document.body.appendChild(footer)
+document.body.appendChild(footer)*/
+
+const header = document.querySelector("header");
+const main = document.querySelector("main");
+const footer = document.querySelector("footer");
 
 const body = document.body;
 
@@ -308,33 +312,31 @@ const i18n = {
 const lang = navigator.language.slice(0, 2);
 const t = i18n[lang] || i18n.en;
 
-document.querySelector("header").innerHTML = `
-<div class="app-drawer-wrapper"></div>
-<button onclick="showHome()">
-    <img src="img/icons/logo.svg" alt="" class="logo">
-</button>
+header.innerHTML = `
+    <div class="app-drawer-wrapper">
+    </div>
+    <button onclick="showHome()">
+        <img src="img/icons/logo.svg" alt="" class="logo">
+    </button>
 `;
 
-document.querySelector("footer").innerHTML = `
-    <button onclick="showHome()">
+footer.innerHTML = `
+    <button onclick="showPage('home')">
         <img src="img/links-icons/home-page.svg" alt="">
     </button>
-    <button onclick="showAccount()">
-        <img src="img/links-icons/account.svg" alt="">
-    </button>
-    <button onclick="showConnectionTypes()">
+    <button onclick="showPage('connection_types')">
         <img src="img/links-icons/connection-types.svg" alt="">
     </button>
-    <button onclick="showVehicles()">
+    <button onclick="showPage('vehicles')">
         <img src="img/links-icons/vehicles.svg" alt="">
     </button>
-    <button onclick="showFare()">
+    <button onclick="showPage('fare')">
         <img src="img/links-icons/fare.svg" alt="">
     </button>
-    <button onclick="showAbout()">
+    <button onclick="showPage('about')">
         <img src="img/links-icons/about.svg" alt="">
     </button>
-    <button onclick="showTechnicalDetails()">
+    <button onclick="showPage('technical_details')">
         <img src="img/links-icons/technical-details.svg" alt="">
     </button>
 `
@@ -401,13 +403,15 @@ const pages = {
             <p>${t.class}: EU 1000</p>
             <p>${t.maximum_speed}: 160 km/h</p>
             <br>
-            <img src="img/services/001-2nd-class-icon.png" alt="">
-            <img src="img/services/005-bicycle-icon.png" alt="">
-            <img src="img/services/006-wheelchair-icon.png" alt="">
-            <img src="img/services/007-power-socket-icon.png" alt="">
-            <img src="img/services/008-usb-icon.png" alt="">
-            <img src="img/services/009-air-conditioning-icon.png" alt="">
-            <img src="img/services/010-wifi-icon.png" alt="">
+            <div class="services-icons">
+                <img src="img/services/001-2nd-class-icon.png" alt="">
+                <img src="img/services/005-bicycle-icon.png" alt="">
+                <img src="img/services/006-wheelchair-icon.png" alt="">
+                <img src="img/services/007-power-socket-icon.png" alt="">
+                <img src="img/services/008-usb-icon.png" alt="">
+                <img src="img/services/009-air-conditioning-icon.png" alt="">
+                <img src="img/services/010-wifi-icon.png" alt="">
+            </div>
             <br>
             <div class="formation">
                 <span class="unit-left">
@@ -423,13 +427,17 @@ const pages = {
             <p>${t.class}: EU 1010</p>
             <p>${t.maximum_speed}: 160 km/h</p>
             <br>
-            <img src="img/services/001-2nd-class-icon.png" alt="">
-            <img src="img/services/005-bicycle-icon.png" alt="">
-            <img src="img/services/006-wheelchair-icon.png" alt="">
-            <img src="img/services/007-power-socket-icon.png" alt="">
-            <img src="img/services/008-usb-icon.png" alt="">
-            <img src="img/services/009-air-conditioning-icon.png" alt="">
-            <img src="img/services/010-wifi-icon.png" alt="">
+            <div class="services-icons">
+                <img src="img/services/001-2nd-class-icon.png" alt="">
+                <img src="img/services/005-bicycle-icon.png" alt="">
+            </div>
+            <div class="services-icons">
+                <img src="img/services/006-wheelchair-icon.png" alt="">
+                <img src="img/services/007-power-socket-icon.png" alt="">
+                <img src="img/services/008-usb-icon.png" alt="">
+                <img src="img/services/009-air-conditioning-icon.png" alt="">
+                <img src="img/services/010-wifi-icon.png" alt="">
+            </div>
             <br>
             <div class="formation">
                 <span class="unit-left">
@@ -448,13 +456,15 @@ const pages = {
             <p>${t.class}: EU 1020</p>
             <p>${t.maximum_speed}: 160 km/h</p>
             <br>
-            <img src="img/services/001-2nd-class-icon.png" alt="">
-            <img src="img/services/005-bicycle-icon.png" alt="">
-            <img src="img/services/006-wheelchair-icon.png" alt="">
-            <img src="img/services/007-power-socket-icon.png" alt="">
-            <img src="img/services/008-usb-icon.png" alt="">
-            <img src="img/services/009-air-conditioning-icon.png" alt="">
-            <img src="img/services/010-wifi-icon.png" alt="">
+            <div class="services-icons">
+                <img src="img/services/001-2nd-class-icon.png" alt="">
+                <img src="img/services/005-bicycle-icon.png" alt="">
+                <img src="img/services/006-wheelchair-icon.png" alt="">
+                <img src="img/services/007-power-socket-icon.png" alt="">
+                <img src="img/services/008-usb-icon.png" alt="">
+                <img src="img/services/009-air-conditioning-icon.png" alt="">
+                <img src="img/services/010-wifi-icon.png" alt="">
+            </div>
             <br>
             <div class="formation">
                 <span class="unit-left">
@@ -476,14 +486,16 @@ const pages = {
             <p>${t.class}: EU 1030</p>
             <p>${t.maximum_speed}: 200 km/h</p>
             <br>
-            <img src="img/services/001-2nd-class-icon.png" alt="">
-            <img src="img/services/002-1st-class-icon.png" alt="">
-            <img src="img/services/005-bicycle-icon.png" alt="">
-            <img src="img/services/006-wheelchair-icon.png" alt="">
-            <img src="img/services/007-power-socket-icon.png" alt="">
-            <img src="img/services/008-usb-icon.png" alt="">
-            <img src="img/services/009-air-conditioning-icon.png" alt="">
-            <img src="img/services/010-wifi-icon.png" alt="">
+            <div class="services-icons">
+                <img src="img/services/001-2nd-class-icon.png" alt="">
+                <img src="img/services/002-1st-class-icon.png" alt="">
+                <img src="img/services/005-bicycle-icon.png" alt="">
+                <img src="img/services/006-wheelchair-icon.png" alt="">
+                <img src="img/services/007-power-socket-icon.png" alt="">
+                <img src="img/services/008-usb-icon.png" alt="">
+                <img src="img/services/009-air-conditioning-icon.png" alt="">
+                <img src="img/services/010-wifi-icon.png" alt="">
+            </div>
             <br>
             <div class="formation">
                 <span class="unit-left">
@@ -508,15 +520,17 @@ const pages = {
             <p>${t.class}: 1000</p>
             <p>${t.maximum_speed}: 230 km/h</p>
             <br>
-            <img src="img/services/001-2nd-class-icon.png" alt="">
-            <img src="img/services/002-1st-class-icon.png" alt="">
-            <img src="img/services/003-dining-car-icon.png" alt="">
-            <img src="img/services/005-bicycle-icon.png" alt="">
-            <img src="img/services/006-wheelchair-icon.png" alt="">
-            <img src="img/services/007-power-socket-icon.png" alt="">
-            <img src="img/services/008-usb-icon.png" alt="">
-            <img src="img/services/009-air-conditioning-icon.png" alt="">
-            <img src="img/services/010-wifi-icon.png" alt="">
+            <div class="services-icons">
+                <img src="img/services/001-2nd-class-icon.png" alt="">
+                <img src="img/services/002-1st-class-icon.png" alt="">
+                <img src="img/services/003-dining-car-icon.png" alt="">
+                <img src="img/services/005-bicycle-icon.png" alt="">
+                <img src="img/services/006-wheelchair-icon.png" alt="">
+                <img src="img/services/007-power-socket-icon.png" alt="">
+                <img src="img/services/008-usb-icon.png" alt="">
+                <img src="img/services/009-air-conditioning-icon.png" alt="">
+                <img src="img/services/010-wifi-icon.png" alt="">
+            </div>
             <br>
             <div class="formation">
                 <span class="unit-left">
@@ -568,13 +582,15 @@ const pages = {
             <p>${t.class}: EU 1040</p>
             <p>${t.maximum_speed}: 80 km/h</p>
             <br>
-            <img src="img/services/001-2nd-class-icon.png" alt="">
-            <img src="img/services/005-bicycle-icon.png" alt="">
-            <img src="img/services/006-wheelchair-icon.png" alt="">
-            <img src="img/services/007-power-socket-icon.png" alt="">
-            <img src="img/services/008-usb-icon.png" alt="">
-            <img src="img/services/009-air-conditioning-icon.png" alt="">
-            <img src="img/services/010-wifi-icon.png" alt="">
+            <div class="services-icons">
+                <img src="img/services/001-2nd-class-icon.png" alt="">
+                <img src="img/services/005-bicycle-icon.png" alt="">
+                <img src="img/services/006-wheelchair-icon.png" alt="">
+                <img src="img/services/007-power-socket-icon.png" alt="">
+                <img src="img/services/008-usb-icon.png" alt="">
+                <img src="img/services/009-air-conditioning-icon.png" alt="">
+                <img src="img/services/010-wifi-icon.png" alt="">
+            </div>
             <br>
             <div class="formation">
                 <span class="unit-left">
@@ -599,13 +615,15 @@ const pages = {
             <p>${t.class}: EU 1050</p>
             <p>${t.maximum_speed}: 80 km/h</p>
             <br>
-            <img src="img/services/001-2nd-class-icon.png" alt="">
-            <img src="img/services/005-bicycle-icon.png" alt="">
-            <img src="img/services/006-wheelchair-icon.png" alt="">
-            <img src="img/services/007-power-socket-icon.png" alt="">
-            <img src="img/services/008-usb-icon.png" alt="">
-            <img src="img/services/009-air-conditioning-icon.png" alt="">
-            <img src="img/services/010-wifi-icon.png" alt="">
+            <div class="services-icons">
+                <img src="img/services/001-2nd-class-icon.png" alt="">
+                <img src="img/services/005-bicycle-icon.png" alt="">
+                <img src="img/services/006-wheelchair-icon.png" alt="">
+                <img src="img/services/007-power-socket-icon.png" alt="">
+                <img src="img/services/008-usb-icon.png" alt="">
+                <img src="img/services/009-air-conditioning-icon.png" alt="">
+                <img src="img/services/010-wifi-icon.png" alt="">
+            </div>
             <br>
             <div class="formation">
                 <span class="unit-left">
@@ -630,13 +648,15 @@ const pages = {
             <p>${t.class}: EU 1060</p>
             <p>${t.maximum_speed}: 70 km/h</p>
             <br>
-            <img src="img/services/001-2nd-class-icon.png" alt="">
-            <img src="img/services/005-bicycle-icon.png" alt="">
-            <img src="img/services/006-wheelchair-icon.png" alt="">
-            <img src="img/services/007-power-socket-icon.png" alt="">
-            <img src="img/services/008-usb-icon.png" alt="">
-            <img src="img/services/009-air-conditioning-icon.png" alt="">
-            <img src="img/services/010-wifi-icon.png" alt="">
+            <div class="services-icons">
+                <img src="img/services/001-2nd-class-icon.png" alt="">
+                <img src="img/services/005-bicycle-icon.png" alt="">
+                <img src="img/services/006-wheelchair-icon.png" alt="">
+                <img src="img/services/007-power-socket-icon.png" alt="">
+                <img src="img/services/008-usb-icon.png" alt="">
+                <img src="img/services/009-air-conditioning-icon.png" alt="">
+                <img src="img/services/010-wifi-icon.png" alt="">
+            </div>
             <br>
             <div class="formation">
                 <span class="unit-left">
@@ -655,13 +675,15 @@ const pages = {
             <p>${t.class}: EU 1070</p>
             <p>${t.maximum_speed}: 70 km/h</p>
             <br>
-            <img src="img/services/001-2nd-class-icon.png" alt="">
-            <img src="img/services/005-bicycle-icon.png" alt="">
-            <img src="img/services/006-wheelchair-icon.png" alt="">
-            <img src="img/services/007-power-socket-icon.png" alt="">
-            <img src="img/services/008-usb-icon.png" alt="">
-            <img src="img/services/009-air-conditioning-icon.png" alt="">
-            <img src="img/services/010-wifi-icon.png" alt="">
+            <div class="services-icons">
+                <img src="img/services/001-2nd-class-icon.png" alt="">
+                <img src="img/services/005-bicycle-icon.png" alt="">
+                <img src="img/services/006-wheelchair-icon.png" alt="">
+                <img src="img/services/007-power-socket-icon.png" alt="">
+                <img src="img/services/008-usb-icon.png" alt="">
+                <img src="img/services/009-air-conditioning-icon.png" alt="">
+                <img src="img/services/010-wifi-icon.png" alt="">
+            </div>
             <br>
             <div class="formation">
                 <span class="unit-left">
@@ -680,10 +702,21 @@ const pages = {
             <p>${t.class}: EL 1000</p>
             <p>${t.maximum_speed}: 230 km/h</p>
             <br>
+            <div class="services-icons">
+                <img src="img/services/001-2nd-class-icon.png" alt="">
+                <img src="img/services/005-bicycle-icon.png" alt="">
+                <img src="img/services/006-wheelchair-icon.png" alt="">
+                <img src="img/services/007-power-socket-icon.png" alt="">
+                <img src="img/services/008-usb-icon.png" alt="">
+                <img src="img/services/009-air-conditioning-icon.png" alt="">
+                <img src="img/services/010-wifi-icon.png" alt="">
+            </div>
+            <br>
             <div class="formation">
                 <span class="locomotive">
                     <p>EL 1000</p>
                 </span>
+            </div>
         </section>
     `,
     fare: `
@@ -907,26 +940,19 @@ const pages = {
 
 function showPage(pageNameLowerCase, pageNameUpperCase) {
     scrollUp();
-    localStorage.setItem('lastPage', pageNameLowerCase);
+    setLastPage(pageNameLowerCase);
     document.title = pageNameUpperCase;
     main.innerHTML = pages[pageNameLowerCase];
 }
 
-document.addEventListener("keydown", (event) => {
-    if (event.ctrlKey && event.altKey && event.shiftKey) {
-        showSetupWarning();
-    }
-});
-
-function showSetupWarning() {
-    main.innerHTML = `
-        <h1>Setup Warning</h1>
-        <p>Are you sure you want to setup the app?</p>
-        <button onclick="showSetup()">Yes</button>
-        <button onclick="loadLastPage()">No</button>
-    `
+function showLastPage() {
+    const lastPage = localStorage.getItem('lastPage') || 'home';
+    const pageNameUpperCase = lastPage.charAt(0).toUpperCase() + lastPage.slice(1).replace('_', ' ');
+    showPage(lastPage, pageNameUpperCase);
 }
 
 function setLastPage(pageName) {
     localStorage.setItem('lastPage', pageName);
 }
+
+showLastPage();
