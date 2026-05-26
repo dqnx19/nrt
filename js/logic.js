@@ -315,8 +315,8 @@ const t = i18n[lang] || i18n.en;
 header.innerHTML = `
     <div class="app-drawer-wrapper">
     </div>
-    <button onclick="showHome()">
-        <img src="img/icons/logo.svg" alt="" class="logo">
+    <button onclick="showHome()"   class="logo">
+        <img src="img/icons/logo.svg" alt="">
     </button>
 `;
 
