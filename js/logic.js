@@ -43,6 +43,9 @@ footer.innerHTML = `
     <button onclick="showVehicles()">
         <img src="img/links-icons/vehicles.svg" alt="">
     </button>
+    <button onclick="showServices()">
+        <img src="img/links-icons/services.svg" alt="">
+    </button>
     <button onclick="showFare()">
         <img src="img/links-icons/fare.svg" alt="">
     </button>
@@ -138,12 +141,8 @@ function showVehicles() {
             </div>
             <br>
             <div class="formation">
-                <span class="unit-left">
-                    <p>EU 1000</p>
-                </span>
-                <span class="unit-right">
-                    <p>EU 1001</p>
-                </span>
+                <span class="unit-left">EU 1000</span>
+                <span class="unit-right">EU 1001</span>
             </div>
         </section>
         <section>
@@ -154,8 +153,6 @@ function showVehicles() {
             <div class="services-icons">
                 <img src="img/services/001-2nd-class-icon.png" alt="">
                 <img src="img/services/005-bicycle-icon.png" alt="">
-            </div>
-            <div class="services-icons">
                 <img src="img/services/006-wheelchair-icon.png" alt="">
                 <img src="img/services/007-power-socket-icon.png" alt="">
                 <img src="img/services/008-usb-icon.png" alt="">
@@ -164,15 +161,9 @@ function showVehicles() {
             </div>
             <br>
             <div class="formation">
-                <span class="unit-left">
-                    <p>EU 1010</p>
-                </span>
-                <span class="unit-middle">
-                    <p>EU 1011</p>
-                </span>
-                <span class="unit-right">
-                    <p>EU 1012</p>
-                </span>
+                <span class="unit-left">EU 1010</span>
+                <span class="unit-middle">EU 1011</span>
+                <span class="unit-right">EU 1012</span>
             </div>
         </section>
         <section>
@@ -191,18 +182,10 @@ function showVehicles() {
             </div>
             <br>
             <div class="formation">
-                <span class="unit-left">
-                    <p>EU 1020</p>
-                </span>
-                <span class="unit-middle">
-                    <p>EU 1021</p>
-                </span>
-                <span class="unit-middle">
-                    <p>EU 1022</p>
-                </span>
-                <span class="unit-right">
-                    <p>EU 1023</p>
-                </span>
+                <span class="unit-left">EU 1020</span>
+                <span class="unit-middle">EU 1021</span>
+                <span class="unit-middle">EU 1022</span>
+                <span class="unit-right">EU 1023</span>
             </div>
         </section>
         <section>
@@ -222,21 +205,11 @@ function showVehicles() {
             </div>
             <br>
             <div class="formation">
-                <span class="unit-left">
-                    <p>EU 1030</p>
-                </span>
-                <span class="unit-middle">
-                    <p>EU 1031</p>
-                </span>
-                <span class="unit-middle">
-                    <p>EU 1032</p>
-                </span>
-                <span class="unit-middle">
-                    <p>EU 1033</p>
-                </span>
-                <span class="unit-right">
-                    <p>EU 1034</p>
-                </span>
+                <span class="unit-left">EU 1030</span>
+                <span class="unit-middle">EU 1031</span>
+                <span class="unit-middle">EU 1032</span>
+                <span class="unit-middle">EU 1033</span>
+                <span class="unit-right">EU 1034</span>
             </div>
         </section>
         <section>
@@ -257,48 +230,18 @@ function showVehicles() {
             </div>
             <br>
             <div class="formation">
-                <span class="unit-left">
-                    <p>1000</p>
-                    <img src="img/services/002-1st-class-icon.png" alt="">
+                <span class="unit-left">1000</span>
+                <span class="unit-middle">1001</span>
+                <span class="unit-middle">1002    
                 </span>
-                <span class="unit-middle">
-                    <p>1001</p>
-                    <img src="img/services/002-1st-class-icon.png" alt="">
+                <span class="unit-middle">1003    
                 </span>
-                <span class="unit-middle">
-                    <p>1002</p>
-                    <img src="img/services/001-2nd-class-icon.png" alt="">
-                    <img src="img/services/003-dining-car-icon.png" alt="">
-                </span>
-                <span class="unit-middle">
-                    <p>1003</p>
-                    <img src="img/services/001-2nd-class-icon.png" alt="">
-                    <img src="img/services/006-wheelchair-icon.png" alt="">
-                </span>
-                <span class="unit-middle">
-                    <p>1004</p>
-                    <img src="img/services/001-2nd-class-icon.png" alt="">
-                </span>
-                <span class="unit-middle">
-                    <p>1005</p>
-                    <img src="img/services/001-2nd-class-icon.png" alt="">
-                </span>
-                <span class="unit-middle">
-                    <p>1006</p>
-                    <img src="img/services/001-2nd-class-icon.png" alt="">
-                </span>
-                <span class="unit-middle">
-                    <p>1007</p>
-                    <img src="img/services/001-2nd-class-icon.png" alt="">
-                </span>
-                <span class="unit-middle">
-                    <p>1008</p>
-                    <img src="img/services/001-2nd-class-icon.png" alt="">
-                    <img src="img/services/005-bicycle-icon.png" alt="">
-                </span>
-                <span class="locomotive">
-                    <p>EL 1000</p>
-                </span>
+                <span class="unit-middle">1004</span>
+                <span class="unit-middle">1005</span>
+                <span class="unit-middle">1006</span>
+                <span class="unit-middle">1007</span>
+                <span class="unit-middle">1008</span>
+                <span class="locomotive"></span>
             </div>
         </section>
         <section>
@@ -317,21 +260,11 @@ function showVehicles() {
             </div>
             <br>
             <div class="formation">
-                <span class="unit-left">
-                    <p>EU 1040</p>
-                </span>
-                <span class="unit-middle">
-                    <p>EU 1041</p>
-                </span>
-                <span class="unit-middle">
-                    <p>EU 1042</p>
-                </span>
-                <span class="unit-middle">
-                    <p>EU 1043</p>
-                </span>
-                <span class="unit-right">
-                    <p>EU 1044</p>
-                </span>
+                <span class="unit-left">EU 1040</span>
+                <span class="unit-middle">EU 1041</span>
+                <span class="unit-middle">EU 1042</span>
+                <span class="unit-middle">EU 1043</span>
+                <span class="unit-right">EU 1044</span>
             </div>
         </section>
         <section>
@@ -350,21 +283,11 @@ function showVehicles() {
             </div>
             <br>
             <div class="formation">
-                <span class="unit-left">
-                    <p>EU 1050</p>
-                </span>
-                <span class="unit-middle">
-                    <p>EU 1051</p>
-                </span>
-                <span class="unit-middle">
-                    <p>EU 1052</p>
-                </span>
-                <span class="unit-middle">
-                    <p>EU 1053</p>
-                </span>
-                <span class="unit-right">
-                    <p>EU 1054</p>
-                </span>
+                <span class="unit-left">EU 1050</span>
+                <span class="unit-middle">EU 1051</span>
+                <span class="unit-middle">EU 1052</span>
+                <span class="unit-middle">EU 1053</span>
+                <span class="unit-right">EU 1054</span>
             </div>
         </section>
         <section>
@@ -383,15 +306,9 @@ function showVehicles() {
             </div>
             <br>
             <div class="formation">
-                <span class="unit-left">
-                    <p>EU 1060</p>
-                </span>
-                <span class="unit-middle">
-                    <p>EU 1061</p>
-                </span>
-                <span class="unit-right">
-                    <p>EU 1062</p>
-                </span>
+                <span class="unit-left">EU 1060</span>
+                <span class="unit-middle">EU 1061</span>
+                <span class="unit-right">EU 1062</span>
             </div>
         </section>
         <section>
@@ -410,15 +327,9 @@ function showVehicles() {
             </div>
             <br>
             <div class="formation">
-                <span class="unit-left">
-                    <p>EU 1070</p>
-                </span>
-                <span class="unit-middle">
-                    <p>EU 1071</p>
-                </span>
-                <span class="unit-right">
-                    <p>EU 1072</p>
-                </span>
+                <span class="unit-left">EU 1070</span>
+                <span class="unit-middle">EU 1071</span>
+                <span class="unit-right">EU 1072</span>
             </div>
         </section>
         <section>
@@ -437,10 +348,104 @@ function showVehicles() {
             </div>
             <br>
             <div class="formation">
-                <span class="locomotive">
-                    <p>EL 1000</p>
-                </span>
+                <span class="locomotive">EL 1000</span>
             </div>
+        </section>
+    `;
+}
+
+function showServices() {
+    scrollUp();
+    document.title = "Services - SRT";
+    main.innerHTML = `
+        <h1>Services</h1>
+        <section>
+            <h2>Second class</h2>
+            <div class="services-icons">
+                <img src="img/services/001-2nd-class-icon.png" alt="2nd Class">
+            </div>
+            <ul>
+                <li>Classic second-class seating</li>
+                <li>Seats: 2 + 2</li>
+                <li>Face-to-face seating / Airline style seatings</li>
+            </ul>
+        </section>
+        <section>
+            <h2>First class</h2>
+            <div class="services-icons">
+                <img src="img/services/002-1st-class-icon.png" alt="1st Class">
+            </div>
+            <ul>
+                <li>Comfortable first-class seating</li>
+                <li>Seats: 2 + 1</li>
+                <li>Spacious and luxurious</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Dining car</h2>
+            <div class="services-icons">
+                <img src="img/services/003-dining-car-icon.png" alt="Dining Car">
+            </div>
+            <ul>
+                <li>Delicious meals</li>
+                <li>Refreshments</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Bicycle transport</h2>
+            <div class="services-icons">
+                <img src="img/services/005-bicycle-icon.png" alt="Bicycle">
+            </div>
+            <ul>
+                <li>Transport of bicycles</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Wheelchair accessibility</h2>
+            <div class="services-icons">
+                <img src="img/services/006-wheelchair-icon.png" alt="Wheelchair">
+            </div>
+            <ul>
+                <li>Accessible seating for wheelchair users</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Power socket</h2>
+            <div class="services-icons">
+                <img src="img/services/007-power-socket-icon.png" alt="Power Socket">
+            </div>
+            <ul>
+                <li>Access to power outlets for charging devices</li>
+            </ul>
+        </section>
+        <section>
+            <h2>USB Ports</h2>
+            <div class="services-icons">
+                <img src="img/services/008-usb-icon.png" alt="USB Ports">
+            </div>
+            <ul>
+                <li>USB ports for charging devices</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Air Conditioning</h2>
+            <div class="services-icons">
+                <img src="img/services/009-air-conditioning-icon.png" alt="Air Conditioning">
+            </div>
+            <ul>
+                <li>Climate control for passenger comfort</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Wi-Fi</h2>
+            <div class="services-icons">
+                <img src="img/services/010-wifi-icon.png" alt="Wi-Fi">
+            </div>
+            <ul>
+                <li>Free Wi-Fi access for passengers</li>
+                <li>Unlimited data usage</li>
+                <li>WiFi SSID (name): srt_free</li>
+            </ul>
         </section>
     `;
 }
