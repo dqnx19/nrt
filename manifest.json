@@ -19,5 +19,84 @@
             "type": "image/svg+xml,image/x-icon",
             "purpose": "any maskable"
         }
+    ],
+    "shortcuts": [
+        {
+            "name": "Home",
+            "short_name": "Home",
+            "url": "/?page=home",
+            "icons": [
+                {
+                    "src": "/img/links-icons/home.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Connection types",
+            "short_name": "Connection types",
+            "url": "/?page=connection-types",
+            "icons": [
+                {
+                    "src": "/img/links-icons/connection-types.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Vehicles",
+            "short_name": "Vehicles",
+            "url": "/?page=vehicles",
+            "icons": [
+                {
+                    "src": "/img/links-icons/vehicles.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Services",
+            "short_name": "Services",
+            "url": "/?page=services",
+            "icons": [
+                {
+                    "src": "/img/links-icons/services.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Fare",
+            "short_name": "Fare",
+            "url": "/?page=fare",
+            "icons": [
+                {
+                    "src": "/img/links-icons/fare.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "About",
+            "short_name": "About",
+            "url": "/?page=about",
+            "icons": [
+                {
+                    "src": "/img/links-icons/about.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Technical details",
+            "short_name": "Technical details",
+            "url": "/?page=technical-details",
+            "icons": [
+                {
+                    "src": "/img/links-icons/technical-details.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        }
     ]
 }

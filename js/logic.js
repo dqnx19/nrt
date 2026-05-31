@@ -1,33 +1,13 @@
-const header = document.querySelector("header");
-const main = document.querySelector("main");
-const footer = document.querySelector("footer");
+const header = document.createElement("header");
+const main = document.createElement("main");
+const footer = document.createElement("footer");
 
-const body = document.body;
-
-const i18n = {
-    en: {
-
-        electric_locomotives: "Electric locomotives",
-        electric_units: "Electric units",
-        non_traction: "Non-traction vehicles",
-
-        announcements: "Announcements",
-
-        next_station: "Next station",
-        next_station_request: "Next station (request)",
-        next_station_requested: "Next station (requested)",
-        next_station_terminus: "Next station (terminus)",
-        this_station: "This station",
-        this_station_terminus: "This Station Terminus"
-    },
-};
-
-const lang = navigator.language.slice(0, 2);
-const t = i18n[lang] || i18n.en;
+document.body.appendChild(header)
+document.body.appendChild(main)
+document.body.appendChild(footer)
 
 header.innerHTML = `
-    <div class="app-drawer-wrapper">
-    </div>
+    <div class="app-drawer-wrapper"></div>
     <button onclick="showHome()"   class="logo">
         <img src="img/icons/logo.svg" alt="">
     </button>
@@ -55,7 +35,45 @@ footer.innerHTML = `
     <button onclick="showTechnicalDetails()">
         <img src="img/links-icons/technical-details.svg" alt="">
     </button>
-`
+`;
+
+function router() {
+    const params = new URLSearchParams(window.location.search);
+    const path = params.get("page");
+
+    switch (path) {
+        case "home":
+            showHome();
+            break;
+
+        case "connection-types":
+            showConnectionTypes();
+            break;
+
+        case "vehicles":
+            showVehicles();
+            break;
+
+        case "services":
+            showServices();
+            break;
+
+        case "fare":
+            showFare();
+            break;
+
+        case "about":
+            showAbout();
+            break;
+
+        case "technical-details":
+            showTechnicalDetails();
+            break;
+
+        default:
+            showHome();
+    }
+}
 
 function scrollUp() {
     window.scrollTo({
@@ -69,6 +87,16 @@ function showHome() {
     document.title = "Home Page - SRT";
     main.innerHTML = `
         <h1>Home</h1>
+        <section>
+            <div class="grouped-list">
+                <button class="item" onclick="showConnectionTypes()">Connection Types</button>
+                <button class="item" onclick="showVehicles()">Vehicles</button>
+                <button class="item" onclick="showServices()">Services</button>
+                <button class="item" onclick="showFare()">Fare</button>
+                <button class="item" onclick="showAbout()">About</button>
+                <button class="item" onclick="showTechnicalDetails()">Technical Details</button>
+            </div>
+        </section>
     `;
 }
 
@@ -608,7 +636,7 @@ function showFare() {
 
 function showAbout() {
     scrollUp();
-    document.title = "About";
+    document.title = "About - SRT";
     main.innerHTML = `
         <h1>About</h1>
         <section>
@@ -626,7 +654,7 @@ function showAbout() {
 
 function showTechnicalDetails() {
     scrollUp();
-    document.title = t.technical_details_title;
+    document.title = "Technical Details - SRT"
     main.innerHTML = `
         <h1>Technical Details</h1>
         <section>
@@ -679,11 +707,4 @@ function showTechnicalDetails() {
     `;
 }
 
-function scrollUp() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}
-
-showHome();
+router();
