@@ -1,3 +1,7 @@
+import {setTitle} from "https://js.nether.click/nether.js";
+import {importJS} from "https://js.nether.click/nether.js";
+import {importCSS} from "https://js.nether.click/nether.js";
+
 const header = document.createElement("header");
 const main = document.createElement("main");
 const footer = document.createElement("footer");
@@ -8,10 +12,18 @@ document.body.appendChild(footer)
 
 header.innerHTML = `
     <div class="app-drawer-wrapper"></div>
-    <button onclick="showHome()"   class="logo">
+    <button onclick="showHome()" class="logo">
         <img src="img/icons/logo.svg" alt="">
     </button>
 `;
+
+window.showHome = showHome;
+window.showConnectionTypes = showConnectionTypes;
+window.showVehicles = showVehicles;
+window.showServices = showServices;
+window.showFare = showFare;
+window.showAbout = showAbout;
+window.showTechnicalDetails = showTechnicalDetails;
 
 footer.innerHTML = `
     <button onclick="showHome()">
@@ -75,16 +87,9 @@ function router() {
     }
 }
 
-function scrollUp() {
-    window.scrollTo({
-        top: 0,
-        behavior: "auto"
-    });
-}
-
 function showHome() {
     scrollUp();
-    document.title = "Home Page - SRT";
+    setTitle("Sigma Republic Transport");
     main.innerHTML = `
         <h1>Home</h1>
         <section>
@@ -102,7 +107,7 @@ function showHome() {
 
 function showConnectionTypes() {
     scrollUp();
-    document.title = "Connection Types - SRT";
+    setTitle("Connection Types - SRT");
     main.innerHTML = `
         <h1>Connection Types</h1>
         <section>
@@ -150,7 +155,7 @@ function showConnectionTypes() {
 
 function showVehicles() {
     scrollUp();
-    document.title = "Vehicles - SRT";
+    setTitle("Vehicles - SRT");
     main.innerHTML = `
         <h1>Vehicles</h1>
         <section>
@@ -384,7 +389,7 @@ function showVehicles() {
 
 function showServices() {
     scrollUp();
-    document.title = "Services - SRT";
+    setTitle("Services - SRT");
     main.innerHTML = `
         <h1>Services</h1>
         <section>
@@ -482,7 +487,7 @@ function showServices() {
 
 function showFare() {
     scrollUp();
-    document.title = "Fare - SRT";
+    setTitle("Fare - SRT");
     main.innerHTML = `
         <h1>Fare</h1>
         <section id="tickets">
@@ -639,7 +644,7 @@ function showFare() {
 
 function showAbout() {
     scrollUp();
-    document.title = "About - SRT";
+    setTitle("About - SRT");
     main.innerHTML = `
         <h1>About</h1>
         <section>
@@ -657,7 +662,7 @@ function showAbout() {
 
 function showTechnicalDetails() {
     scrollUp();
-    document.title = "Technical Details - SRT";
+    setTitle("Technical Details - SRT");
     main.innerHTML = `
         <h1>Technical Details</h1>
         <section>
