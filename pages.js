@@ -1,21 +1,65 @@
-import {setTitle} from "https://js.nether.click/nether.js";
-import {importJS} from "https://js.nether.click/nether.js";
-import {importCSS} from "https://js.nether.click/nether.js";
+import { importCSSFromList, createElement, setTitle, importJS, importCSS, setFavicon, scrollUp, setContentOfHeader, setContentOfMain, setContentOfFooter } from "https://js.nether.click/nether.js";
 
-const header = document.createElement("header");
-const main = document.createElement("main");
-const footer = document.createElement("footer");
+const header = createElement("header")
+const main = createElement("main")
+const footer = createElement("footer")
 
-document.body.appendChild(header)
-document.body.appendChild(main)
-document.body.appendChild(footer)
+importCSSFromList([
+    "https://modern-web.nether.click/css/fonts.css",
+    "https://modern-web.nether.click/css/elements/h1.css",
+    "https://modern-web.nether.click/css/elements/h2.css",
+    "https://modern-web.nether.click/css/elements/main.css",
+    "https://modern-web.nether.click/css/elements/footer.css",
+    "https://modern-web.nether.click/css/elements/header.css",
+    "https://modern-web.nether.click/css/elements/table.css",
+    "https://modern-web.nether.click/css/elements/th.css",
+    "https://modern-web.nether.click/css/elements/section.css",
+    "https://modern-web.nether.click/css/fonts.css",
+    "https://modern-web.nether.click/css/elements/body.css",
+    "https://modern-web.nether.click/css/elements/all.css",
+    "https://modern-web.nether.click/css/elements/input.css",
+    "https://modern-web.nether.click/css/elements/form.css",
+    "https://modern-web.nether.click/css/elements/li.css",
+    "https://modern-web.nether.click/css/elements/select.css",
+    "https://modern-web.nether.click/css/elements/button.css",
+    "https://modern-web.nether.click/css/components/logo.css",
+    "https://modern-web.nether.click/css/components/footer-bar.css",
+    "https://modern-web.nether.click/css/components/app-drawer.css",
+    "https://modern-web.nether.click/css/components/services-icons.css",
+    "https://modern-web.nether.click/css/components/train-formation.css",
+    "https://modern-web.nether.click/css/components/grouped-list.css"
+])
 
-header.innerHTML = `
+setContentOfFooter(`
+    <button onclick="showHome()">
+        <img src="/img/links-icons/home-page.svg" alt="">
+    </button>
+    <button onclick="showConnectionTypes()">
+        <img src="/img/links-icons/connection-types.svg" alt="">
+    </button>
+    <button onclick="showVehicles()">
+        <img src="/img/links-icons/vehicles.svg" alt="">
+    </button>
+    <button onclick="showServices()">
+        <img src="/img/links-icons/services.svg" alt="">
+    </button>
+    <button onclick="showFare()">
+        <img src="/img/links-icons/fare.svg" alt="">
+    </button>
+    <button onclick="showAbout()">
+        <img src="/img/links-icons/about.svg" alt="">
+    </button>
+    <button onclick="showTechnicalDetails()">
+        <img src="/img/links-icons/technical-details.svg" alt="">
+    </button>
+`)
+
+setContentOfHeader(`
     <div class="app-drawer-wrapper"></div>
     <button onclick="showHome()" class="logo">
         <img src="img/icons/logo.svg" alt="">
     </button>
-`;
+`)
 
 window.showHome = showHome;
 window.showConnectionTypes = showConnectionTypes;
@@ -25,74 +69,39 @@ window.showFare = showFare;
 window.showAbout = showAbout;
 window.showTechnicalDetails = showTechnicalDetails;
 
-footer.innerHTML = `
-    <button onclick="showHome()">
-        <img src="img/links-icons/home-page.svg" alt="">
-    </button>
-    <button onclick="showConnectionTypes()">
-        <img src="img/links-icons/connection-types.svg" alt="">
-    </button>
-    <button onclick="showVehicles()">
-        <img src="img/links-icons/vehicles.svg" alt="">
-    </button>
-    <button onclick="showServices()">
-        <img src="img/links-icons/services.svg" alt="">
-    </button>
-    <button onclick="showFare()">
-        <img src="img/links-icons/fare.svg" alt="">
-    </button>
-    <button onclick="showAbout()">
-        <img src="img/links-icons/about.svg" alt="">
-    </button>
-    <button onclick="showTechnicalDetails()">
-        <img src="img/links-icons/technical-details.svg" alt="">
-    </button>
-`;
-
 function router() {
-    const params = new URLSearchParams(window.location.search);
-    const path = params.get("page");
+    const page = new URLSearchParams(location.search).get("page");
 
-    switch (path) {
-        case "home":
-            showHome();
-            break;
-
+    switch (page) {
         case "connection-types":
-            showConnectionTypes();
-            break;
+            return showConnectionTypes();
 
         case "vehicles":
-            showVehicles();
-            break;
+            return showVehicles();
 
         case "services":
-            showServices();
-            break;
+            return showServices();
 
         case "fare":
-            showFare();
-            break;
+            return showFare();
 
         case "about":
-            showAbout();
-            break;
+            return showAbout();
 
         case "technical-details":
-            showTechnicalDetails();
-            break;
+            return showTechnicalDetails();
 
         default:
-            showHome();
+            return showHome();
     }
 }
 
 function showHome() {
     scrollUp();
     setTitle("Sigma Republic Transport");
-    main.innerHTML = `
-        <h1>Home</h1>
-        <section>
+    setContentOfMain(`
+        <h1>Sigma Republic Transport</h1>
+        <section>   
             <div class="grouped-list">
                 <button class="item" onclick="showConnectionTypes()">Connection Types</button>
                 <button class="item" onclick="showVehicles()">Vehicles</button>
@@ -102,13 +111,13 @@ function showHome() {
                 <button class="item" onclick="showTechnicalDetails()">Technical Details</button>
             </div>
         </section>
-    `;
+    `)
 }
 
 function showConnectionTypes() {
     scrollUp();
     setTitle("Connection Types - SRT");
-    main.innerHTML = `
+    setContentOfMain(`
         <h1>Connection Types</h1>
         <section>
             <h2>Regional Bahn Train</h2>
@@ -150,7 +159,7 @@ function showConnectionTypes() {
             <p>Stops At: Every Station</p>
             <p>Route Type: Urban/Suburban</p>
         </section>
-    `;
+    `)
 }
 
 function showVehicles() {
@@ -164,13 +173,13 @@ function showVehicles() {
             <p>Maximum Speed: 160 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="img/services/001-2nd-class-icon.png" alt="">
-                <img src="img/services/005-bicycle-icon.png" alt="">
-                <img src="img/services/006-wheelchair-icon.png" alt="">
-                <img src="img/services/007-power-socket-icon.png" alt="">
-                <img src="img/services/008-usb-icon.png" alt="">
-                <img src="img/services/009-air-conditioning-icon.png" alt="">
-                <img src="img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="">
+                <img src="/img/services/005-bicycle-icon.png" alt="">
+                <img src="/img/services/006-wheelchair-icon.png" alt="">
+                <img src="/img/services/007-power-socket-icon.png" alt="">
+                <img src="/img/services/008-usb-icon.png" alt="">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="">
+                <img src="/img/services/010-wifi-icon.png" alt="">
             </div>
             <br>
             <div class="formation">
@@ -184,13 +193,13 @@ function showVehicles() {
             <p>Maximum Speed: 160 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="img/services/001-2nd-class-icon.png" alt="">
-                <img src="img/services/005-bicycle-icon.png" alt="">
-                <img src="img/services/006-wheelchair-icon.png" alt="">
-                <img src="img/services/007-power-socket-icon.png" alt="">
-                <img src="img/services/008-usb-icon.png" alt="">
-                <img src="img/services/009-air-conditioning-icon.png" alt="">
-                <img src="img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="">
+                <img src="/img/services/005-bicycle-icon.png" alt="">
+                <img src="/img/services/006-wheelchair-icon.png" alt="">
+                <img src="/img/services/007-power-socket-icon.png" alt="">
+                <img src="/img/services/008-usb-icon.png" alt="">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="">
+                <img src="/img/services/010-wifi-icon.png" alt="">
             </div>
             <br>
             <div class="formation">
@@ -205,13 +214,13 @@ function showVehicles() {
             <p>Maximum Speed: 160 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="img/services/001-2nd-class-icon.png" alt="">
-                <img src="img/services/005-bicycle-icon.png" alt="">
-                <img src="img/services/006-wheelchair-icon.png" alt="">
-                <img src="img/services/007-power-socket-icon.png" alt="">
-                <img src="img/services/008-usb-icon.png" alt="">
-                <img src="img/services/009-air-conditioning-icon.png" alt="">
-                <img src="img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="">
+                <img src="/img/services/005-bicycle-icon.png" alt="">
+                <img src="/img/services/006-wheelchair-icon.png" alt="">
+                <img src="/img/services/007-power-socket-icon.png" alt="">
+                <img src="/img/services/008-usb-icon.png" alt="">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="">
+                <img src="/img/services/010-wifi-icon.png" alt="">
             </div>
             <br>
             <div class="formation">
@@ -227,14 +236,14 @@ function showVehicles() {
             <p>Maximum Speed: 200 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="img/services/001-2nd-class-icon.png" alt="">
-                <img src="img/services/002-1st-class-icon.png" alt="">
-                <img src="img/services/005-bicycle-icon.png" alt="">
-                <img src="img/services/006-wheelchair-icon.png" alt="">
-                <img src="img/services/007-power-socket-icon.png" alt="">
-                <img src="img/services/008-usb-icon.png" alt="">
-                <img src="img/services/009-air-conditioning-icon.png" alt="">
-                <img src="img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="">
+                <img src="/img/services/002-1st-class-icon.png" alt="">
+                <img src="/img/services/005-bicycle-icon.png" alt="">
+                <img src="/img/services/006-wheelchair-icon.png" alt="">
+                <img src="/img/services/007-power-socket-icon.png" alt="">
+                <img src="/img/services/008-usb-icon.png" alt="">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="">
+                <img src="/img/services/010-wifi-icon.png" alt="">
             </div>
             <br>
             <div class="formation">
@@ -251,15 +260,15 @@ function showVehicles() {
             <p>Maximum Speed: 230 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="img/services/001-2nd-class-icon.png" alt="">
-                <img src="img/services/002-1st-class-icon.png" alt="">
-                <img src="img/services/003-dining-car-icon.png" alt="">
-                <img src="img/services/005-bicycle-icon.png" alt="">
-                <img src="img/services/006-wheelchair-icon.png" alt="">
-                <img src="img/services/007-power-socket-icon.png" alt="">
-                <img src="img/services/008-usb-icon.png" alt="">
-                <img src="img/services/009-air-conditioning-icon.png" alt="">
-                <img src="img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="">
+                <img src="/img/services/002-1st-class-icon.png" alt="">
+                <img src="/img/services/003-dining-car-icon.png" alt="">
+                <img src="/img/services/005-bicycle-icon.png" alt="">
+                <img src="/img/services/006-wheelchair-icon.png" alt="">
+                <img src="/img/services/007-power-socket-icon.png" alt="">
+                <img src="/img/services/008-usb-icon.png" alt="">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="">
+                <img src="/img/services/010-wifi-icon.png" alt="">
             </div>
             <br>
             <div class="formation">
@@ -283,13 +292,13 @@ function showVehicles() {
             <p>Maximum Speed: 80 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="img/services/001-2nd-class-icon.png" alt="">
-                <img src="img/services/005-bicycle-icon.png" alt="">
-                <img src="img/services/006-wheelchair-icon.png" alt="">
-                <img src="img/services/007-power-socket-icon.png" alt="">
-                <img src="img/services/008-usb-icon.png" alt="">
-                <img src="img/services/009-air-conditioning-icon.png" alt="">
-                <img src="img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="">
+                <img src="/img/services/005-bicycle-icon.png" alt="">
+                <img src="/img/services/006-wheelchair-icon.png" alt="">
+                <img src="/img/services/007-power-socket-icon.png" alt="">
+                <img src="/img/services/008-usb-icon.png" alt="">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="">
+                <img src="/img/services/010-wifi-icon.png" alt="">
             </div>
             <br>
             <div class="formation">
@@ -306,13 +315,13 @@ function showVehicles() {
             <p>Maximum Speed: 80 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="img/services/001-2nd-class-icon.png" alt="">
-                <img src="img/services/005-bicycle-icon.png" alt="">
-                <img src="img/services/006-wheelchair-icon.png" alt="">
-                <img src="img/services/007-power-socket-icon.png" alt="">
-                <img src="img/services/008-usb-icon.png" alt="">
-                <img src="img/services/009-air-conditioning-icon.png" alt="">
-                <img src="img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="">
+                <img src="/img/services/005-bicycle-icon.png" alt="">
+                <img src="/img/services/006-wheelchair-icon.png" alt="">
+                <img src="/img/services/007-power-socket-icon.png" alt="">
+                <img src="/img/services/008-usb-icon.png" alt="">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="">
+                <img src="/img/services/010-wifi-icon.png" alt="">
             </div>
             <br>
             <div class="formation">
@@ -329,13 +338,13 @@ function showVehicles() {
             <p>Maximum Speed: 70 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="img/services/001-2nd-class-icon.png" alt="">
-                <img src="img/services/005-bicycle-icon.png" alt="">
-                <img src="img/services/006-wheelchair-icon.png" alt="">
-                <img src="img/services/007-power-socket-icon.png" alt="">
-                <img src="img/services/008-usb-icon.png" alt="">
-                <img src="img/services/009-air-conditioning-icon.png" alt="">
-                <img src="img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="">
+                <img src="/img/services/005-bicycle-icon.png" alt="">
+                <img src="/img/services/006-wheelchair-icon.png" alt="">
+                <img src="/img/services/007-power-socket-icon.png" alt="">
+                <img src="/img/services/008-usb-icon.png" alt="">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="">
+                <img src="/img/services/010-wifi-icon.png" alt="">
             </div>
             <br>
             <div class="formation">
@@ -350,13 +359,13 @@ function showVehicles() {
             <p>Maximum Speed: 70 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="img/services/001-2nd-class-icon.png" alt="">
-                <img src="img/services/005-bicycle-icon.png" alt="">
-                <img src="img/services/006-wheelchair-icon.png" alt="">
-                <img src="img/services/007-power-socket-icon.png" alt="">
-                <img src="img/services/008-usb-icon.png" alt="">
-                <img src="img/services/009-air-conditioning-icon.png" alt="">
-                <img src="img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="">
+                <img src="/img/services/005-bicycle-icon.png" alt="">
+                <img src="/img/services/006-wheelchair-icon.png" alt="">
+                <img src="/img/services/007-power-socket-icon.png" alt="">
+                <img src="/img/services/008-usb-icon.png" alt="">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="">
+                <img src="/img/services/010-wifi-icon.png" alt="">
             </div>
             <br>
             <div class="formation">
@@ -371,13 +380,13 @@ function showVehicles() {
             <p>Maximum Speed: 230 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="img/services/001-2nd-class-icon.png" alt="">
-                <img src="img/services/005-bicycle-icon.png" alt="">
-                <img src="img/services/006-wheelchair-icon.png" alt="">
-                <img src="img/services/007-power-socket-icon.png" alt="">
-                <img src="img/services/008-usb-icon.png" alt="">
-                <img src="img/services/009-air-conditioning-icon.png" alt="">
-                <img src="img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="">
+                <img src="/img/services/005-bicycle-icon.png" alt="">
+                <img src="/img/services/006-wheelchair-icon.png" alt="">
+                <img src="/img/services/007-power-socket-icon.png" alt="">
+                <img src="/img/services/008-usb-icon.png" alt="">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="">
+                <img src="/img/services/010-wifi-icon.png" alt="">
             </div>
             <br>
             <div class="formation">
@@ -395,7 +404,7 @@ function showServices() {
         <section>
             <h2>Second class</h2>
             <div class="services-icons">
-                <img src="img/services/001-2nd-class-icon.png" alt="2nd Class">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd Class">
             </div>
             <ul>
                 <li>Classic second-class seating</li>
@@ -406,7 +415,7 @@ function showServices() {
         <section>
             <h2>First class</h2>
             <div class="services-icons">
-                <img src="img/services/002-1st-class-icon.png" alt="1st Class">
+                <img src="/img/services/002-1st-class-icon.png" alt="1st Class">
             </div>
             <ul>
                 <li>Comfortable first-class seating</li>
@@ -417,7 +426,7 @@ function showServices() {
         <section>
             <h2>Dining car</h2>
             <div class="services-icons">
-                <img src="img/services/003-dining-car-icon.png" alt="Dining Car">
+                <img src="/img/services/003-dining-car-icon.png" alt="Dining Car">
             </div>
             <ul>
                 <li>Delicious meals</li>
@@ -429,7 +438,7 @@ function showServices() {
         <section>
             <h2>Bicycle transport</h2>
             <div class="services-icons">
-                <img src="img/services/005-bicycle-icon.png" alt="Bicycle">
+                <img src="/img/services/005-bicycle-icon.png" alt="Bicycle">
             </div>
             <ul>
                 <li>Transport of bicycles</li>
@@ -438,7 +447,7 @@ function showServices() {
         <section>
             <h2>Wheelchair accessibility</h2>
             <div class="services-icons">
-                <img src="img/services/006-wheelchair-icon.png" alt="Wheelchair">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair">
             </div>
             <ul>
                 <li>Accessible seating for wheelchair users</li>
@@ -447,7 +456,7 @@ function showServices() {
         <section>
             <h2>Power socket</h2>
             <div class="services-icons">
-                <img src="img/services/007-power-socket-icon.png" alt="Power Socket">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket">
             </div>
             <ul>
                 <li>Access to power outlets for charging devices</li>
@@ -456,7 +465,7 @@ function showServices() {
         <section>
             <h2>USB Ports</h2>
             <div class="services-icons">
-                <img src="img/services/008-usb-icon.png" alt="USB Ports">
+                <img src="/img/services/008-usb-icon.png" alt="USB Ports">
             </div>
             <ul>
                 <li>USB ports for charging devices</li>
@@ -465,7 +474,7 @@ function showServices() {
         <section>
             <h2>Air Conditioning</h2>
             <div class="services-icons">
-                <img src="img/services/009-air-conditioning-icon.png" alt="Air Conditioning">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning">
             </div>
             <ul>
                 <li>Climate control for passenger comfort</li>
@@ -474,7 +483,7 @@ function showServices() {
         <section>
             <h2>Wi-Fi</h2>
             <div class="services-icons">
-                <img src="img/services/010-wifi-icon.png" alt="Wi-Fi">
+                <img src="/img/services/010-wifi-icon.png" alt="Wi-Fi">
             </div>
             <ul>
                 <li>Free Wi-Fi access for passengers</li>
