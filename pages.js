@@ -1,8 +1,4 @@
-import { importCSSFromList, createElement, setTitle, importJS, importCSS, setFavicon, scrollUp, setContentOfHeader, setContentOfMain, setContentOfFooter } from "https://js.nether.click/nether.js";
-
-const header = createElement("header")
-const main = createElement("main")
-const footer = createElement("footer")
+import { importCSSFromList, importJSFromList, setTitle, setFavicon, scrollUp, setContentOfHeader, setContentOfMain, setContentOfFooter } from "https://js.nether.click/nether.js";
 
 importCSSFromList([
     "https://modern-web.nether.click/css/fonts.css",
@@ -14,7 +10,6 @@ importCSSFromList([
     "https://modern-web.nether.click/css/elements/table.css",
     "https://modern-web.nether.click/css/elements/th.css",
     "https://modern-web.nether.click/css/elements/section.css",
-    "https://modern-web.nether.click/css/fonts.css",
     "https://modern-web.nether.click/css/elements/body.css",
     "https://modern-web.nether.click/css/elements/all.css",
     "https://modern-web.nether.click/css/elements/input.css",
@@ -29,6 +24,8 @@ importCSSFromList([
     "https://modern-web.nether.click/css/components/train-formation.css",
     "https://modern-web.nether.click/css/components/grouped-list.css"
 ])
+
+setFavicon("img/icons/favicon.svg")
 
 setContentOfFooter(`
     <button onclick="showHome()">
@@ -116,7 +113,7 @@ function showHome() {
 
 function showConnectionTypes() {
     scrollUp();
-    setTitle("Connection Types - SRT");
+    setTitle("Connection Types - Sigma Republic Transport");
     setContentOfMain(`
         <h1>Connection Types</h1>
         <section>
@@ -164,8 +161,8 @@ function showConnectionTypes() {
 
 function showVehicles() {
     scrollUp();
-    setTitle("Vehicles - SRT");
-    main.innerHTML = `
+    setTitle("Vehicles - Sigma Republic Transport");
+    setContentOfMain(`
         <h1>Vehicles</h1>
         <section>
             <h2>Skoda 18Ev (2 cars)</h2>
@@ -393,13 +390,13 @@ function showVehicles() {
                 <span class="locomotive">EL 1000</span>
             </div>
         </section>
-    `;
+    `)
 }
 
 function showServices() {
     scrollUp();
-    setTitle("Services - SRT");
-    main.innerHTML = `
+    setTitle("Services - Sigma Republic Transport");
+    setContentOfMain(`
         <h1>Services</h1>
         <section>
             <h2>Second class</h2>
@@ -491,13 +488,13 @@ function showServices() {
                 <li>WiFi SSID (name): srt_free</li>
             </ul>
         </section>
-    `;
+    `)
 }
 
 function showFare() {
     scrollUp();
-    setTitle("Fare - SRT");
-    main.innerHTML = `
+    setTitle("Fare - Sigma Republic Transport");
+    setContentOfMain(`
         <h1>Fare</h1>
         <section id="tickets">
             <h2>Tickets</h2>
@@ -648,13 +645,13 @@ function showFare() {
                 </tbody>
             </table>
         </section>
-    `;
+    `)
 }
 
 function showAbout() {
     scrollUp();
-    setTitle("About - SRT");
-    main.innerHTML = `
+    setTitle("About - Sigma Republic Transport");
+    setContentOfMain(`
         <h1>About</h1>
         <section>
             <h2>What is SRT?</h2>
@@ -666,13 +663,13 @@ function showAbout() {
                 <li>Anything else except SRT vehicles is NOT real.</li>
             </ul>
         </section>
-    `;
+    `)
 }
 
 function showTechnicalDetails() {
     scrollUp();
-    setTitle("Technical Details - SRT");
-    main.innerHTML = `
+    setTitle("Technical Details - Sigma Republic Transport");
+    setContentOfMain(`
         <h1>Technical Details</h1>
         <section>
             <h2>Rolling Stock Classes</h2>
@@ -721,7 +718,7 @@ function showTechnicalDetails() {
             <p>This station (Terminus)</p>
             <li>{gong} {station name} terminus station please exit the vehicle.</li>
         </section>
-    `;
+    `)
 }
 
 router();
