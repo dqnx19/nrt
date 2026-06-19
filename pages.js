@@ -1,54 +1,52 @@
 import { importCSSFromList, importJSFromList, setTitle, setFavicon, scrollUp, setContentOfHeader, setContentOfMain, setContentOfFooter } from "https://js.nether.click/nether.js";
 
 importCSSFromList([
-    "https://modern-web.nether.click/css/fonts.css",
-    "https://modern-web.nether.click/css/elements/h1.css",
-    "https://modern-web.nether.click/css/elements/h2.css",
-    "https://modern-web.nether.click/css/elements/main.css",
-    "https://modern-web.nether.click/css/elements/footer.css",
-    "https://modern-web.nether.click/css/elements/header.css",
-    "https://modern-web.nether.click/css/elements/table.css",
-    "https://modern-web.nether.click/css/elements/th.css",
-    "https://modern-web.nether.click/css/elements/section.css",
-    "https://modern-web.nether.click/css/elements/body.css",
-    "https://modern-web.nether.click/css/elements/all.css",
-    "https://modern-web.nether.click/css/elements/input.css",
-    "https://modern-web.nether.click/css/elements/form.css",
-    "https://modern-web.nether.click/css/elements/li.css",
-    "https://modern-web.nether.click/css/elements/select.css",
-    "https://modern-web.nether.click/css/elements/button.css",
-    "https://modern-web.nether.click/css/components/logo.css",
-    "https://modern-web.nether.click/css/components/footer-bar.css",
-    "https://modern-web.nether.click/css/components/app-drawer.css",
-    "https://modern-web.nether.click/css/components/services-icons.css",
-    "https://modern-web.nether.click/css/components/train-formation.css",
-    "https://modern-web.nether.click/css/components/grouped-list.css"
+    "https://modern-web.nether.click/fonts/lexend/lexend.css",
+    "https://modern-web.nether.click/components/css/headings.css",
+    "https://modern-web.nether.click/components/css/main.css",
+    "https://modern-web.nether.click/components/css/footer.css",
+    "https://modern-web.nether.click/components/css/header.css",
+    "https://modern-web.nether.click/components/css/table.css",
+    "https://modern-web.nether.click/components/css/section.css",
+    "https://modern-web.nether.click/components/css/body.css",
+    "https://modern-web.nether.click/components/css/all.css",
+    "https://modern-web.nether.click/components/css/form.css",
+    "https://modern-web.nether.click/components/css/li.css",
+    "https://modern-web.nether.click/components/css/button.css",
+    "https://modern-web.nether.click/components/css/logo.css",
+    "https://modern-web.nether.click/components/css/app-drawer.css",
+    "https://modern-web.nether.click/components/css/services-icons.css",
+    "https://modern-web.nether.click/components/css/train-formation.css",
+    "https://modern-web.nether.click/components/css/grouped-list.css"
 ])
 
 setFavicon("img/icons/favicon.svg")
 
 setContentOfFooter(`
-    <button onclick="showHome()">
-        <img src="/img/links-icons/home-page.svg" alt="">
-    </button>
-    <button onclick="showConnectionTypes()">
-        <img src="/img/links-icons/connection-types.svg" alt="">
-    </button>
-    <button onclick="showVehicles()">
-        <img src="/img/links-icons/vehicles.svg" alt="">
-    </button>
-    <button onclick="showServices()">
-        <img src="/img/links-icons/services.svg" alt="">
-    </button>
-    <button onclick="showFare()">
-        <img src="/img/links-icons/fare.svg" alt="">
-    </button>
-    <button onclick="showAbout()">
-        <img src="/img/links-icons/about.svg" alt="">
-    </button>
-    <button onclick="showTechnicalDetails()">
-        <img src="/img/links-icons/technical-details.svg" alt="">
-    </button>
+    <span class="expand-bar"></span>
+    <div class="buttons">
+        <button onclick="showHome()">
+            <img src="/img/links-icons/home-page.svg" alt="">
+        </button>
+        <button onclick="showConnectionTypes()">
+            <img src="/img/links-icons/connection-types.svg" alt="">
+        </button>
+        <button onclick="showVehicles()">
+            <img src="/img/links-icons/vehicles.svg" alt="">
+        </button>
+        <button onclick="showServices()">
+            <img src="/img/links-icons/services.svg" alt="">
+        </button>
+        <button onclick="showFare()">
+            <img src="/img/links-icons/fare.svg" alt="">
+        </button>
+        <button onclick="showAbout()">
+            <img src="/img/links-icons/about.svg" alt="">
+        </button>
+        <button onclick="showTechnicalDetails()">
+            <img src="/img/links-icons/technical-details.svg" alt="">
+        </button>
+    </div>
 `)
 
 setContentOfHeader(`
@@ -95,9 +93,9 @@ function router() {
 
 function showHome() {
     scrollUp();
-    setTitle("Sigma Republic Transport");
+    setTitle("Nether Republic Transport");
     setContentOfMain(`
-        <h1>Sigma Republic Transport</h1>
+        <h1>Nether Republic Transport</h1>
         <section>   
             <div class="grouped-list">
                 <button class="item" onclick="showConnectionTypes()">Connection Types</button>
@@ -113,7 +111,7 @@ function showHome() {
 
 function showConnectionTypes() {
     scrollUp();
-    setTitle("Connection Types - Sigma Republic Transport");
+    setTitle("Connection Types - Nether Republic Transport");
     setContentOfMain(`
         <h1>Connection Types</h1>
         <section>
@@ -161,7 +159,7 @@ function showConnectionTypes() {
 
 function showVehicles() {
     scrollUp();
-    setTitle("Vehicles - Sigma Republic Transport");
+    setTitle("Vehicles - Nether Republic Transport");
     setContentOfMain(`
         <h1>Vehicles</h1>
         <section>
@@ -395,7 +393,7 @@ function showVehicles() {
 
 function showServices() {
     scrollUp();
-    setTitle("Services - Sigma Republic Transport");
+    setTitle("Services - Nether Republic Transport");
     setContentOfMain(`
         <h1>Services</h1>
         <section>
@@ -493,7 +491,7 @@ function showServices() {
 
 function showFare() {
     scrollUp();
-    setTitle("Fare - Sigma Republic Transport");
+    setTitle("Fare - Nether Republic Transport");
     setContentOfMain(`
         <h1>Fare</h1>
         <section id="tickets">
@@ -650,14 +648,14 @@ function showFare() {
 
 function showAbout() {
     scrollUp();
-    setTitle("About - Sigma Republic Transport");
+    setTitle("About - Nether Republic Transport");
     setContentOfMain(`
         <h1>About</h1>
         <section>
             <h2>What is SRT?</h2>
             <ul>
                 <li>Founded in November 2024.</li>
-                <li>Transportation system of the sigma republic</li>
+                <li>Transportation system of the Nether republic</li>
                 <li>National operator of Railway, metro, and tram tracks, depots and public roads</li>
                 <li>National Carrier of trains, u-bahns, trams and buses</li>
                 <li>Anything else except SRT vehicles is NOT real.</li>
@@ -668,7 +666,7 @@ function showAbout() {
 
 function showTechnicalDetails() {
     scrollUp();
-    setTitle("Technical Details - Sigma Republic Transport");
+    setTitle("Technical Details - Nether Republic Transport");
     setContentOfMain(`
         <h1>Technical Details</h1>
         <section>
