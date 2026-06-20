@@ -1,6 +1,10 @@
-import { importCSSFromList, importJSFromList, setTitle, setFavicon, scrollUp, setContentOfHeader, setContentOfMain, setContentOfFooter } from "https://js.nether.click/nether.js";
+import { importCSSFromList, importJSFromList, setTitle, setFavicon, setAttribute, scrollUp, setContentOfHeader, setContentOfMain, setContentOfFooter } from "https://js.nether.click/nether.js";
 
-importCSSFromList([
+setAttribute("html", "lang", "en")
+
+setFavicon("img/icons/favicon.svg")
+
+await importCSSFromList([
     "https://modern-web.nether.click/fonts/lexend/lexend.css",
     "https://modern-web.nether.click/components/css/headings.css",
     "https://modern-web.nether.click/components/css/main.css",
@@ -20,39 +24,39 @@ importCSSFromList([
     "https://modern-web.nether.click/components/css/grouped-list.css"
 ])
 
-setFavicon("img/icons/favicon.svg")
-
-setContentOfFooter(`
-    <span class="expand-bar"></span>
-    <div class="buttons">
-        <button onclick="showHome()">
-            <img src="/img/links-icons/home-page.svg" alt="">
-        </button>
-        <button onclick="showConnectionTypes()">
-            <img src="/img/links-icons/connection-types.svg" alt="">
-        </button>
-        <button onclick="showVehicles()">
-            <img src="/img/links-icons/vehicles.svg" alt="">
-        </button>
-        <button onclick="showServices()">
-            <img src="/img/links-icons/services.svg" alt="">
-        </button>
-        <button onclick="showFare()">
-            <img src="/img/links-icons/fare.svg" alt="">
-        </button>
-        <button onclick="showAbout()">
-            <img src="/img/links-icons/about.svg" alt="">
-        </button>
-        <button onclick="showTechnicalDetails()">
-            <img src="/img/links-icons/technical-details.svg" alt="">
-        </button>
-    </div>
-`)
+await importJSFromList([
+    "https://nether.click/js/import-app-drawer.js",
+    "https://modern-web.nether.click/components/js/app-drawer.js"
+])
 
 setContentOfHeader(`
     <div class="app-drawer-wrapper"></div>
     <button onclick="showHome()" class="logo">
         <img src="img/icons/logo.svg" alt="">
+    </button>
+`)
+
+setContentOfFooter(`
+    <button onclick="showHome()" title="Shows Home Page">
+        <img src="/img/icons/logo.svg" alt="NRT Logo">
+    </button>
+    <button onclick="showConnectionTypes()" title="Shows Connection Types Page">
+        <img src="/img/links-icons/connection-types.svg" alt="Connection Types icon">
+    </button>
+    <button onclick="showVehicles()" title="Shows Vehicles Page">
+        <img src="/img/links-icons/vehicles.svg" alt="Vehicles icon">
+    </button>
+    <button onclick="showServices()" title="Shows Services Page">
+        <img src="/img/links-icons/services.svg" alt="Services icon">
+    </button>
+    <button onclick="showFare()" title="Shows Fare Page">
+        <img src="/img/links-icons/fare.svg" alt="Fare icon">
+    </button>
+    <button onclick="showAbout()" title="Shows About Page">
+        <img src="/img/links-icons/about.svg" alt="About icon">
+    </button>
+    <button onclick="showTechnicalDetails()" title="Shows Technical Details Page">
+        <img src="/img/links-icons/technical-details.svg" alt="Technical Details icon">
     </button>
 `)
 
@@ -168,13 +172,13 @@ function showVehicles() {
             <p>Maximum Speed: 160 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="">
-                <img src="/img/services/005-bicycle-icon.png" alt="">
-                <img src="/img/services/006-wheelchair-icon.png" alt="">
-                <img src="/img/services/007-power-socket-icon.png" alt="">
-                <img src="/img/services/008-usb-icon.png" alt="">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="">
-                <img src="/img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
             </div>
             <br>
             <div class="formation">
@@ -188,13 +192,13 @@ function showVehicles() {
             <p>Maximum Speed: 160 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="">
-                <img src="/img/services/005-bicycle-icon.png" alt="">
-                <img src="/img/services/006-wheelchair-icon.png" alt="">
-                <img src="/img/services/007-power-socket-icon.png" alt="">
-                <img src="/img/services/008-usb-icon.png" alt="">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="">
-                <img src="/img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
             </div>
             <br>
             <div class="formation">
@@ -209,13 +213,13 @@ function showVehicles() {
             <p>Maximum Speed: 160 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="">
-                <img src="/img/services/005-bicycle-icon.png" alt="">
-                <img src="/img/services/006-wheelchair-icon.png" alt="">
-                <img src="/img/services/007-power-socket-icon.png" alt="">
-                <img src="/img/services/008-usb-icon.png" alt="">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="">
-                <img src="/img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
             </div>
             <br>
             <div class="formation">
@@ -231,14 +235,14 @@ function showVehicles() {
             <p>Maximum Speed: 200 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
                 <img src="/img/services/002-1st-class-icon.png" alt="">
-                <img src="/img/services/005-bicycle-icon.png" alt="">
-                <img src="/img/services/006-wheelchair-icon.png" alt="">
-                <img src="/img/services/007-power-socket-icon.png" alt="">
-                <img src="/img/services/008-usb-icon.png" alt="">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="">
-                <img src="/img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
             </div>
             <br>
             <div class="formation">
@@ -255,15 +259,15 @@ function showVehicles() {
             <p>Maximum Speed: 230 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
                 <img src="/img/services/002-1st-class-icon.png" alt="">
                 <img src="/img/services/003-dining-car-icon.png" alt="">
-                <img src="/img/services/005-bicycle-icon.png" alt="">
-                <img src="/img/services/006-wheelchair-icon.png" alt="">
-                <img src="/img/services/007-power-socket-icon.png" alt="">
-                <img src="/img/services/008-usb-icon.png" alt="">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="">
-                <img src="/img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
             </div>
             <br>
             <div class="formation">
@@ -287,13 +291,13 @@ function showVehicles() {
             <p>Maximum Speed: 80 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="">
-                <img src="/img/services/005-bicycle-icon.png" alt="">
-                <img src="/img/services/006-wheelchair-icon.png" alt="">
-                <img src="/img/services/007-power-socket-icon.png" alt="">
-                <img src="/img/services/008-usb-icon.png" alt="">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="">
-                <img src="/img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
             </div>
             <br>
             <div class="formation">
@@ -310,13 +314,13 @@ function showVehicles() {
             <p>Maximum Speed: 80 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="">
-                <img src="/img/services/005-bicycle-icon.png" alt="">
-                <img src="/img/services/006-wheelchair-icon.png" alt="">
-                <img src="/img/services/007-power-socket-icon.png" alt="">
-                <img src="/img/services/008-usb-icon.png" alt="">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="">
-                <img src="/img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
             </div>
             <br>
             <div class="formation">
@@ -333,13 +337,13 @@ function showVehicles() {
             <p>Maximum Speed: 70 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="">
-                <img src="/img/services/005-bicycle-icon.png" alt="">
-                <img src="/img/services/006-wheelchair-icon.png" alt="">
-                <img src="/img/services/007-power-socket-icon.png" alt="">
-                <img src="/img/services/008-usb-icon.png" alt="">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="">
-                <img src="/img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
             </div>
             <br>
             <div class="formation">
@@ -354,13 +358,13 @@ function showVehicles() {
             <p>Maximum Speed: 70 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="">
-                <img src="/img/services/005-bicycle-icon.png" alt="">
-                <img src="/img/services/006-wheelchair-icon.png" alt="">
-                <img src="/img/services/007-power-socket-icon.png" alt="">
-                <img src="/img/services/008-usb-icon.png" alt="">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="">
-                <img src="/img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
             </div>
             <br>
             <div class="formation">
@@ -375,13 +379,13 @@ function showVehicles() {
             <p>Maximum Speed: 230 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="">
-                <img src="/img/services/005-bicycle-icon.png" alt="">
-                <img src="/img/services/006-wheelchair-icon.png" alt="">
-                <img src="/img/services/007-power-socket-icon.png" alt="">
-                <img src="/img/services/008-usb-icon.png" alt="">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="">
-                <img src="/img/services/010-wifi-icon.png" alt="">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
             </div>
             <br>
             <div class="formation">
@@ -494,103 +498,91 @@ function showFare() {
     setTitle("Fare - Nether Republic Transport");
     setContentOfMain(`
         <h1>Fare</h1>
-        <section id="tickets">
+        <section>
             <h2>Tickets</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Zones Validity</th>
-                        <th>Time Validity</th>
-                        <th>Full 2nd Class</th>
-                        <th>Full 1st Class</th>
-                        <th>Discounted 2nd Class</th>
-                        <th>Discounted 1st Class</th>
+                        <th>Zones / Time Validity</th>
+                        <th>Full 2nd class</th>
+                        <th>Full 1st class</th>
+                        <th>Discounted 2nd class</th>
+                        <th>Discounted 1st class</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1 zone</td>
-                        <td>0.5 hours</td>
+                        <td>1 zone / 30 min</td>
                         <td>0,10€</td>
                         <td>0,30€</td>
                         <td>0,05€</td>
                         <td>0,15€</td>
                     </tr>
                     <tr>
-                        <td>2 zones</td>
-                        <td>1 hour</td>
+                        <td>2 zones / 1 h</td>
                         <td>0,20€</td>
                         <td>0,60€</td>
                         <td>0,10€</td>
                         <td>0,30€</td>
                     </tr>
                     <tr>
-                        <td>3 zones</td>
-                        <td>1.5 hours</td>
+                        <td>3 zones / 1.5 h</td>
                         <td>0,30€</td>
                         <td>0,90€</td>
                         <td>0,15€</td>
                         <td>0,45€</td>
                     </tr>
                     <tr>
-                        <td>4 zones</td>
-                        <td>2 hours</td>
+                        <td>4 zones / 2 h</td>
                         <td>0,40€</td>
                         <td>1,20€</td>
                         <td>0,20€</td>
                         <td>0,60€</td>
                     </tr>
                     <tr>
-                        <td>5 zones</td>
-                        <td>2.5 hours</td>
+                        <td>5 zones / 2.5 h</td>
                         <td>0,50€</td>
                         <td>1,50€</td>
                         <td>0,25€</td>
                         <td>0,75€</td>
                     </tr>
                     <tr>
-                        <td>6 zones</td>
-                        <td>3 hours</td>
+                        <td>6 zones / 3 h</td>
                         <td>0,60€</td>
                         <td>1,80€</td>
                         <td>0,30€</td>
                         <td>0,90€</td>
                     </tr>
                     <tr>
-                        <td>7 zones</td>
-                        <td>3.5 hours</td>
+                        <td>7 zones / 3.5 h</td>
                         <td>0,70€</td>
                         <td>2,10€</td>
                         <td>0,35€</td>
                         <td>1,05€</td>
                     </tr>
                     <tr>
-                        <td>8 zones</td>
-                        <td>4 hours</td>
+                        <td>8 zones / 4 h</td>
                         <td>0,80€</td>
                         <td>2,40€</td>
                         <td>0,40€</td>
                         <td>1,20€</td>
                     </tr>
                     <tr>
-                        <td>9 zones</td>
-                        <td>4.5 hours</td>
+                        <td>9 zones / 4.5 h</td>
                         <td>0,90€</td>
                         <td>2,70€</td>
                         <td>0,45€</td>
                         <td>1,35€</td>
                     </tr>
                     <tr>
-                        <td>10 zones</td>
-                        <td>5 hours</td>
+                        <td>10 zones / 5 h</td>
                         <td>1,00€</td>
                         <td>3,00€</td>
                         <td>0,50€</td>
                         <td>1,50€</td>
                     </tr>
                     <tr>
-                        <td>All zones</td>
-                        <td>24 hours</td>
+                        <td>All zones / 24 h</td>
                         <td>2,00€</td>
                         <td>6,00€</td>
                         <td>1,00€</td>
@@ -652,13 +644,16 @@ function showAbout() {
     setContentOfMain(`
         <h1>About</h1>
         <section>
-            <h2>What is SRT?</h2>
+            <h2>What is Nether Republic Transport</h2>
+            <p>The backbone of transportation in the Nether Republic.</p>
             <ul>
-                <li>Founded in November 2024.</li>
-                <li>Transportation system of the Nether republic</li>
-                <li>National operator of Railway, metro, and tram tracks, depots and public roads</li>
-                <li>National Carrier of trains, u-bahns, trams and buses</li>
-                <li>Anything else except SRT vehicles is NOT real.</li>
+                <li>📅 Founded in November 2024</li>
+                <li>🚆 National railway operator</li>
+                <li>🚇 Operator of metro networks</li>
+                <li>🚊 Operator of tram systems</li>
+                <li>🚌 National bus carrier</li>
+                <li>🛣️ Maintains public roads and transport infrastructure</li>
+                <li>✅ Only NRT-operated vehicles are considered official</li>
             </ul>
         </section>
     `)
