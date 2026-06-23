@@ -6,26 +6,38 @@ setFavicon("img/icons/favicon.svg")
 
 await importCSSFromList([
     "https://modern-web.nether.click/fonts/lexend/lexend.css",
-    "https://modern-web.nether.click/components/css/headings.css",
-    "https://modern-web.nether.click/components/css/main.css",
-    "https://modern-web.nether.click/components/css/footer.css",
-    "https://modern-web.nether.click/components/css/header.css",
-    "https://modern-web.nether.click/components/css/table.css",
-    "https://modern-web.nether.click/components/css/section.css",
-    "https://modern-web.nether.click/components/css/body.css",
+
     "https://modern-web.nether.click/components/css/all.css",
-    "https://modern-web.nether.click/components/css/form.css",
-    "https://modern-web.nether.click/components/css/li.css",
-    "https://modern-web.nether.click/components/css/button.css",
-    "https://modern-web.nether.click/components/css/logo.css",
     "https://modern-web.nether.click/components/css/app-drawer.css",
+
+    "https://modern-web.nether.click/components/css/body.css",
+    "https://modern-web.nether.click/components/css/button.css",
+
+    "https://modern-web.nether.click/components/css/footer.css",
+    "https://modern-web.nether.click/components/css/form.css",
+
+    "https://modern-web.nether.click/components/css/grouped-list.css",
+
+    "https://modern-web.nether.click/components/css/header.css",
+    "https://modern-web.nether.click/components/css/headings.css",
+
+    "https://modern-web.nether.click/components/css/li.css",
+
+    "https://modern-web.nether.click/components/css/main.css",
+
+    "https://modern-web.nether.click/components/css/section.css",
     "https://modern-web.nether.click/components/css/services-icons.css",
+
+    "https://modern-web.nether.click/components/css/table.css",
+
+    "https://modern-web.nether.click/components/css/timeline.css",
+
     "https://modern-web.nether.click/components/css/train-formation.css",
-    "https://modern-web.nether.click/components/css/grouped-list.css"
 ])
 
 await importJSFromList([
     "https://nether.click/js/import-app-drawer.js",
+
     "https://modern-web.nether.click/components/js/app-drawer.js"
 ])
 
@@ -647,14 +659,61 @@ function showAbout() {
             <h2>What is Nether Republic Transport</h2>
             <p>The backbone of transportation in the Nether Republic.</p>
             <ul>
-                <li>📅 Founded in November 2024</li>
-                <li>🚆 National railway operator</li>
-                <li>🚇 Operator of metro networks</li>
-                <li>🚊 Operator of tram systems</li>
-                <li>🚌 National bus carrier</li>
-                <li>🛣️ Maintains public roads and transport infrastructure</li>
-                <li>✅ Only NRT-operated vehicles are considered official</li>
+                <li>National operator of train, metro and tram tracks</li>
+                <li>National carrier of trains, metro and trams</li>
+                <li>Public roads operator</li>
+                <li>Only NRT-operated vehicles are considered official</li>
             </ul>
+        </section>
+        <section>
+            <h2>History</h2>
+            <div class="timeline">
+                <div class="event">
+                    <span class="marker"></span>
+                    <span class="date">November 2024</span>
+                    <span class="description">Created</span>
+                </div>
+                <div class="event">
+                    <span class="marker"></span>
+                    <span class="date">April 2025</span>
+                    <span class="description">Created Website on google sites</span>
+                </div>
+                <div class="event">
+                    <span class="marker"></span>
+                    <span class="date">July 2025</span>
+                    <span class="description">Rebuilt the entire website from scratch using custom HTML and CSS and publishing to netlify, replacing the Google Sites</span>
+                </div>
+                <div class="event">
+                    <span class="marker"></span>
+                    <span class="date">August 2025</span>
+                    <span class="description">Added support for phones</span>
+                </div>
+                <div class="event">
+                    <span class="marker"></span>
+                    <span class="date">April 2026</span>
+                    <span class="description">Changed url from srt0.netlify.app to sigma-republic-transport.netlify.app</span>
+                </div>
+                <div class="event">
+                    <span class="marker"></span>
+                    <span class="date">16 May 2026</span>
+                    <span class="description">Joined nether ecosystem and changed domain from sigma-republic-transport.netlify.app to srt.nether.click</span>
+                </div>
+                <div class="event">
+                    <span class="marker"></span>
+                    <span class="date">30 May 2026</span>
+                    <span class="description"></span>
+                </div>
+                <div class="event">
+                    <span class="marker"></span>
+                    <span class="date">20 June 2026</span>
+                    <span class="description">Changed name from Sigma Republic Transport to Nether Republic Transport</span>
+                </div>
+                <div class="event">
+                    <span class="marker"></span>
+                    <span class="date">June 2026</span>
+                    <span class="description">Started using Nether.js as page main and only framework</span>
+                </div>
+            </div>
         </section>
     `)
 }
