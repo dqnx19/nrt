@@ -526,141 +526,149 @@ function showFare() {
     setContentOfMain(`
         <h1>Fare</h1>
         <section>
-            <h2>Tickets</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Zones / Time Validity</th>
-                        <th>Full 2nd class</th>
-                        <th>Full 1st class</th>
-                        <th>Discounted 2nd class</th>
-                        <th>Discounted 1st class</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1 zone / 30 min</td>
-                        <td>0,10€</td>
-                        <td>0,30€</td>
-                        <td>0,05€</td>
-                        <td>0,15€</td>
-                    </tr>
-                    <tr>
-                        <td>2 zones / 1 h</td>
-                        <td>0,20€</td>
-                        <td>0,60€</td>
-                        <td>0,10€</td>
-                        <td>0,30€</td>
-                    </tr>
-                    <tr>
-                        <td>3 zones / 1.5 h</td>
-                        <td>0,30€</td>
-                        <td>0,90€</td>
-                        <td>0,15€</td>
-                        <td>0,45€</td>
-                    </tr>
-                    <tr>
-                        <td>4 zones / 2 h</td>
-                        <td>0,40€</td>
-                        <td>1,20€</td>
-                        <td>0,20€</td>
-                        <td>0,60€</td>
-                    </tr>
-                    <tr>
-                        <td>5 zones / 2.5 h</td>
-                        <td>0,50€</td>
-                        <td>1,50€</td>
-                        <td>0,25€</td>
-                        <td>0,75€</td>
-                    </tr>
-                    <tr>
-                        <td>6 zones / 3 h</td>
-                        <td>0,60€</td>
-                        <td>1,80€</td>
-                        <td>0,30€</td>
-                        <td>0,90€</td>
-                    </tr>
-                    <tr>
-                        <td>7 zones / 3.5 h</td>
-                        <td>0,70€</td>
-                        <td>2,10€</td>
-                        <td>0,35€</td>
-                        <td>1,05€</td>
-                    </tr>
-                    <tr>
-                        <td>8 zones / 4 h</td>
-                        <td>0,80€</td>
-                        <td>2,40€</td>
-                        <td>0,40€</td>
-                        <td>1,20€</td>
-                    </tr>
-                    <tr>
-                        <td>9 zones / 4.5 h</td>
-                        <td>0,90€</td>
-                        <td>2,70€</td>
-                        <td>0,45€</td>
-                        <td>1,35€</td>
-                    </tr>
-                    <tr>
-                        <td>10 zones / 5 h</td>
-                        <td>1,00€</td>
-                        <td>3,00€</td>
-                        <td>0,50€</td>
-                        <td>1,50€</td>
-                    </tr>
-                    <tr>
-                        <td>All zones / 24 h</td>
-                        <td>2,00€</td>
-                        <td>6,00€</td>
-                        <td>1,00€</td>
-                        <td>3,00€</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section>
-            <h2>Ticket Types</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Passenger</th>
-                        <th>Ticket Type</th>
-                        <th>Note</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Kid</td>
-                        <td>Free</td>
-                        <td>ID card needed</td>
-                    </tr>
-                    <tr>
-                        <td>Senior</td>
-                        <td>Free</td>
-                        <td>ID card needed</td>
-                    </tr>
-                    <tr>
-                        <td>Adult</td>
-                        <td>Full</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Student</td>
-                        <td>Discounted</td>
-                        <td>ISIC card required</td>
-                    </tr>
-                    <tr>
-                        <td>EDC</td>
-                        <td>Discounted</td>
-                        <td>EDC card required</td>
-                    </tr>
-                    <tr>
-                        <td>EDC Guide</td>
-                        <td>Free</td>
-                        <td>EDC guide note</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="tabs-switching">
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('tickets', this)">Tickets</button>
+                    <button class="tab" onclick="showTab('tickets_types', this)">Tickets Types</button>
+                </div>
+                <div class="tab-content active" id="tickets">
+                    <h2>Tickets</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Zones / Time Validity</th>
+                                <th>Full 2nd class</th>
+                                <th>Full 1st class</th>
+                                <th>Discounted 2nd class</th>
+                                <th>Discounted 1st class</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1 zone / 30 min</td>
+                                <td>0,10€</td>
+                                <td>0,30€</td>
+                                <td>0,05€</td>
+                                <td>0,15€</td>
+                            </tr>
+                            <tr>
+                                <td>2 zones / 1 h</td>
+                                <td>0,20€</td>
+                                <td>0,60€</td>
+                                <td>0,10€</td>
+                                <td>0,30€</td>
+                            </tr>
+                            <tr>
+                                <td>3 zones / 1.5 h</td>
+                                <td>0,30€</td>
+                                <td>0,90€</td>
+                                <td>0,15€</td>
+                                <td>0,45€</td>
+                            </tr>
+                            <tr>
+                                <td>4 zones / 2 h</td>
+                                <td>0,40€</td>
+                                <td>1,20€</td>
+                                <td>0,20€</td>
+                                <td>0,60€</td>
+                            </tr>
+                            <tr>
+                                <td>5 zones / 2.5 h</td>
+                                <td>0,50€</td>
+                                <td>1,50€</td>
+                                <td>0,25€</td>
+                                <td>0,75€</td>
+                            </tr>
+                            <tr>
+                                <td>6 zones / 3 h</td>
+                                <td>0,60€</td>
+                                <td>1,80€</td>
+                                <td>0,30€</td>
+                                <td>0,90€</td>
+                            </tr>
+                            <tr>
+                                <td>7 zones / 3.5 h</td>
+                                <td>0,70€</td>
+                                <td>2,10€</td>
+                                <td>0,35€</td>
+                                <td>1,05€</td>
+                            </tr>
+                            <tr>
+                                <td>8 zones / 4 h</td>
+                                <td>0,80€</td>
+                                <td>2,40€</td>
+                                <td>0,40€</td>
+                                <td>1,20€</td>
+                            </tr>
+                            <tr>
+                                <td>9 zones / 4.5 h</td>
+                                <td>0,90€</td>
+                                <td>2,70€</td>
+                                <td>0,45€</td>
+                                <td>1,35€</td>
+                            </tr>
+                            <tr>
+                                <td>10 zones / 5 h</td>
+                                <td>1,00€</td>
+                                <td>3,00€</td>
+                                <td>0,50€</td>
+                                <td>1,50€</td>
+                            </tr>
+                            <tr>
+                                <td>All zones / 24 h</td>
+                                <td>2,00€</td>
+                                <td>6,00€</td>
+                                <td>1,00€</td>
+                                <td>3,00€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-content" id="tickets_types">
+                    <h2>Ticket Types</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Passenger</th>
+                                <th>Ticket Type</th>
+                                <th>Note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Kid</td>
+                                <td>Free</td>
+                                <td>ID card needed</td>
+                            </tr>
+                            <tr>
+                                <td>Senior</td>
+                                <td>Free</td>
+                                <td>ID card needed</td>
+                            </tr>
+                            <tr>
+                                <td>Adult</td>
+                                <td>Full</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Student</td>
+                                <td>Discounted</td>
+                                <td>ISIC card required</td>
+                            </tr>
+                            <tr>
+                                <td>EDC</td>
+                                <td>Discounted</td>
+                                <td>EDC card required</td>
+                            </tr>
+                            <tr>
+                                <td>EDC Guide</td>
+                                <td>Free</td>
+                                <td>EDC guide note</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </section>
     `)
 }
@@ -671,62 +679,76 @@ function showAbout() {
     setContentOfMain(`
         <h1>About</h1>
         <section>
-            <h2>What is Nether Republic Transport</h2>
-            <p>The backbone of transportation in the Nether Republic.</p>
-            <ul>
-                <li>National operator of train, metro and tram tracks</li>
-                <li>National carrier of trains, metro and trams</li>
-                <li>Public roads operator</li>
-                <li>Only NRT-operated vehicles are considered official</li>
-            </ul>
-        </section>
-        <section>
-            <h2>History</h2>
-            <div class="timeline">
-                <div class="event">
-                    <span class="marker"></span>
-                    <span class="date">November 2024</span>
-                    <span class="description">Created</span>
+            <div class="tabs-switching">
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('what_is_nether_republic_transport', this)">What is
+                        Nether Republic Transport</button>
+                    <button class="tab" onclick="showTab('history', this)">History</button>
                 </div>
-                <div class="event">
-                    <span class="marker"></span>
-                    <span class="date">April 2025</span>
-                    <span class="description">Created Website on google sites</span>
+                <div class="tab-content active" id="what_is_nether_republic_transport">
+                    <h2>What is Nether Republic Transport</h2>
+                    <p>The backbone of transportation in the Nether Republic.</p>
+                    <ul>
+                        <li>National operator of train, metro and tram tracks</li>
+                        <li>National carrier of trains, metro and trams</li>
+                        <li>Public roads operator</li>
+                        <li>Only NRT-operated vehicles are considered official</li>
+                    </ul>
                 </div>
-                <div class="event">
-                    <span class="marker"></span>
-                    <span class="date">July 2025</span>
-                    <span class="description">Rebuilt the entire website from scratch using custom HTML and CSS and publishing to netlify, replacing the Google Sites</span>
-                </div>
-                <div class="event">
-                    <span class="marker"></span>
-                    <span class="date">August 2025</span>
-                    <span class="description">Added support for phones</span>
-                </div>
-                <div class="event">
-                    <span class="marker"></span>
-                    <span class="date">April 2026</span>
-                    <span class="description">Changed url from srt0.netlify.app to sigma-republic-transport.netlify.app</span>
-                </div>
-                <div class="event">
-                    <span class="marker"></span>
-                    <span class="date">16 May 2026</span>
-                    <span class="description">Joined nether ecosystem and changed domain from sigma-republic-transport.netlify.app to srt.nether.click</span>
-                </div>
-                <div class="event">
-                    <span class="marker"></span>
-                    <span class="date">30 May 2026</span>
-                    <span class="description"></span>
-                </div>
-                <div class="event">
-                    <span class="marker"></span>
-                    <span class="date">20 June 2026</span>
-                    <span class="description">Changed name from Sigma Republic Transport to Nether Republic Transport</span>
-                </div>
-                <div class="event">
-                    <span class="marker"></span>
-                    <span class="date">June 2026</span>
-                    <span class="description">Started using Nether.js as page main and only framework</span>
+                <div class="tab-content" id="history">
+                    <h2>History</h2>
+                    <div class="timeline">
+                        <div class="event">
+                            <span class="marker"></span>
+                            <span class="date">November 2024</span>
+                            <span class="description">Created</span>
+                        </div>
+                        <div class="event">
+                            <span class="marker"></span>
+                            <span class="date">April 2025</span>
+                            <span class="description">Created Website on google sites</span>
+                        </div>
+                        <div class="event">
+                            <span class="marker"></span>
+                            <span class="date">July 2025</span>
+                            <span class="description">Rebuilt the entire website from scratch using custom HTML and CSS
+                                and
+                                publishing to netlify, replacing the Google Sites</span>
+                        </div>
+                        <div class="event">
+                            <span class="marker"></span>
+                            <span class="date">August 2025</span>
+                            <span class="description">Added support for phones</span>
+                        </div>
+                        <div class="event">
+                            <span class="marker"></span>
+                            <span class="date">April 2026</span>
+                            <span class="description">Changed url from srt0.netlify.app to
+                                sigma-republic-transport.netlify.app</span>
+                        </div>
+                        <div class="event">
+                            <span class="marker"></span>
+                            <span class="date">16 May 2026</span>
+                            <span class="description">Joined nether ecosystem and changed domain from
+                                sigma-republic-transport.netlify.app to srt.nether.click</span>
+                        </div>
+                        <div class="event">
+                            <span class="marker"></span>
+                            <span class="date">30 May 2026</span>
+                            <span class="description"></span>
+                        </div>
+                        <div class="event">
+                            <span class="marker"></span>
+                            <span class="date">20 June 2026</span>
+                            <span class="description">Changed name from Sigma Republic Transport to Nether Republic
+                                Transport</span>
+                        </div>
+                        <div class="event">
+                            <span class="marker"></span>
+                            <span class="date">June 2026</span>
+                            <span class="description">Started using Nether.js as page main and only framework</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
