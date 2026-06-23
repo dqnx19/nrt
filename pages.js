@@ -30,6 +30,7 @@ await importCSSFromList([
 
     "https://modern-web.nether.click/components/css/table.css",
 
+    "https://modern-web.nether.click/components/css/tabs-switching.css",
     "https://modern-web.nether.click/components/css/timeline.css",
 
     "https://modern-web.nether.click/components/css/train-formation.css",
@@ -38,7 +39,8 @@ await importCSSFromList([
 await importJSFromList([
     "https://nether.click/js/import-app-drawer.js",
 
-    "https://modern-web.nether.click/components/js/app-drawer.js"
+    "https://modern-web.nether.click/components/js/app-drawer.js",
+    "https://modern-web.nether.click/components/js/tabs-switching.js"
 ])
 
 setContentOfHeader(`
@@ -413,94 +415,107 @@ function showServices() {
     setContentOfMain(`
         <h1>Services</h1>
         <section>
-            <h2>Second class</h2>
-            <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd Class">
+            <div class="tabs">
+                <button class="tab active" onclick="showTab('second_class', this)">Second class</button>
+                <button class="tab" onclick="showTab('first_class', this)">First class</button>
+                <button class="tab" onclick="showTab('dining_car', this)">Dining car</button>
+                <button class="tab" onclick="showTab('bicycle_transport', this)">Bicycle Transport</button>
+                <button class="tab" onclick="showTab('wheelchair_accessibility', this)">Wheelchair Accesibility</button>
+                <button class="tab" onclick="showTab('power_socket', this)">Power Socket</button>
+                <button class="tab" onclick="showTab('usb_ports', this)">USB Ports</button>
+                <button class="tab" onclick="showTab('air_conditioning', this)">Air Conditioning</button>
+                <button class="tab" onclick="showTab('wifi', this)">WiFi</button>
             </div>
-            <ul>
-                <li>Classic second-class seating</li>
-                <li>Seats: 2 + 2</li>
-                <li>Face-to-face seating / Airline style seatings</li>
-            </ul>
-        </section>
-        <section>
-            <h2>First class</h2>
-            <div class="services-icons">
-                <img src="/img/services/002-1st-class-icon.png" alt="1st Class">
+            <div class="tab-content active" id="second_class">
+                <h2>Second class</h2>
+                <div class="services-icons">
+                    <img src="/img/services/001-2nd-class-icon.png" alt="2nd Class">
+                </div>
+                <ul>
+                    <li>Classic second-class seating</li>
+                    <li>Seats: 2 + 2</li>
+                    <li>Face-to-face seating / Airline style seatings</li>
+                </ul>
             </div>
-            <ul>
-                <li>Comfortable first-class seating</li>
-                <li>Seats: 2 + 1</li>
-                <li>Spacious and luxurious</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Dining car</h2>
-            <div class="services-icons">
-                <img src="/img/services/003-dining-car-icon.png" alt="Dining Car">
+            <div class="tab-content" id="first_class">
+                <h2>First class</h2>
+                <div class="services-icons">
+                    <img src="/img/services/002-1st-class-icon.png" alt="1st Class">
+                </div>
+                <ul>
+                    <li>Comfortable first-class seating</li>
+                    <li>Seats: 2 + 1</li>
+                    <li>Spacious and luxurious</li>
+                </ul>
             </div>
-            <ul>
-                <li>Delicious meals</li>
-                <li>Refreshments</li>
-            </ul>
-            <button onclick="window.location.href=('documents/dining-car-menu.docx')">View Menu (docx)</button>
-            <button onclick="window.location.href=('documents/dining-car-menu.pdf')">View Menu (pdf)</button>
-        </section>
-        <section>
-            <h2>Bicycle transport</h2>
-            <div class="services-icons">
-                <img src="/img/services/005-bicycle-icon.png" alt="Bicycle">
+            <div class="tab-content" id="dining_car">
+                <h2>Dining car</h2>
+                <div class="services-icons">
+                    <img src="/img/services/003-dining-car-icon.png" alt="Dining Car">
+                </div>
+                <ul>
+                    <li>Delicious meals</li>
+                    <li>Refreshments</li>
+                </ul>
+                <button onclick="window.location.href=('documents/dining-car-menu.docx')">View Menu (docx)</button>
+                <button onclick="window.location.href=('documents/dining-car-menu.pdf')">View Menu (pdf)</button>
             </div>
-            <ul>
-                <li>Transport of bicycles</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Wheelchair accessibility</h2>
-            <div class="services-icons">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair">
+            <div class="tab-content" id="bicycle_transport">
+                <h2>Bicycle transport</h2>
+                <div class="services-icons">
+                    <img src="/img/services/005-bicycle-icon.png" alt="Bicycle">
+                </div>
+                <ul>
+                    <li>Transport of bicycles</li>
+                </ul>
             </div>
-            <ul>
-                <li>Accessible seating for wheelchair users</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Power socket</h2>
-            <div class="services-icons">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket">
+            <div class="tab-content" id="wheelchair_accessibility">
+                <h2>Wheelchair accessibility</h2>
+                <div class="services-icons">
+                    <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair">
+                </div>
+                <ul>
+                    <li>Accessible seating for wheelchair users</li>
+                </ul>
             </div>
-            <ul>
-                <li>Access to power outlets for charging devices</li>
-            </ul>
-        </section>
-        <section>
-            <h2>USB Ports</h2>
-            <div class="services-icons">
-                <img src="/img/services/008-usb-icon.png" alt="USB Ports">
+            <div class="tab-content" id="power_socket">
+                <h2>Power socket</h2>
+                <div class="services-icons">
+                    <img src="/img/services/007-power-socket-icon.png" alt="Power Socket">
+                </div>
+                <ul>
+                    <li>Access to power outlets for charging devices</li>
+                </ul>
             </div>
-            <ul>
-                <li>USB ports for charging devices</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Air Conditioning</h2>
-            <div class="services-icons">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning">
+            <div class="tab-content" id="usb_ports">
+                <h2>USB Ports</h2>
+                <div class="services-icons">
+                    <img src="/img/services/008-usb-icon.png" alt="USB Ports">
+                </div>
+                <ul>
+                    <li>USB ports for charging devices</li>
+                </ul>
             </div>
-            <ul>
-                <li>Climate control for passenger comfort</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Wi-Fi</h2>
-            <div class="services-icons">
-                <img src="/img/services/010-wifi-icon.png" alt="Wi-Fi">
+            <div class="tab-content" id="air_conditioning">
+                <h2>Air Conditioning</h2>
+                <div class="services-icons">
+                    <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning">
+                </div>
+                <ul>
+                    <li>Climate control for passenger comfort</li>
+                </ul>
             </div>
-            <ul>
-                <li>Free Wi-Fi access for passengers</li>
-                <li>Unlimited data usage</li>
-                <li>WiFi SSID (name): srt_free</li>
-            </ul>
+            <div class="tab-content" id="wifi">
+                <h2>Wi-Fi</h2>
+                <div class="services-icons">
+                    <img src="/img/services/010-wifi-icon.png" alt="Wi-Fi">
+                </div>
+                <ul>
+                    <li>Free Wi-Fi access for passengers</li>
+                    <li>Unlimited data usage</li>
+                    <li>WiFi SSID (name): srt_free</li>
+                </ul>
+            </div>
         </section>
     `)
 }
