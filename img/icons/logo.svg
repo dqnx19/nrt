@@ -7,6 +7,10 @@
     <style><![CDATA[
       @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@900&display=swap');
     ]]></style>
+    <linearGradient id="gradient">
+      <stop offset="0%" stop-color="#a600ff"/>
+      <stop offset="100%" stop-color="#00aaff"/>
+    </linearGradient>
   </defs>
 
   <rect width="512" height="512" fill="transparent"/>
@@ -16,7 +20,7 @@
         dominant-baseline="middle"
         font-family="Lexend, sans-serif"
         font-size="180"
-        fill="#ff0000"
+        fill="url(#gradient)"
         font-weight="900">
     NRT
   </text>
