@@ -186,13 +186,13 @@ function showVehicles() {
             <p>Maximum Speed: 160 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
             </div>
             <br>
             <div class="formation">
@@ -206,13 +206,13 @@ function showVehicles() {
             <p>Maximum Speed: 160 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
             </div>
             <br>
             <div class="formation">
@@ -227,13 +227,13 @@ function showVehicles() {
             <p>Maximum Speed: 160 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
             </div>
             <br>
             <div class="formation">
@@ -249,14 +249,14 @@ function showVehicles() {
             <p>Maximum Speed: 200 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
                 <img src="/img/services/002-1st-class-icon.png" alt="">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
             </div>
             <br>
             <div class="formation">
@@ -273,24 +273,22 @@ function showVehicles() {
             <p>Maximum Speed: 230 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
                 <img src="/img/services/002-1st-class-icon.png" alt="">
                 <img src="/img/services/003-dining-car-icon.png" alt="">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
             </div>
             <br>
             <div class="formation">
                 <span class="unit-left">1000</span>
                 <span class="unit-middle">1001</span>
-                <span class="unit-middle">1002    
-                </span>
-                <span class="unit-middle">1003    
-                </span>
+                <span class="unit-middle">1002</span>
+                <span class="unit-middle">1003</span>
                 <span class="unit-middle">1004</span>
                 <span class="unit-middle">1005</span>
                 <span class="unit-middle">1006</span>
@@ -305,13 +303,13 @@ function showVehicles() {
             <p>Maximum Speed: 80 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
             </div>
             <br>
             <div class="formation">
@@ -328,13 +326,13 @@ function showVehicles() {
             <p>Maximum Speed: 80 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
             </div>
             <br>
             <div class="formation">
@@ -351,13 +349,13 @@ function showVehicles() {
             <p>Maximum Speed: 70 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
             </div>
             <br>
             <div class="formation">
@@ -372,13 +370,13 @@ function showVehicles() {
             <p>Maximum Speed: 70 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
             </div>
             <br>
             <div class="formation">
@@ -393,13 +391,13 @@ function showVehicles() {
             <p>Maximum Speed: 230 km/h</p>
             <br>
             <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon">
+                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
+                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
+                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
+                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
+                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
+                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
+                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
             </div>
             <br>
             <div class="formation">
@@ -409,22 +407,22 @@ function showVehicles() {
     `)
 }
 
-function showServices() {
+function showServices(tab = 'second_class') {
     scrollUp();
     setTitle("Services - Nether Republic Transport");
     setContentOfMain(`
         <h1>Services</h1>
         <section>
             <div class="tabs">
-                <button class="tab active" onclick="showTab('second_class', this)">Second class</button>
-                <button class="tab" onclick="showTab('first_class', this)">First class</button>
-                <button class="tab" onclick="showTab('dining_car', this)">Dining car</button>
-                <button class="tab" onclick="showTab('bicycle_transport', this)">Bicycle Transport</button>
-                <button class="tab" onclick="showTab('wheelchair_accessibility', this)">Wheelchair Accesibility</button>
-                <button class="tab" onclick="showTab('power_socket', this)">Power Socket</button>
-                <button class="tab" onclick="showTab('usb_ports', this)">USB Ports</button>
-                <button class="tab" onclick="showTab('air_conditioning', this)">Air Conditioning</button>
-                <button class="tab" onclick="showTab('wifi', this)">WiFi</button>
+                <button class="tab active" onclick="showTab('second_class', this)" data-tab="second_class">Second class</button>
+                <button class="tab" onclick="showTab('first_class', this)" data-tab="first_class">First class</button>
+                <button class="tab" onclick="showTab('dining_car', this)" data-tab="dining_car">Dining car</button>
+                <button class="tab" onclick="showTab('bicycle_transport', this)" data-tab="bicycle_transport">Bicycle Transport</button>
+                <button class="tab" onclick="showTab('wheelchair_accessibility', this)" data-tab="wheelchair_accessibility">Wheelchair Accesibility</button>
+                <button class="tab" onclick="showTab('power_socket', this)" data-tab="power_socket">Power Socket</button>
+                <button class="tab" onclick="showTab('usb_ports', this)" data-tab="usb_ports">USB Ports</button>
+                <button class="tab" onclick="showTab('air_conditioning', this)" data-tab="air_conditioning">Air Conditioning</button>
+                <button class="tab" onclick="showTab('wifi', this)" data-tab="wifi">WiFi</button>
             </div>
             <div class="tab-content active" id="second_class">
                 <h2>Second class</h2>
@@ -518,6 +516,7 @@ function showServices() {
             </div>
         </section>
     `)
+    showTab(tab)
 }
 
 function showFare() {
@@ -677,81 +676,106 @@ function showAbout() {
     scrollUp();
     setTitle("About - Nether Republic Transport");
     setContentOfMain(`
-        <h1>About</h1>
-        <section>
-            <div class="tabs-switching">
-                <div class="tabs">
-                    <button class="tab active" onclick="showTab('what_is_nether_republic_transport', this)">What is
-                        Nether Republic Transport</button>
-                    <button class="tab" onclick="showTab('history', this)">History</button>
+    <h1>About</h1>
+    <section>
+        <div class="tabs-switching">
+            <div class="tabs">
+                <button class="tab active" onclick="showTab('what_is_nether_republic_transport', this)" data-tab="what_is_nether_republic_transport">What is Nether Republic Transport</button>
+                <button class="tab" onclick="showTab('build_on')" data-tab="build_on">Build On</button>
+                <button class="tab" onclick="showTab('history', this)" data-tab="history">History</button>
+            </div>
+            <div class="tab-content active" id="what_is_nether_republic_transport">
+                <h2>What is Nether Republic Transport</h2>
+                <p>The backbone of transportation in the Nether Republic.</p>
+                <ul>
+                    <li>National operator of train, metro and tram tracks</li>
+                    <li>National carrier of trains, metro and trams</li>
+                    <li>Public roads operator</li>
+                    <li>Only NRT-operated vehicles are considered official</li>
+                </ul>
+            </div>
+            <div class="tab-content" id="build_on">
+                <h2>Build On</h2>
+                <div class="grouped-list">
+                    <button class="item" onclick="window.location.href = 'https://html.spec.whatwg.org'">
+                        <img src="img/brands/html-logo.png" alt="HTML5 Logo">
+                        HTML
+                    </button>
+                    <button class="item" onclick="window.location.href = 'https://www.w3.org/Style/CSS/'">
+                        <img src="img/brands/css-logo.png" alt="CSS3 Logo">
+                        CSS
+                    </button>
+                    <button class="item" onclick="window.location.href = 'https://www.ecma-international.org/publications-and-standards/standards/ecma-262/'">
+                        <img src="img/brands/js-logo.png" alt="JS Logo">
+                        JS
+                    </button>
+                    <button class="item" onclick="window.location.href = 'https://js.nether.click'">
+                        <img src="img/brands/nether-js-logo.png" alt="Nether.js Logo">
+                        Nether.js
+                    </button>
+                    <button class="item" onclick="window.location.href = 'https://python.org'">
+                        <img src="img/brands/python-logo.png" alt="Python Logo">
+                        Python (future backend)
+                    </button>
                 </div>
-                <div class="tab-content active" id="what_is_nether_republic_transport">
-                    <h2>What is Nether Republic Transport</h2>
-                    <p>The backbone of transportation in the Nether Republic.</p>
-                    <ul>
-                        <li>National operator of train, metro and tram tracks</li>
-                        <li>National carrier of trains, metro and trams</li>
-                        <li>Public roads operator</li>
-                        <li>Only NRT-operated vehicles are considered official</li>
-                    </ul>
-                </div>
-                <div class="tab-content" id="history">
-                    <h2>History</h2>
-                    <div class="timeline">
-                        <div class="event">
-                            <span class="marker"></span>
-                            <span class="date">November 2024</span>
-                            <span class="description">Created</span>
-                        </div>
-                        <div class="event">
-                            <span class="marker"></span>
-                            <span class="date">April 2025</span>
-                            <span class="description">Created Website on google sites</span>
-                        </div>
-                        <div class="event">
-                            <span class="marker"></span>
-                            <span class="date">July 2025</span>
-                            <span class="description">Rebuilt the entire website from scratch using custom HTML and CSS
-                                and
-                                publishing to netlify, replacing the Google Sites</span>
-                        </div>
-                        <div class="event">
-                            <span class="marker"></span>
-                            <span class="date">August 2025</span>
-                            <span class="description">Added support for phones</span>
-                        </div>
-                        <div class="event">
-                            <span class="marker"></span>
-                            <span class="date">April 2026</span>
-                            <span class="description">Changed url from srt0.netlify.app to
-                                sigma-republic-transport.netlify.app</span>
-                        </div>
-                        <div class="event">
-                            <span class="marker"></span>
-                            <span class="date">16 May 2026</span>
-                            <span class="description">Joined nether ecosystem and changed domain from
-                                sigma-republic-transport.netlify.app to srt.nether.click</span>
-                        </div>
-                        <div class="event">
-                            <span class="marker"></span>
-                            <span class="date">30 May 2026</span>
-                            <span class="description"></span>
-                        </div>
-                        <div class="event">
-                            <span class="marker"></span>
-                            <span class="date">20 June 2026</span>
-                            <span class="description">Changed name from Sigma Republic Transport to Nether Republic
-                                Transport</span>
-                        </div>
-                        <div class="event">
-                            <span class="marker"></span>
-                            <span class="date">June 2026</span>
-                            <span class="description">Started using Nether.js as page main and only framework</span>
-                        </div>
+            </div>
+            <div class="tab-content" id="history">
+                <h2>History</h2>
+                <div class="timeline">
+                    <div class="event">
+                        <span class="marker"></span>
+                        <span class="date">November 2024</span>
+                        <span class="description">Created</span>
+                    </div>
+                    <div class="event">
+                        <span class="marker"></span>
+                        <span class="date">April 2025</span>
+                        <span class="description">Created Website on google sites</span>
+                    </div>
+                    <div class="event">
+                        <span class="marker"></span>
+                        <span class="date">July 2025</span>
+                        <span class="description">Rebuilt the entire website from scratch using custom HTML and CSS
+                            and
+                            publishing to netlify, replacing the Google Sites</span>
+                    </div>
+                    <div class="event">
+                        <span class="marker"></span>
+                        <span class="date">August 2025</span>
+                        <span class="description">Added support for phones</span>
+                    </div>
+                    <div class="event">
+                        <span class="marker"></span>
+                        <span class="date">April 2026</span>
+                        <span class="description">Changed url from srt0.netlify.app to
+                            sigma-republic-transport.netlify.app</span>
+                    </div>
+                    <div class="event">
+                        <span class="marker"></span>
+                        <span class="date">16 May 2026</span>
+                        <span class="description">Joined nether ecosystem and changed domain from
+                            sigma-republic-transport.netlify.app to srt.nether.click</span>
+                    </div>
+                    <div class="event">
+                        <span class="marker"></span>
+                        <span class="date">30 May 2026</span>
+                        <span class="description"></span>
+                    </div>
+                    <div class="event">
+                        <span class="marker"></span>
+                        <span class="date">20 June 2026</span>
+                        <span class="description">Changed name from Sigma Republic Transport to Nether Republic
+                            Transport</span>
+                    </div>
+                    <div class="event">
+                        <span class="marker"></span>
+                        <span class="date">June 2026</span>
+                        <span class="description">Started using Nether.js as page main and only framework</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
     `)
 }
 
@@ -761,51 +785,60 @@ function showTechnicalDetails() {
     setContentOfMain(`
         <h1>Technical Details</h1>
         <section>
-            <h2>Rolling Stock Classes</h2>
-            <table>
-                <thead>
-                    <th>Type of Vehicle</th>
-                    <th>Designation From</th>
-                    <th>Designation To</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Electric Locomotives</td>
-                        <td>EL 1000 0000-0</td>
-                        <td>EL 9999 9999-9</td>
-                    </tr>
-                    <tr>
-                        <td>Electric Units</td>
-                        <td>EU 1000 0000-0</td>
-                        <td>EU 9999 9999-9</td>
-                    </tr>
-                    <tr>
-                        <td>Non-Traction Vehicles</td>
-                        <td>0000 0000-0</td>
-                        <td>9999 9999-9</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section>
-            <h2>Announcements</h2>
-            <p>Next station</p>
-            <li>{gong} Next station {station name}.</li>
-            <br>
-            <p>Next station (Request)</p>
-            <li>{gong} Next station {station name} request stop press button for exit.</li>
-            <br>
-            <p>Next stop (Requested)</p>
-            <li>{gong} Next station {station name} the vehicle will stop.</li>
-            <br>
-            <p>Next station (Terminus)</p>
-            <li>{gong} Next station {station name} terminus station.</li>
-            <br>
-            <p>This station</p>
-            <li>{gong} {station name}.</li>
-            <br>
-            <p>This station (Terminus)</p>
-            <li>{gong} {station name} terminus station please exit the vehicle.</li>
+            <div class="tabs-switching">
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('rolling_stock_classes', this)">Rolling stock
+                        classes</button>
+                    <button class="tab" onclick="showTab('announcements', this)">Announcements</button>
+                </div>
+                <div class="tab-content active" id="rolling_stock_classes">
+                    <h2>Rolling Stock Classes</h2>
+                    <table>
+                        <thead>
+                            <th>Type of Vehicle</th>
+                            <th>Designation From</th>
+                            <th>Designation To</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Electric Locomotives</td>
+                                <td>EL 1000 0000-0</td>
+                                <td>EL 9999 9999-9</td>
+                            </tr>
+                            <tr>
+                                <td>Electric Units</td>
+                                <td>EU 1000 0000-0</td>
+                                <td>EU 9999 9999-9</td>
+                            </tr>
+                            <tr>
+                                <td>Non-Traction Vehicles</td>
+                                <td>0000 0000-0</td>
+                                <td>9999 9999-9</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-content" id="announcements">
+                    <h2>Announcements</h2>
+                    <p>Next station</p>
+                    <li>{gong} Next station {station name}.</li>
+                    <br>
+                    <p>Next station (Request)</p>
+                    <li>{gong} Next station {station name} request stop press button for exit.</li>
+                    <br>
+                    <p>Next stop (Requested)</p>
+                    <li>{gong} Next station {station name} the vehicle will stop.</li>
+                    <br>
+                    <p>Next station (Terminus)</p>
+                    <li>{gong} Next station {station name} terminus station.</li>
+                    <br>
+                    <p>This station</p>
+                    <li>{gong} {station name}.</li>
+                    <br>
+                    <p>This station (Terminus)</p>
+                    <li>{gong} {station name} terminus station please exit the vehicle.</li>
+                </div>
+            </div>
         </section>
     `)
 }
