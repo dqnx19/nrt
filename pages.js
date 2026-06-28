@@ -38,6 +38,7 @@ await importCSSFromList([
 
 await importJSFromList([
     "https://nether.click/js/import-app-drawer.js",
+    "https://nether.click/js/import-app-check.js",
 
     "https://modern-web.nether.click/components/js/app-drawer.js",
     "https://modern-web.nether.click/components/js/tabs-switching.js"
@@ -414,21 +415,45 @@ function showServices(tab = 'second_class') {
         <h1>Services</h1>
         <section>
             <div class="tabs">
-                <button class="tab active" onclick="showTab('second_class', this)" data-tab="second_class">Second class</button>
-                <button class="tab" onclick="showTab('first_class', this)" data-tab="first_class">First class</button>
-                <button class="tab" onclick="showTab('dining_car', this)" data-tab="dining_car">Dining car</button>
-                <button class="tab" onclick="showTab('bicycle_transport', this)" data-tab="bicycle_transport">Bicycle Transport</button>
-                <button class="tab" onclick="showTab('wheelchair_accessibility', this)" data-tab="wheelchair_accessibility">Wheelchair Accesibility</button>
-                <button class="tab" onclick="showTab('power_socket', this)" data-tab="power_socket">Power Socket</button>
-                <button class="tab" onclick="showTab('usb_ports', this)" data-tab="usb_ports">USB Ports</button>
-                <button class="tab" onclick="showTab('air_conditioning', this)" data-tab="air_conditioning">Air Conditioning</button>
-                <button class="tab" onclick="showTab('wifi', this)" data-tab="wifi">WiFi</button>
+                <button class="tab active" onclick="showTab('second_class')" data-tab="second_class">
+                    <img src="img/services/001-2nd-class-icon.png" alt="Second class icon">
+                    Second class
+                </button>
+                <button class="tab" onclick="showTab('first_class')" data-tab="first_class">
+                    <img src="img/services/002-1st-class-icon.png" alt="First class icon">
+                    First class
+                </button>
+                <button class="tab" onclick="showTab('dining_car')" data-tab="dining_car">
+                    <img src="img/services/003-dining-car-icon.png" alt="Dining car icon">
+                    Dining car
+                </button>
+                <button class="tab" onclick="showTab('bicycle_transport')" data-tab="bicycle_transport">
+                    <img src="img/services/005-bicycle-icon.png" alt="Bicycle icon">
+                    Bicycle Transport
+                </button>
+                <button class="tab" onclick="showTab('wheelchair_accessibility')" data-tab="wheelchair_accessibility">
+                    <img src="img/services/006-wheelchair-icon.png" alt="Wheelchair icon">
+                    Wheelchair Accesibility
+                </button>
+                <button class="tab" onclick="showTab('power_socket')" data-tab="power_socket">
+                    <img src="img/services/007-power-socket-icon.png" alt="Power socket icon">
+                    Power Socket
+                </button>
+                <button class="tab" onclick="showTab('usb_ports')" data-tab="usb_ports">
+                    <img src="img/services/008-usb-icon.png" alt="USB Ports icon">
+                    USB Ports
+                </button>
+                <button class="tab" onclick="showTab('air_conditioning')" data-tab="air_conditioning">
+                    <img src="img/services/009-air-conditioning-icon.png" alt="Air conditioning icon">
+                    Air Conditioning
+                </button>
+                <button class="tab" onclick="showTab('wifi')" data-tab="wifi">
+                    <img src="img/services/010-wifi-icon.png" alt="WiFi icon">
+                    WiFi
+                </button>
             </div>
             <div class="tab-content active" id="second_class">
                 <h2>Second class</h2>
-                <div class="services-icons">
-                    <img src="/img/services/001-2nd-class-icon.png" alt="2nd Class">
-                </div>
                 <ul>
                     <li>Classic second-class seating</li>
                     <li>Seats: 2 + 2</li>
@@ -437,9 +462,6 @@ function showServices(tab = 'second_class') {
             </div>
             <div class="tab-content" id="first_class">
                 <h2>First class</h2>
-                <div class="services-icons">
-                    <img src="/img/services/002-1st-class-icon.png" alt="1st Class">
-                </div>
                 <ul>
                     <li>Comfortable first-class seating</li>
                     <li>Seats: 2 + 1</li>
@@ -448,9 +470,6 @@ function showServices(tab = 'second_class') {
             </div>
             <div class="tab-content" id="dining_car">
                 <h2>Dining car</h2>
-                <div class="services-icons">
-                    <img src="/img/services/003-dining-car-icon.png" alt="Dining Car">
-                </div>
                 <ul>
                     <li>Delicious meals</li>
                     <li>Refreshments</li>
@@ -460,54 +479,36 @@ function showServices(tab = 'second_class') {
             </div>
             <div class="tab-content" id="bicycle_transport">
                 <h2>Bicycle transport</h2>
-                <div class="services-icons">
-                    <img src="/img/services/005-bicycle-icon.png" alt="Bicycle">
-                </div>
                 <ul>
                     <li>Transport of bicycles</li>
                 </ul>
             </div>
             <div class="tab-content" id="wheelchair_accessibility">
                 <h2>Wheelchair accessibility</h2>
-                <div class="services-icons">
-                    <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair">
-                </div>
                 <ul>
                     <li>Accessible seating for wheelchair users</li>
                 </ul>
             </div>
             <div class="tab-content" id="power_socket">
                 <h2>Power socket</h2>
-                <div class="services-icons">
-                    <img src="/img/services/007-power-socket-icon.png" alt="Power Socket">
-                </div>
                 <ul>
                     <li>Access to power outlets for charging devices</li>
                 </ul>
             </div>
             <div class="tab-content" id="usb_ports">
                 <h2>USB Ports</h2>
-                <div class="services-icons">
-                    <img src="/img/services/008-usb-icon.png" alt="USB Ports">
-                </div>
                 <ul>
                     <li>USB ports for charging devices</li>
                 </ul>
             </div>
             <div class="tab-content" id="air_conditioning">
                 <h2>Air Conditioning</h2>
-                <div class="services-icons">
-                    <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning">
-                </div>
                 <ul>
                     <li>Climate control for passenger comfort</li>
                 </ul>
             </div>
             <div class="tab-content" id="wifi">
                 <h2>Wi-Fi</h2>
-                <div class="services-icons">
-                    <img src="/img/services/010-wifi-icon.png" alt="Wi-Fi">
-                </div>
                 <ul>
                     <li>Free Wi-Fi access for passengers</li>
                     <li>Unlimited data usage</li>
@@ -527,8 +528,8 @@ function showFare() {
         <section>
             <div class="tabs-switching">
                 <div class="tabs">
-                    <button class="tab active" onclick="showTab('tickets', this)">Tickets</button>
-                    <button class="tab" onclick="showTab('tickets_types', this)">Tickets Types</button>
+                    <button class="tab active" onclick="showTab('tickets')" data-tab="tickets">Tickets</button>
+                    <button class="tab" onclick="showTab('tickets_types')" data-tab="tickets_types">Tickets Types</button>
                 </div>
                 <div class="tab-content active" id="tickets">
                     <h2>Tickets</h2>
@@ -680,9 +681,9 @@ function showAbout() {
     <section>
         <div class="tabs-switching">
             <div class="tabs">
-                <button class="tab active" onclick="showTab('what_is_nether_republic_transport', this)" data-tab="what_is_nether_republic_transport">What is Nether Republic Transport</button>
+                <button class="tab active" onclick="showTab('what_is_nether_republic_transport')" data-tab="what_is_nether_republic_transport">What is Nether Republic Transport</button>
                 <button class="tab" onclick="showTab('build_on')" data-tab="build_on">Build On</button>
-                <button class="tab" onclick="showTab('history', this)" data-tab="history">History</button>
+                <button class="tab" onclick="showTab('history')" data-tab="history">History</button>
             </div>
             <div class="tab-content active" id="what_is_nether_republic_transport">
                 <h2>What is Nether Republic Transport</h2>
@@ -787,9 +788,9 @@ function showTechnicalDetails() {
         <section>
             <div class="tabs-switching">
                 <div class="tabs">
-                    <button class="tab active" onclick="showTab('rolling_stock_classes', this)">Rolling stock
+                    <button class="tab active" onclick="showTab('rolling_stock_classes')" data-tab="rolling_stock_classes">Rolling stock
                         classes</button>
-                    <button class="tab" onclick="showTab('announcements', this)">Announcements</button>
+                    <button class="tab" onclick="showTab('announcements')" data-tab="announcements">Announcements</button>
                 </div>
                 <div class="tab-content active" id="rolling_stock_classes">
                     <h2>Rolling Stock Classes</h2>
