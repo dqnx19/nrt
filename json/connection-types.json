@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Regional Bahn Train",
+        "techname": "regional_bahn_train",
+        "stops_at": "Every Station",
+        "route_type": "Domestic/Interstate"
+    },
+    {
+        "name": "Regional Express Train",
+        "techname": "regional_express_train",
+        "stops_at": "Some Stations",
+        "route_type": "Domestic/Interstate"
+    },
+    {
+        "name": "Interregio Train",
+        "techname": "interregio_train",
+        "stops_at": "Important Stations",
+        "route_type": "Domestic/Interstate"
+    },
+    {
+        "name": "Intercity Train",
+        "techname": "intercity_train",
+        "stops_at": "Most Important Stations",
+        "route_type": "Domestic"
+    },
+    {
+        "name": "Eurocity Train",
+        "techname": "eurocity_train",
+        "stops_at": "Most Important Stations",
+        "route_type": "Interstate"
+    },
+    {
+        "name": "U-Bahn",
+        "techname": "u_bahn",
+        "stops_at": "Every Station",
+        "route_type": "Urban/Suburban"
+    },
+    {
+        "name": "Tram",
+        "techname": "tram",
+        "stops_at": "Every Station",
+        "route_type": "Urban/Suburban"
+    },
+    {
+        "name": "Local Bus",
+        "techname": "local_bus",
+        "stops_at": "Every Station",
+        "route_type": "Urban/Suburban"
+    }
+]

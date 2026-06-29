@@ -1,0 +1,339 @@
+[
+    {
+        "name": "Skoda 18Ev (2 cars)",
+        "techname": "skoda_18ev_2_cars",
+        "vehicles_class": "EU 1000",
+        "maximum_speed": "160 km/h",
+        "services": [
+            "second_class",
+            "bicycle_transport",
+            "wheelchair_transport",
+            "power_socket",
+            "usb_ports",
+            "air_conditioning",
+            "wifi"
+        ],
+        "formation": [
+            {
+                "type": "unit-left",
+                "text": "EU 1000"
+            },
+            {
+                "type": "unit-right",
+                "text": "EU 1001"
+            }
+        ]
+    },
+    {
+        "name": "Skoda 18Ev (3 cars)",
+        "techname": "skoda_18ev_3_cars",
+        "vehicles_class": "EU 1010",
+        "maximum_speed": "160 km/h",
+        "services": [
+            "second_class",
+            "bicycle_transport",
+            "wheelchair_transport",
+            "power_socket",
+            "usb_ports",
+            "air_conditioning",
+            "wifi"
+        ],
+        "formation": [
+            {
+                "type": "unit-left",
+                "text": "EU 1010"
+            },
+            {
+                "type": "unit-middle",
+                "text": "EU 1011"
+            },
+            {
+                "type": "unit-right",
+                "text": "EU 1012"
+            }
+        ]
+    },
+    {
+        "name": "Skoda 18Ev (4 cars)",
+        "techname": "skoda_18ev_4_cars",
+        "vehicles_class": "EU 1020",
+        "maximum_speed": "160 km/h",
+        "services": [
+            "second_class",
+            "bicycle_transport",
+            "wheelchair_transport",
+            "power_socket",
+            "usb_ports",
+            "air_conditioning",
+            "wifi"
+        ],
+        "formation": [
+            {
+                "type": "unit-left",
+                "text": "EU 1020"
+            },
+            {
+                "type": "unit-middle",
+                "text": "EU 1021"
+            },
+            {
+                "type": "unit-middle",
+                "text": "EU 1022"
+            },
+            {
+                "type": "unit-right",
+                "text": "EU 1023"
+            }
+        ]
+    },
+    {
+        "name": "Skoda 26Ev (5 cars)",
+        "techname": "skoda_26ev_5_cars",
+        "vehicles_class": "EU 1030",
+        "maximum_speed": "200 km/h",
+        "services": [
+            "second_class",
+            "first_class",
+            "bicycle_transport",
+            "wheelchair_transport",
+            "power_socket",
+            "usb_ports",
+            "air_conditioning",
+            "wifi"
+        ],
+        "formation": [
+            {
+                "type": "unit-left",
+                "text": "EU 1030"
+            },
+            {
+                "type": "unit-middle",
+                "text": "EU 1031"
+            },
+            {
+                "type": "unit-middle",
+                "text": "EU 1032"
+            },
+            {
+                "type": "unit-middle",
+                "text": "EU 1033"
+            },
+            {
+                "type": "unit-right",
+                "text": "EU 1034"
+            }
+        ]
+    },
+    {
+        "name": "Siemens Viaggio Comfort (9 cars)",
+        "techname": "siemens_viaggion_comfort_9_cars",
+        "vehicles_class": "1000",
+        "maximum_speed": "230 km/h",
+        "services": [
+            "second_class",
+            "first_class",
+            "dining_car",
+            "bicycle_transport",
+            "wheelchair_transport",
+            "power_socket",
+            "usb_ports",
+            "air_conditioning",
+            "wifi"
+        ],
+        "formation": [
+            {
+                "type": "unit-left",
+                "text": "1000"
+            },
+            {
+                "type": "unit-middle",
+                "text": "1001"
+            },
+            {
+                "type": "unit-middle",
+                "text": "1002"
+            },
+            {
+                "type": "unit-middle",
+                "text": "1003"
+            },
+            {
+                "type": "unit-middle",
+                "text": "1004"
+            },
+            {
+                "type": "unit-middle",
+                "text": "1005"
+            },
+            {
+                "type": "unit-middle",
+                "text": "1006"
+            },
+            {
+                "type": "unit-middle",
+                "text": "1007"
+            },
+            {
+                "type": "unit-middle",
+                "text": "1008"
+            },
+            {
+                "type": "locomotive",
+                "text": ""
+            }
+        ]
+    },
+    {
+        "name": "81-71 M (5 cars)",
+        "techname": "81_71_m_5_cars",
+        "vehicles_class": "EU 1040",
+        "maximum_speed": "80 km/h",
+        "services": [
+            "second_class",
+            "bicycle_transport",
+            "wheelchair_transport",
+            "power_socket",
+            "usb_ports",
+            "air_conditioning",
+            "wifi"
+        ],
+        "formation": [
+            {
+                "type": "unit-left",
+                "text": "EU 1040"
+            },
+            {
+                "type": "unit-middle",
+                "text": "EU 1041"
+            },
+            {
+                "type": "unit-middle",
+                "text": "EU 1042"
+            },
+            {
+                "type": "unit-middle",
+                "text": "EU 1043"
+            },
+            {
+                "type": "unit-right",
+                "text": "EU 1044"
+            }
+        ]
+    },
+    {
+        "name": "M1 (5 cars)",
+        "techname": "m1_5_cars",
+        "vehicles_class": "EU 1050",
+        "maximum_speed": "80 km/h",
+        "services": [
+            "second_class",
+            "bicycle_transport",
+            "wheelchair_transport",
+            "power_socket",
+            "usb_ports",
+            "air_conditioning",
+            "wifi"
+        ],
+        "formation": [
+            {
+                "type": "unit-left",
+                "text": "EU 1050"
+            },
+            {
+                "type": "unit-middle",
+                "text": "EU 1051"
+            },
+            {
+                "type": "unit-middle",
+                "text": "EU 1052"
+            },
+            {
+                "type": "unit-middle",
+                "text": "EU 1053"
+            },
+            {
+                "type": "unit-right",
+                "text": "EU 1054"
+            }
+        ]
+    },
+    {
+        "name": "Skoda 40T (3 cars)",
+        "techname": "skoda_40t_3_cars",
+        "vehicles_class": "EU 1060",
+        "maximum_speed": "70 km/h",
+        "services": [
+            "second_class",
+            "bicycle_transport",
+            "wheelchair_transport",
+            "power_socket",
+            "usb_ports",
+            "air_conditioning",
+            "wifi"
+        ],
+        "formation": [
+            {
+                "type": "unit-left",
+                "text": "EU 1060"
+            },
+            {
+                "type": "unit-middle",
+                "text": "EU 1061"
+            },
+            {
+                "type": "unit-right",
+                "text": "EU 1062"
+            }
+        ]
+    },
+    {
+        "name": "Skoda 45T (5 cars)",
+        "techname": "skoda_45t_5_cars",
+        "vehicles_class": "EU 1070",
+        "maximum_speed": "70 km/h",
+        "services": [
+            "second_class",
+            "bicycle_transport",
+            "wheelchair_transport",
+            "power_socket",
+            "usb_ports",
+            "air_conditioning",
+            "wifi"
+        ],
+        "formation": [
+            {
+                "type": "unit-left",
+                "text": "EU 1070"
+            },
+            {
+                "type": "unit-middle",
+                "text": "EU 1071"
+            },
+            {
+                "type": "unit-right",
+                "text": "EU 1072"
+            }
+        ]
+    },
+    {
+        "name": "Siemens Vectron (1 car)",
+        "techname": "siemens_vectron_1_car",
+        "vehicles_class": "EL 1000",
+        "maximum_speed": "230 km/h",
+        "services": [
+            "second_class",
+            "bicycle_transport",
+            "wheelchair_transport",
+            "power_socket",
+            "usb_ports",
+            "air_conditioning",
+            "wifi"
+        ],
+        "formation": [
+            {
+                "type": "locomotive",
+                "text": "EL 1000"
+            }
+        ]
+    }
+]

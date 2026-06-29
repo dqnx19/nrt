@@ -4,7 +4,7 @@
 <a href="https://nrt.nether.click">🌐 Visit Official Website</a>
 
 <h2>🚀 Project Overview</h2>
-<p>Nether Republic Transport (NRT) is a fictional transportation system founded in november 2024.<>
+<p>Nether Republic Transport (NRT) is a fictional transportation system founded in november 2024.<p>
 
 <h2>📸 Preview (Screenshots)</h2>
 <img src="img/screenshots/home-page.png">
@@ -37,3 +37,4 @@ python -m http.server 8000
 ### 3. Open your browser
 ```bash
 http://localhost:8000
+```

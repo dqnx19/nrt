@@ -1,0 +1,10 @@
+001 - Second class
+002 - First class
+003 - Dining car
+004 - 
+005 - Bicycle icon
+006 - wheelchair icon
+007 - Power socket
+008 - usb icon
+009 - air conditioning
+010 - wifi icon

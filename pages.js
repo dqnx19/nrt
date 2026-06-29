@@ -128,284 +128,108 @@ function showHome() {
     `)
 }
 
-function showConnectionTypes() {
+async function showConnectionTypes(tab = 'regional_bahn_train') {
     scrollUp();
     setTitle("Connection Types - Nether Republic Transport");
     setContentOfMain(`
         <h1>Connection Types</h1>
         <section>
-            <h2>Regional Bahn Train</h2>
-            <p>Stops At: Every Station</p>
-            <p>Route Type: Domestic/Interstate</p>
-        </section>
-        <section>
-            <h2>Regional Express Train</h2>
-            <p>Stops At: Some Stations</p>
-            <p>Route Type: Domestic/Interstate</p>
-        </section>
-        <section>
-            <h2>Interregio Train</h2>
-            <p>Stops At: Important Stations</p>
-            <p>Route Type: Domestic/Interstate</p>
-        </section>
-        <section>
-            <h2>Intercity Train</h2>
-            <p>Stops At: Most Important Stations</p>
-            <p>Route Type: Domestic</p>
-        </section>
-        <section>
-            <h2>Eurocity Train</h2>
-            <p>Stops At: Most Important Stations</p>
-            <p>Route Type: Interstate</p>
-        </section>
-        <section>
-            <h2>U-Bahn</h2>
-            <p>Stops At: Every Station</p>
-            <p>Route Type: Urban/Suburban</p>
-        </section>
-        <section>
-            <h2>Tram</h2>
-            <p>Stops At: Every Station</p>
-            <p>Route Type: Urban/Suburban</p>
-        </section>
-        <section>
-            <h2>Local Bus</h2>
-            <p>Stops At: Every Station</p>
-            <p>Route Type: Urban/Suburban</p>
+            <div class="tabs"></div>
         </section>
     `)
+
+    const section = document.querySelector("section")
+
+    const db = await fetch("json/connection-types.json").then(r => r.json());
+
+    db.forEach(element => {
+        const tab_button = document.createElement("button")
+        tab_button.className = "tab"
+        tab_button.onclick = () => {
+            showTab(element.techname);
+        };
+        tab_button.dataset.tab = element.techname
+        tab_button.innerText = element.name
+
+        document.querySelector(".tabs").appendChild(tab_button)
+    });
+
+    db.forEach(element => {
+        const tab_content = document.createElement("div")
+        tab_content.className = "tab-content"
+        tab_content.id = element.techname
+        tab_content.innerHTML = `
+            <h2>${element.name}</h2>
+            <p>Stops at: ${element.stops_at}
+            <p>Route Type: ${element.route_type}
+        `
+        section.appendChild(tab_content)
+    });
+
+    showTab(tab)
 }
 
-function showVehicles() {
+async function showVehicles(tab = 'skoda_18ev_2_cars') {
     scrollUp();
     setTitle("Vehicles - Nether Republic Transport");
     setContentOfMain(`
         <h1>Vehicles</h1>
         <section>
-            <h2>Skoda 18Ev (2 cars)</h2>
-            <p>Class: EU 1000</p>
-            <p>Maximum Speed: 160 km/h</p>
-            <br>
-            <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
-            </div>
-            <br>
-            <div class="formation">
-                <span class="unit-left">EU 1000</span>
-                <span class="unit-right">EU 1001</span>
-            </div>
-        </section>
-        <section>
-            <h2>Skoda 18Ev (3 cars)</h2>
-            <p>Class: EU 1010</p>
-            <p>Maximum Speed: 160 km/h</p>
-            <br>
-            <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
-            </div>
-            <br>
-            <div class="formation">
-                <span class="unit-left">EU 1010</span>
-                <span class="unit-middle">EU 1011</span>
-                <span class="unit-right">EU 1012</span>
-            </div>
-        </section>
-        <section>
-            <h2>Skoda 18Ev (4 cars)</h2>
-            <p>Class: EU 1020</p>
-            <p>Maximum Speed: 160 km/h</p>
-            <br>
-            <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
-            </div>
-            <br>
-            <div class="formation">
-                <span class="unit-left">EU 1020</span>
-                <span class="unit-middle">EU 1021</span>
-                <span class="unit-middle">EU 1022</span>
-                <span class="unit-right">EU 1023</span>
-            </div>
-        </section>
-        <section>
-            <h2>Skoda 26Ev (5 cars)</h2>
-            <p>Class: EU 1030</p>
-            <p>Maximum Speed: 200 km/h</p>
-            <br>
-            <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
-                <img src="/img/services/002-1st-class-icon.png" alt="">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
-            </div>
-            <br>
-            <div class="formation">
-                <span class="unit-left">EU 1030</span>
-                <span class="unit-middle">EU 1031</span>
-                <span class="unit-middle">EU 1032</span>
-                <span class="unit-middle">EU 1033</span>
-                <span class="unit-right">EU 1034</span>
-            </div>
-        </section>
-        <section>
-            <h2>Siemens Viaggio Comfort (9 cars)</h2>
-            <p>Class: 1000</p>
-            <p>Maximum Speed: 230 km/h</p>
-            <br>
-            <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
-                <img src="/img/services/002-1st-class-icon.png" alt="">
-                <img src="/img/services/003-dining-car-icon.png" alt="">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
-            </div>
-            <br>
-            <div class="formation">
-                <span class="unit-left">1000</span>
-                <span class="unit-middle">1001</span>
-                <span class="unit-middle">1002</span>
-                <span class="unit-middle">1003</span>
-                <span class="unit-middle">1004</span>
-                <span class="unit-middle">1005</span>
-                <span class="unit-middle">1006</span>
-                <span class="unit-middle">1007</span>
-                <span class="unit-middle">1008</span>
-                <span class="locomotive"></span>
-            </div>
-        </section>
-        <section>
-            <h2>81-71 M (5 cars)</h2>
-            <p>Class: EU 1040</p>
-            <p>Maximum Speed: 80 km/h</p>
-            <br>
-            <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
-            </div>
-            <br>
-            <div class="formation">
-                <span class="unit-left">EU 1040</span>
-                <span class="unit-middle">EU 1041</span>
-                <span class="unit-middle">EU 1042</span>
-                <span class="unit-middle">EU 1043</span>
-                <span class="unit-right">EU 1044</span>
-            </div>
-        </section>
-        <section>
-            <h2>M1 (5 cars)</h2>
-            <p>Class: EU 1050</p>
-            <p>Maximum Speed: 80 km/h</p>
-            <br>
-            <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
-            </div>
-            <br>
-            <div class="formation">
-                <span class="unit-left">EU 1050</span>
-                <span class="unit-middle">EU 1051</span>
-                <span class="unit-middle">EU 1052</span>
-                <span class="unit-middle">EU 1053</span>
-                <span class="unit-right">EU 1054</span>
-            </div>
-        </section>
-        <section>
-            <h2>Skoda 40T (3 cars)</h2>
-            <p>Class: EU 1060</p>
-            <p>Maximum Speed: 70 km/h</p>
-            <br>
-            <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
-            </div>
-            <br>
-            <div class="formation">
-                <span class="unit-left">EU 1060</span>
-                <span class="unit-middle">EU 1061</span>
-                <span class="unit-right">EU 1062</span>
-            </div>
-        </section>
-        <section>
-            <h2>Skoda 45T (5 cars)</h2>
-            <p>Class: EU 1070</p>
-            <p>Maximum Speed: 70 km/h</p>
-            <br>
-            <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
-            </div>
-            <br>
-            <div class="formation">
-                <span class="unit-left">EU 1070</span>
-                <span class="unit-middle">EU 1071</span>
-                <span class="unit-right">EU 1072</span>
-            </div>
-        </section>
-        <section>
-            <h2>Siemens Vectron (1 car)</h2>
-            <p>Class: EL 1000</p>
-            <p>Maximum Speed: 230 km/h</p>
-            <br>
-            <div class="services-icons">
-                <img src="/img/services/001-2nd-class-icon.png" alt="2nd class icon" onclick="showServices('second_class')">
-                <img src="/img/services/005-bicycle-icon.png" alt="1st class icon" onclick="showServices('first_class')">
-                <img src="/img/services/006-wheelchair-icon.png" alt="Wheelchair Icon" onclick="showServices('wheelchair_transport')">
-                <img src="/img/services/007-power-socket-icon.png" alt="Power Socket icon" onclick="showServices('power_socket')">
-                <img src="/img/services/008-usb-icon.png" alt="USB icon" onclick="showServices('usb_ports')">
-                <img src="/img/services/009-air-conditioning-icon.png" alt="Air Conditioning icon" onclick="showServices('air_conditioning')">
-                <img src="/img/services/010-wifi-icon.png" alt="WiFi icon"  onclick="showServices('wifi')">
-            </div>
-            <br>
-            <div class="formation">
-                <span class="locomotive">EL 1000</span>
-            </div>
+            <div class="tabs"></div>
         </section>
     `)
+
+    const section = document.querySelector("section")
+
+    const db = await fetch("json/vehicles.json").then(r => r.json());
+
+    db.forEach(element => {
+        const tab_button = document.createElement("button")
+        tab_button.className = "tab"
+        tab_button.onclick = () => {
+            showTab(element.techname);
+        };
+        tab_button.dataset.tab = element.techname
+        tab_button.innerText = element.name
+
+        document.querySelector(".tabs").appendChild(tab_button)
+    });
+
+    db.forEach(element => {
+        const tab_content = document.createElement("div");
+        tab_content.className = "tab-content";
+        tab_content.id = element.techname;
+
+        tab_content.innerHTML = `
+            <h2>${element.name}</h2>
+            <div class="services-icons"></div>
+            <div class="formation"></div>
+    `;
+
+        section.appendChild(tab_content);
+
+        const iconsDiv = tab_content.querySelector(".services-icons");
+
+        element.services.forEach(service => {
+            const img = document.createElement("img");
+            img.src = `/img/services/${service}.png`;
+            img.alt = service;
+            img.dataset.service = service;
+            img.onclick = () => showServices(service);
+            iconsDiv.appendChild(img);
+        });
+
+        const formationDiv = tab_content.querySelector(".formation")
+        
+        element.formation.forEach(unit => {
+            const div = document.createElement("div");
+            div.className = unit.type
+            div.textContent = unit.text
+            formationDiv.appendChild(div)
+        })
+    });
+
+    showTab(tab)
 }
 
 function showServices(tab = 'second_class') {
@@ -416,39 +240,39 @@ function showServices(tab = 'second_class') {
         <section>
             <div class="tabs">
                 <button class="tab active" onclick="showTab('second_class')" data-tab="second_class">
-                    <img src="img/services/001-2nd-class-icon.png" alt="Second class icon">
+                    <img src="img/services/second_class.png" alt="Second class icon">
                     Second class
                 </button>
                 <button class="tab" onclick="showTab('first_class')" data-tab="first_class">
-                    <img src="img/services/002-1st-class-icon.png" alt="First class icon">
+                    <img src="img/services/first_class.png" alt="First class icon">
                     First class
                 </button>
                 <button class="tab" onclick="showTab('dining_car')" data-tab="dining_car">
-                    <img src="img/services/003-dining-car-icon.png" alt="Dining car icon">
+                    <img src="img/services/dining_car.png" alt="Dining car icon">
                     Dining car
                 </button>
                 <button class="tab" onclick="showTab('bicycle_transport')" data-tab="bicycle_transport">
-                    <img src="img/services/005-bicycle-icon.png" alt="Bicycle icon">
+                    <img src="img/services/bicycle_transport.png" alt="Bicycle icon">
                     Bicycle Transport
                 </button>
                 <button class="tab" onclick="showTab('wheelchair_accessibility')" data-tab="wheelchair_accessibility">
-                    <img src="img/services/006-wheelchair-icon.png" alt="Wheelchair icon">
+                    <img src="img/services/wheelchair_transport.png" alt="Wheelchair icon">
                     Wheelchair Accesibility
                 </button>
                 <button class="tab" onclick="showTab('power_socket')" data-tab="power_socket">
-                    <img src="img/services/007-power-socket-icon.png" alt="Power socket icon">
+                    <img src="img/services/power_socket.png" alt="Power socket icon">
                     Power Socket
                 </button>
                 <button class="tab" onclick="showTab('usb_ports')" data-tab="usb_ports">
-                    <img src="img/services/008-usb-icon.png" alt="USB Ports icon">
+                    <img src="img/services/usb_ports.png" alt="USB Ports icon">
                     USB Ports
                 </button>
                 <button class="tab" onclick="showTab('air_conditioning')" data-tab="air_conditioning">
-                    <img src="img/services/009-air-conditioning-icon.png" alt="Air conditioning icon">
+                    <img src="img/services/air_conditioning.png" alt="Air conditioning icon">
                     Air Conditioning
                 </button>
                 <button class="tab" onclick="showTab('wifi')" data-tab="wifi">
-                    <img src="img/services/010-wifi-icon.png" alt="WiFi icon">
+                    <img src="img/services/wifi.png" alt="WiFi icon">
                     WiFi
                 </button>
             </div>
