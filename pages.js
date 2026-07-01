@@ -115,14 +115,32 @@ function showHome() {
     setTitle("Nether Republic Transport");
     setContentOfMain(`
         <h1>Nether Republic Transport</h1>
-        <section>   
+        <section>
             <div class="grouped-list">
-                <button class="item" onclick="showConnectionTypes()">Connection Types</button>
-                <button class="item" onclick="showVehicles()">Vehicles</button>
-                <button class="item" onclick="showServices()">Services</button>
-                <button class="item" onclick="showFare()">Fare</button>
-                <button class="item" onclick="showAbout()">About</button>
-                <button class="item" onclick="showTechnicalDetails()">Technical Details</button>
+                <button class="item" onclick="showConnectionTypes()" title="Renders Connection Types page">
+                    <img src="img/links-icons/connection-types.svg" alt="Connection Types page link icon">
+                    Connection Types
+                </button>
+                <button class="item" onclick="showVehicles()" title="Renders Vehicles page">
+                    <img src="img/links-icons/vehicles.svg" alt="Vehicles page link icon">
+                    Vehicles
+                </button>
+                <button class="item" onclick="showServices()" title="Renders Services page">
+                    <img src="img/links-icons/services.svg" alt="Services page link icon">
+                    Services
+                </button>
+                <button class="item" onclick="showFare()" title="Renders Fare page">
+                    <img src="img/links-icons/fare.svg" alt="Fare page link icon">
+                    Fare
+                </button>
+                <button class="item" onclick="showAbout()" title="Renders About page">
+                    <img src="img/links-icons/about.svg" alt="About page link icon">
+                    About
+                </button>
+                <button class="item" onclick="showTechnicalDetails()" title="Renders Technical Details page">
+                    <img src="img/links-icons/technical-details.svg" alt="Technical Details page link icon">
+                    Technical Details
+                </button>
             </div>
         </section>
     `)
