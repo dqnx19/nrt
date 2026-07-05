@@ -21,7 +21,7 @@ await importCSSFromList([
     "https://web-ui.nether.click/components/css/header.css",
     "https://web-ui.nether.click/components/css/headings.css",
 
-    "https://web-ui.nether.click/components/css/li.css",
+    "https://web-ui.nether.click/components/css/lists.css",
 
     "https://web-ui.nether.click/components/css/main.css",
 

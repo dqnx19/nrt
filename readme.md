@@ -8,6 +8,7 @@
 
 <h2>📸 Preview (Screenshots)</h2>
 <img src="img/screenshots/home-page.png">
+<img src="img/screenshots/home-page-mobile.png">
 
 <h2>🛠️ Technologies Used</h2>
 

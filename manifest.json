@@ -3,7 +3,7 @@
     "name": "Nether Republic Transport",
     "description": "Fictional transport system",
     "lang": "en-GB",
-    "start_url": "/",
+    "start_url": "/?showas=app",
     "scope": "/",
     "display": "standalone",
     "orientation": "portrait",
