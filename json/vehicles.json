@@ -87,44 +87,6 @@
         ]
     },
     {
-        "name": "Skoda 26Ev (5 cars)",
-        "techname": "skoda_26ev_5_cars",
-        "vehicles_class": "EU 1030",
-        "maximum_speed": "200 km/h",
-        "services": [
-            "second_class",
-            "first_class",
-            "bicycle_transport",
-            "wheelchair_accessibility",
-            "power_socket",
-            "usb_ports",
-            "air_conditioning",
-            "wifi"
-        ],
-        "formation": [
-            {
-                "type": "unit-left",
-                "text": "EU 1030"
-            },
-            {
-                "type": "unit-middle",
-                "text": "EU 1031"
-            },
-            {
-                "type": "unit-middle",
-                "text": "EU 1032"
-            },
-            {
-                "type": "unit-middle",
-                "text": "EU 1033"
-            },
-            {
-                "type": "unit-right",
-                "text": "EU 1034"
-            }
-        ]
-    },
-    {
         "name": "Siemens Viaggio Comfort (9 cars)",
         "techname": "siemens_viaggion_comfort_9_cars",
         "vehicles_class": "1000",

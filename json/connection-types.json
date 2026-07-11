@@ -3,48 +3,49 @@
         "name": "Regional Bahn Train",
         "techname": "regional_bahn_train",
         "stops_at": "Every Station",
-        "route_type": "Domestic/Interstate"
+        "route_type": "Domestic/Interstate",
+        "frequency": "15 - 30 minutes" 
     },
     {
         "name": "Regional Express Train",
         "techname": "regional_express_train",
         "stops_at": "Some Stations",
-        "route_type": "Domestic/Interstate"
-    },
-    {
-        "name": "Interregio Train",
-        "techname": "interregio_train",
-        "stops_at": "Important Stations",
-        "route_type": "Domestic/Interstate"
+        "route_type": "Domestic/Interstate",
+        "frequency": "60 minutes"
     },
     {
         "name": "Intercity Train",
         "techname": "intercity_train",
         "stops_at": "Most Important Stations",
-        "route_type": "Domestic"
+        "route_type": "Domestic",
+        "frequency": "120 minutes"
     },
     {
         "name": "Eurocity Train",
         "techname": "eurocity_train",
         "stops_at": "Most Important Stations",
-        "route_type": "Interstate"
+        "route_type": "Interstate",
+        "frequency": "120 minutes"
     },
     {
         "name": "U-Bahn",
         "techname": "u_bahn",
         "stops_at": "Every Station",
-        "route_type": "Urban/Suburban"
+        "route_type": "Urban/Suburban",
+        "frequency": "1 - 5 minutes"
     },
     {
         "name": "Tram",
         "techname": "tram",
         "stops_at": "Every Station",
-        "route_type": "Urban/Suburban"
+        "route_type": "Urban/Suburban",
+        "frequency": "5 - 10 minutes"
     },
     {
         "name": "Local Bus",
         "techname": "local_bus",
         "stops_at": "Every Station",
-        "route_type": "Urban/Suburban"
+        "route_type": "Urban/Suburban",
+        "frequency": "10 - 15 minutes"
     }
 ]

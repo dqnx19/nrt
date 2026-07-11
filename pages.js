@@ -55,25 +55,25 @@ setContentOfHeader(`
 
 setContentOfFooter(`
     <button onclick="showHome()" title="Shows Home Page">
-        <img src="/img/icons/logo.svg" alt="NRT Logo">
+        <img src="img/icons/logo.svg" alt="NRT Logo">
     </button>
     <button onclick="showConnectionTypes()" title="Shows Connection Types Page">
-        <img src="/img/links-icons/connection-types.svg" alt="Connection Types icon">
+        <img src="img/links-icons/connection-types.svg" alt="Connection Types icon">
     </button>
     <button onclick="showVehicles()" title="Shows Vehicles Page">
-        <img src="/img/links-icons/vehicles.svg" alt="Vehicles icon">
+        <img src="img/links-icons/vehicles.svg" alt="Vehicles icon">
     </button>
     <button onclick="showServices()" title="Shows Services Page">
-        <img src="/img/links-icons/services.svg" alt="Services icon">
+        <img src="img/links-icons/services.svg" alt="Services icon">
     </button>
     <button onclick="showFare()" title="Shows Fare Page">
-        <img src="/img/links-icons/fare.svg" alt="Fare icon">
+        <img src="img/links-icons/fare.svg" alt="Fare icon">
     </button>
     <button onclick="showAbout()" title="Shows About Page">
-        <img src="/img/links-icons/about.svg" alt="About icon">
+        <img src="img/links-icons/about.svg" alt="About icon">
     </button>
     <button onclick="showTechnicalDetails()" title="Shows Technical Details Page">
-        <img src="/img/links-icons/technical-details.svg" alt="Technical Details icon">
+        <img src="img/links-icons/technical-details.svg" alt="Technical Details icon">
     </button>
 `)
 
@@ -242,7 +242,7 @@ async function showVehicles(tab = 'skoda_18ev_2_cars') {
 
         element.services.forEach(service => {
             const img = document.createElement("img");
-            img.src = `/img/services/${service}.png`;
+            img.src = `img/services/${service}.png`;
             img.alt = service;
             img.dataset.service = service;
             img.onclick = () => showServices(service);
