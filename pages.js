@@ -1,4 +1,4 @@
-import { importCSSFromList, importJSFromList, setTitle, setFavicon, setAttribute, scrollUp, setContentOfHeader, setContentOfMain, setContentOfFooter } from "https://js.nether.click/nether.js";
+import { importCSSFromList, importJSFromList, getURLParam, setTitle, setFavicon, setAttribute, scrollUp, setContentOfHeader, setContentOfMain, setContentOfFooter } from "https://js.nether.click/nether.js";
 
 setAttribute("html", "lang", "en")
 
@@ -12,6 +12,8 @@ await importCSSFromList([
 
     "https://web-ui.nether.click/components/css/body.css",
     "https://web-ui.nether.click/components/css/button.css",
+
+    "https://web-ui.nether.click/components/css/cards.css",
 
     "https://web-ui.nether.click/components/css/footer.css",
     "https://web-ui.nether.click/components/css/form.css",
@@ -83,66 +85,73 @@ window.showFare = showFare;
 window.showAbout = showAbout;
 window.showTechnicalDetails = showTechnicalDetails;
 
-function router() {
-    const page = new URLSearchParams(location.search).get("page");
-
-    switch (page) {
-        case "connection-types":
-            return showConnectionTypes();
-
-        case "vehicles":
-            return showVehicles();
-
-        case "services":
-            return showServices();
-
-        case "fare":
-            return showFare();
-
-        case "about":
-            return showAbout();
-
-        case "technical-details":
-            return showTechnicalDetails();
-
-        default:
-            return showHome();
-    }
-}
-
 function showHome() {
     scrollUp();
     setTitle("Nether Republic Transport");
     setContentOfMain(`
         <h1>Nether Republic Transport</h1>
-        <section>
-            <div class="grouped-list">
-                <button class="item" onclick="showConnectionTypes()" title="Renders Connection Types page">
+        <div class="cards">
+            <div class="card">
+                <div class="header">
                     <img src="img/links-icons/connection-types.svg" alt="Connection Types page link icon">
                     Connection Types
-                </button>
-                <button class="item" onclick="showVehicles()" title="Renders Vehicles page">
+                </div>
+                <div class="body">
+                    <span>List of all connection types</span>
+                    <button onclick="showConnectionTypes()">Open link</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header">
                     <img src="img/links-icons/vehicles.svg" alt="Vehicles page link icon">
                     Vehicles
-                </button>
-                <button class="item" onclick="showServices()" title="Renders Services page">
+                </div>
+                <div class="body">
+                    <span>List of all vehicles</span>
+                    <button onclick="showVehicles()">Open link</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header">
                     <img src="img/links-icons/services.svg" alt="Services page link icon">
                     Services
-                </button>
-                <button class="item" onclick="showFare()" title="Renders Fare page">
+                </div>
+                <div class="body">
+                    <span>List of all services</span>
+                    <button onclick="showServices()">Open link</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header">
                     <img src="img/links-icons/fare.svg" alt="Fare page link icon">
                     Fare
-                </button>
-                <button class="item" onclick="showAbout()" title="Renders About page">
+                </div>
+                <div class="body">
+                    <span>Information about fares and ticket prices</span>
+                    <button onclick="showFare()">Open link</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header">
                     <img src="img/links-icons/about.svg" alt="About page link icon">
                     About
-                </button>
-                <button class="item" onclick="showTechnicalDetails()" title="Renders Technical Details page">
+                </div>
+                <div class="body">
+                    <span>Information about this project</span>
+                    <button onclick="showAbout()">Open link</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header">
                     <img src="img/links-icons/technical-details.svg" alt="Technical Details page link icon">
                     Technical Details
-                </button>
+                </div>
+                <div class="body">
+                    <span>Technical information and implementation details</span>
+                    <button onclick="showTechnicalDetails()">Open link</button>
+                </div>
             </div>
-        </section>
+        </div>
     `)
 }
 
@@ -161,15 +170,18 @@ async function showConnectionTypes(tab = 'regional_bahn_train') {
     const db = await fetch("json/connection-types.json").then(r => r.json());
 
     db.forEach(element => {
-        const tab_button = document.createElement("button")
-        tab_button.className = "tab"
-        tab_button.onclick = () => {
+        const tab = document.createElement("button")
+        tab.className = "tab"
+        tab.onclick = () => {
             showTab(element.techname);
         };
-        tab_button.dataset.tab = element.techname
-        tab_button.innerText = element.name
+        tab.dataset.tab = element.techname
+        tab.innerText = element.name
+        tab.innerHTML = `
+            <img src="img/connections/${element.techname}.svg">
+            <span>${element.name}</span>`
 
-        document.querySelector(".tabs").appendChild(tab_button)
+        document.querySelector(".tabs").appendChild(tab)
     });
 
     db.forEach(element => {
@@ -238,7 +250,7 @@ async function showVehicles(tab = 'skoda_18ev_2_cars') {
         });
 
         const formationDiv = tab_content.querySelector(".formation")
-        
+
         element.formation.forEach(unit => {
             const div = document.createElement("div");
             div.className = unit.type
@@ -250,115 +262,61 @@ async function showVehicles(tab = 'skoda_18ev_2_cars') {
     showTab(tab)
 }
 
-function showServices(tab = 'second_class') {
+async function showServices(tab = 'second_class') {
     scrollUp();
     setTitle("Services - Nether Republic Transport");
     setContentOfMain(`
         <h1>Services</h1>
-        <section>
-            <div class="tabs">
-                <button class="tab active" onclick="showTab('second_class')" data-tab="second_class">
-                    <img src="img/services/second_class.png" alt="Second class icon">
-                    Second class
-                </button>
-                <button class="tab" onclick="showTab('first_class')" data-tab="first_class">
-                    <img src="img/services/first_class.png" alt="First class icon">
-                    First class
-                </button>
-                <button class="tab" onclick="showTab('dining_car')" data-tab="dining_car">
-                    <img src="img/services/dining_car.png" alt="Dining car icon">
-                    Dining car
-                </button>
-                <button class="tab" onclick="showTab('bicycle_transport')" data-tab="bicycle_transport">
-                    <img src="img/services/bicycle_transport.png" alt="Bicycle icon">
-                    Bicycle Transport
-                </button>
-                <button class="tab" onclick="showTab('wheelchair_accessibility')" data-tab="wheelchair_accessibility">
-                    <img src="img/services/wheelchair_transport.png" alt="Wheelchair icon">
-                    Wheelchair Accesibility
-                </button>
-                <button class="tab" onclick="showTab('power_socket')" data-tab="power_socket">
-                    <img src="img/services/power_socket.png" alt="Power socket icon">
-                    Power Socket
-                </button>
-                <button class="tab" onclick="showTab('usb_ports')" data-tab="usb_ports">
-                    <img src="img/services/usb_ports.png" alt="USB Ports icon">
-                    USB Ports
-                </button>
-                <button class="tab" onclick="showTab('air_conditioning')" data-tab="air_conditioning">
-                    <img src="img/services/air_conditioning.png" alt="Air conditioning icon">
-                    Air Conditioning
-                </button>
-                <button class="tab" onclick="showTab('wifi')" data-tab="wifi">
-                    <img src="img/services/wifi.png" alt="WiFi icon">
-                    WiFi
-                </button>
-            </div>
-            <div class="tab-content active" id="second_class">
-                <h2>Second class</h2>
-                <ul>
-                    <li>Classic second-class seating</li>
-                    <li>Seats: 2 + 2</li>
-                    <li>Face-to-face seating / Airline style seatings</li>
-                </ul>
-            </div>
-            <div class="tab-content" id="first_class">
-                <h2>First class</h2>
-                <ul>
-                    <li>Comfortable first-class seating</li>
-                    <li>Seats: 2 + 1</li>
-                    <li>Spacious and luxurious</li>
-                </ul>
-            </div>
-            <div class="tab-content" id="dining_car">
-                <h2>Dining car</h2>
-                <ul>
-                    <li>Delicious meals</li>
-                    <li>Refreshments</li>
-                </ul>
-                <button onclick="window.location.href=('documents/dining-car-menu.docx')">View Menu (docx)</button>
-                <button onclick="window.location.href=('documents/dining-car-menu.pdf')">View Menu (pdf)</button>
-            </div>
-            <div class="tab-content" id="bicycle_transport">
-                <h2>Bicycle transport</h2>
-                <ul>
-                    <li>Transport of bicycles</li>
-                </ul>
-            </div>
-            <div class="tab-content" id="wheelchair_accessibility">
-                <h2>Wheelchair accessibility</h2>
-                <ul>
-                    <li>Accessible seating for wheelchair users</li>
-                </ul>
-            </div>
-            <div class="tab-content" id="power_socket">
-                <h2>Power socket</h2>
-                <ul>
-                    <li>Access to power outlets for charging devices</li>
-                </ul>
-            </div>
-            <div class="tab-content" id="usb_ports">
-                <h2>USB Ports</h2>
-                <ul>
-                    <li>USB ports for charging devices</li>
-                </ul>
-            </div>
-            <div class="tab-content" id="air_conditioning">
-                <h2>Air Conditioning</h2>
-                <ul>
-                    <li>Climate control for passenger comfort</li>
-                </ul>
-            </div>
-            <div class="tab-content" id="wifi">
-                <h2>Wi-Fi</h2>
-                <ul>
-                    <li>Free Wi-Fi access for passengers</li>
-                    <li>Unlimited data usage</li>
-                    <li>WiFi SSID (name): srt_free</li>
-                </ul>
-            </div>
+        <section> 
         </section>
     `)
+    showTab(tab)
+
+    const db = await fetch("json/services.json").then(r => r.json())
+
+    const tabs_switching = document.createElement("div")
+    tabs_switching.className = "tabs-switching"
+    document.querySelector("section").appendChild(tabs_switching)
+
+    const tabs = document.createElement("div")
+    tabs.className = "tabs"
+    tabs_switching.appendChild(tabs)
+
+    db.forEach(element => {
+        const tab = document.createElement("button");
+        tab.classList = "tab"
+        tab.onclick = () => {
+            showTab(element.techname)
+        }
+        tab.dataset.tab = element.techname
+        tab.innerHTML = `
+            <img src="img/services/${element.techname}.png">
+            <span>${element.name}</span>`
+
+        tabs.appendChild(tab)
+    });
+
+    db.forEach(element => {
+        const tab_content = document.createElement("div");
+        tab_content.id = element.techname
+        tab_content.className = "tab-content"
+        tab_content.innerHTML = `
+            <h2>${element.name}</h2>
+        `
+
+        const list = document.createElement("ul");
+
+        element.description.forEach(element => {
+            const list_item = document.createElement("li")
+            list_item.innerText = element
+
+            list.appendChild(list_item)
+        })
+        tab_content.appendChild(list)
+
+        tabs_switching.appendChild(tab_content)
+    })
+
     showTab(tab)
 }
 
@@ -686,4 +644,4 @@ function showTechnicalDetails() {
     `)
 }
 
-router();
+showHome();

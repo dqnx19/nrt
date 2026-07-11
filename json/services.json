@@ -1,0 +1,70 @@
+[
+    {
+        "name": "Second class",
+        "techname": "second_class",
+        "description": [
+            "2 + 2 Seats",
+            "Face-to-face seating / Airline style seatings"
+        ]
+    },
+    {
+        "name": "First class",
+        "techname": "first_class",
+        "description": [
+            "2 + 1 Seats",
+            "Face-to-face seating / Airline style seatings"
+        ]
+    },
+    {
+        "name": "Dining car",
+        "techname": "dining_car",
+        "description": [
+            "Delicious meals",
+            "Refreshments"
+        ]
+    },
+    {
+        "name": "Bicycle transport",
+        "techname": "bicycle_transport",
+        "description": [
+            "Transport of bicycles"
+        ]
+    },
+    {
+        "name": "Wheelchair accessibility",
+        "techname": "wheelchair_accessibility",
+        "description": [
+            "Accessible seating for wheelchair users"
+        ]
+    },
+    {
+        "name": "Power socket",
+        "techname": "power_socket",
+        "description": [
+            "Access to power outlets for charging devices"
+        ]
+    },
+    {
+        "name": "USB Ports",
+        "techname": "usb_ports",
+        "description": [
+            "USB ports for charging devices"
+        ]
+    },
+    {
+        "name": "Air Conditioning",
+        "techname": "air_conditioning",
+        "description": [
+            "Climate control for passenger comfort"
+        ]
+    },
+    {
+        "name": "Wi-Fi",
+        "techname": "wifi",
+        "description": [
+            "Free Wi-Fi access for passengers",
+            "Unlimited data usage",
+            "WiFi SSID (name): srt_free"
+        ]
+    }
+]

@@ -7,7 +7,7 @@
         "services": [
             "second_class",
             "bicycle_transport",
-            "wheelchair_transport",
+            "wheelchair_accessibility",
             "power_socket",
             "usb_ports",
             "air_conditioning",
@@ -32,7 +32,7 @@
         "services": [
             "second_class",
             "bicycle_transport",
-            "wheelchair_transport",
+            "wheelchair_accessibility",
             "power_socket",
             "usb_ports",
             "air_conditioning",
@@ -61,7 +61,7 @@
         "services": [
             "second_class",
             "bicycle_transport",
-            "wheelchair_transport",
+            "wheelchair_accessibility",
             "power_socket",
             "usb_ports",
             "air_conditioning",
@@ -95,7 +95,7 @@
             "second_class",
             "first_class",
             "bicycle_transport",
-            "wheelchair_transport",
+            "wheelchair_accessibility",
             "power_socket",
             "usb_ports",
             "air_conditioning",
@@ -134,7 +134,7 @@
             "first_class",
             "dining_car",
             "bicycle_transport",
-            "wheelchair_transport",
+            "wheelchair_accessibility",
             "power_socket",
             "usb_ports",
             "air_conditioning",
@@ -191,7 +191,7 @@
         "services": [
             "second_class",
             "bicycle_transport",
-            "wheelchair_transport",
+            "wheelchair_accessibility",
             "power_socket",
             "usb_ports",
             "air_conditioning",
@@ -228,7 +228,7 @@
         "services": [
             "second_class",
             "bicycle_transport",
-            "wheelchair_transport",
+            "wheelchair_accessibility",
             "power_socket",
             "usb_ports",
             "air_conditioning",
@@ -265,7 +265,7 @@
         "services": [
             "second_class",
             "bicycle_transport",
-            "wheelchair_transport",
+            "wheelchair_accessibility",
             "power_socket",
             "usb_ports",
             "air_conditioning",
@@ -294,7 +294,7 @@
         "services": [
             "second_class",
             "bicycle_transport",
-            "wheelchair_transport",
+            "wheelchair_accessibility",
             "power_socket",
             "usb_ports",
             "air_conditioning",
@@ -323,7 +323,7 @@
         "services": [
             "second_class",
             "bicycle_transport",
-            "wheelchair_transport",
+            "wheelchair_accessibility",
             "power_socket",
             "usb_ports",
             "air_conditioning",
