@@ -231,8 +231,11 @@ async function showVehicles(tab = 'skoda_18ev_2_cars') {
         tab_content.id = element.techname;
 
         tab_content.innerHTML = `
-            <h2>${element.name}</h2>
+            <p>Vehicles class: ${element.vehicles_class}</p>
+            <p>Maximum speed: ${element.maximum_speed}</p>
+            <br>
             <div class="services-icons"></div>
+            <br>
             <div class="formation"></div>
     `;
 
@@ -242,7 +245,7 @@ async function showVehicles(tab = 'skoda_18ev_2_cars') {
 
         element.services.forEach(service => {
             const img = document.createElement("img");
-            img.src = `img/services/${service}.png`;
+            img.src = `img/services/${service}.svg`;
             img.alt = service;
             img.dataset.service = service;
             img.onclick = () => showServices(service);
@@ -290,7 +293,7 @@ async function showServices(tab = 'second_class') {
         }
         tab.dataset.tab = element.techname
         tab.innerHTML = `
-            <img src="img/services/${element.techname}.png">
+            <img src="img/services/${element.techname}.svg">
             <span>${element.name}</span>`
 
         tabs.appendChild(tab)
@@ -645,3 +648,18 @@ function showTechnicalDetails() {
 }
 
 showHome();
+
+const style = document.createElement("style");
+style.innerText = `
+.services-icons img, .tab img {
+    filter: brightness(0);
+}
+
+@media (prefers-color-scheme: dark) {
+    .services-icons img, .tab img {
+        filter: brightness(0) invert(1);
+    }
+}
+`
+
+document.head.appendChild(style)
