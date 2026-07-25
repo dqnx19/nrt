@@ -85,74 +85,35 @@ window.showFare = showFare;
 window.showAbout = showAbout;
 window.showTechnicalDetails = showTechnicalDetails;
 
-function showHome() {
+async function showHome() {
     scrollUp();
     setTitle("Nether Republic Transport");
     setContentOfMain(`
-        <h1>Nether Republic Transport</h1>
-        <div class="cards">
-            <div class="card">
-                <div class="header">
-                    <img src="img/links-icons/connection-types.svg" alt="Connection Types page link icon">
-                    Connection Types
-                </div>
-                <div class="body">
-                    <span>List of all connection types</span>
-                    <button onclick="showConnectionTypes()">Open link</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="header">
-                    <img src="img/links-icons/vehicles.svg" alt="Vehicles page link icon">
-                    Vehicles
-                </div>
-                <div class="body">
-                    <span>List of all vehicles</span>
-                    <button onclick="showVehicles()">Open link</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="header">
-                    <img src="img/links-icons/services.svg" alt="Services page link icon">
-                    Services
-                </div>
-                <div class="body">
-                    <span>List of all services</span>
-                    <button onclick="showServices()">Open link</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="header">
-                    <img src="img/links-icons/fare.svg" alt="Fare page link icon">
-                    Fare
-                </div>
-                <div class="body">
-                    <span>Information about fares and ticket prices</span>
-                    <button onclick="showFare()">Open link</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="header">
-                    <img src="img/links-icons/about.svg" alt="About page link icon">
-                    About
-                </div>
-                <div class="body">
-                    <span>Information about this project</span>
-                    <button onclick="showAbout()">Open link</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="header">
-                    <img src="img/links-icons/technical-details.svg" alt="Technical Details page link icon">
-                    Technical Details
-                </div>
-                <div class="body">
-                    <span>Technical information and implementation details</span>
-                    <button onclick="showTechnicalDetails()">Open link</button>
-                </div>
-            </div>
-        </div>
+        <h1>Welcome to NRT!</h1>
+        <div class="cards"></div>
     `)
+
+    const db = await fetch("json/home.json").then(r => r.json());
+
+    const cards = document.querySelector(".cards");
+
+    db.forEach(element => {
+        const card = document.createElement("div");
+
+        card.className = "card"
+        card.innerHTML = `
+            <div class="header">
+                <img src="img/links-icons/${element.techname}.svg" alt="${element.name} page link icon">
+                ${element.name}
+            </div>
+            <div class="body">
+                <span>${element.desc}</span>
+                <button onclick="${element.func}()">Open link</button>
+            </div>
+        `
+
+        cards.appendChild(card)
+    });
 }
 
 async function showConnectionTypes(tab = 'regional_bahn_train') {
@@ -648,18 +609,3 @@ function showTechnicalDetails() {
 }
 
 showHome();
-
-const style = document.createElement("style");
-style.innerText = `
-.services-icons img, .tab img {
-    filter: brightness(0);
-}
-
-@media (prefers-color-scheme: dark) {
-    .services-icons img, .tab img {
-        filter: brightness(0) invert(1);
-    }
-}
-`
-
-document.head.appendChild(style)

@@ -66,5 +66,25 @@
             "Unlimited data usage",
             "WiFi SSID (name): srt_free"
         ]
+    },
+    {
+        "name": "Toilet",
+        "techname": "toilet",
+        "description": []
+    },
+    {
+        "name": "Accessible toilet",
+        "techname": "accessible_toilet",
+        "description": []
+    },
+    {
+        "name": "Vending machine",
+        "techname": "vending_machine",
+        "description": []
+    },
+    {
+        "name": "Tickets Machine",
+        "techname": "tickets_machine",
+        "description": []
     }
 ]

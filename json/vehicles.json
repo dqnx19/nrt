@@ -11,7 +11,11 @@
             "power_socket",
             "usb_ports",
             "air_conditioning",
-            "wifi"
+            "wifi",
+            "toilet",
+            "accessible_toilet",
+            "vending_machine",
+            "tickets_machine"
         ],
         "formation": [
             {
@@ -36,7 +40,11 @@
             "power_socket",
             "usb_ports",
             "air_conditioning",
-            "wifi"
+            "wifi",
+            "toilet",
+            "accessible_toilet",
+            "vending_machine",
+            "tickets_machine"
         ],
         "formation": [
             {
@@ -65,7 +73,11 @@
             "power_socket",
             "usb_ports",
             "air_conditioning",
-            "wifi"
+            "wifi",
+            "toilet",
+            "accessible_toilet",
+            "vending_machine",
+            "tickets_machine"
         ],
         "formation": [
             {
@@ -100,7 +112,11 @@
             "power_socket",
             "usb_ports",
             "air_conditioning",
-            "wifi"
+            "wifi",
+            "toilet",
+            "accessible_toilet",
+            "vending_machine",
+            "tickets_machine"
         ],
         "formation": [
             {
@@ -157,7 +173,11 @@
             "power_socket",
             "usb_ports",
             "air_conditioning",
-            "wifi"
+            "wifi",
+            "toilet",
+            "accessible_toilet",
+            "vending_machine",
+            "tickets_machine"
         ],
         "formation": [
             {
@@ -194,7 +214,11 @@
             "power_socket",
             "usb_ports",
             "air_conditioning",
-            "wifi"
+            "wifi",
+            "toilet",
+            "accessible_toilet",
+            "vending_machine",
+            "tickets_machine"
         ],
         "formation": [
             {
@@ -231,7 +255,11 @@
             "power_socket",
             "usb_ports",
             "air_conditioning",
-            "wifi"
+            "wifi",
+            "toilet",
+            "accessible_toilet",
+            "vending_machine",
+            "tickets_machine"
         ],
         "formation": [
             {
@@ -260,7 +288,11 @@
             "power_socket",
             "usb_ports",
             "air_conditioning",
-            "wifi"
+            "wifi",
+            "toilet",
+            "accessible_toilet",
+            "vending_machine",
+            "tickets_machine"
         ],
         "formation": [
             {
@@ -289,7 +321,11 @@
             "power_socket",
             "usb_ports",
             "air_conditioning",
-            "wifi"
+            "wifi",
+            "toilet",
+            "accessible_toilet",
+            "vending_machine",
+            "tickets_machine"
         ],
         "formation": [
             {
