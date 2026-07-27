@@ -70,21 +70,37 @@
     {
         "name": "Toilet",
         "techname": "toilet",
-        "description": []
+        "description": [
+            "Available for passengers",
+            "Basic hygiene facilities",
+            "Convenient during longer journeys"
+        ]
     },
     {
         "name": "Accessible toilet",
         "techname": "accessible_toilet",
-        "description": []
+        "description": [
+            "Wheelchair accessible",
+            "Extra space for mobility aids",
+            "Designed for passengers with disabilities"
+        ]
     },
     {
         "name": "Vending machine",
         "techname": "vending_machine",
-        "description": []
+        "description": [
+            "Snacks and drinks available",
+            "Self-service operation",
+            "Payment by card or cash"
+        ]
     },
     {
         "name": "Tickets Machine",
         "techname": "tickets_machine",
-        "description": []
+        "description": [
+            "Buy tickets on-site",
+            "Supports contactless payments",
+            "Ticket and travel pass services"
+        ]
     }
 ]

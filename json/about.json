@@ -1,0 +1,58 @@
+{
+    "what_is_nrt": {
+        "name": "What is Nether Republic Transport",
+        "data": [
+            "The backbone of transportation in the Nether Republic.",
+            "National operator of train, metro and tram tracks.",
+            "National carrier of trains, metro and trams.",
+            "Public roads operator.",
+            "Only NRT-operated vehicles are considered official."
+        ]
+    },
+    "build_on": {
+        "name": "Build on",
+        "data": [
+            "HTML5",
+            "CSS3",
+            "JavaScript ES13/ES2022 (or newer)"
+        ]
+    },
+    "history": [
+        {
+            "date": "November 2024",
+            "description": "Created"
+        },
+        {
+            "date": "April 2025",
+            "description": "Created Website on Google Sites"
+        },
+        {
+            "date": "July 2025",
+            "description": "Rebuilt the entire website from scratch using custom HTML and CSS and published to Netlify, replacing Google Sites"
+        },
+        {
+            "date": "August 2025",
+            "description": "Added support for phones"
+        },
+        {
+            "date": "April 2026",
+            "description": "Changed URL from srt0.netlify.app to sigma-republic-transport.netlify.app"
+        },
+        {
+            "date": "16 May 2026",
+            "description": "Joined Nether ecosystem and changed domain from sigma-republic-transport.netlify.app to srt.nether.click"
+        },
+        {
+            "date": "30 May 2026",
+            "description": ""
+        },
+        {
+            "date": "20 June 2026",
+            "description": "Changed name from Sigma Republic Transport to Nether Republic Transport"
+        },
+        {
+            "date": "June 2026",
+            "description": "Started using Nether.js as page main and only framework"
+        }
+    ]
+}

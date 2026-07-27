@@ -53,29 +53,19 @@ setContentOfHeader(`
     </button>
 `)
 
-setContentOfFooter(`
-    <button onclick="showHome()" title="Shows Home Page">
-        <img src="img/icons/logo.svg" alt="NRT Logo">
-    </button>
-    <button onclick="showConnectionTypes()" title="Shows Connection Types Page">
-        <img src="img/links-icons/connection-types.svg" alt="Connection Types icon">
-    </button>
-    <button onclick="showVehicles()" title="Shows Vehicles Page">
-        <img src="img/links-icons/vehicles.svg" alt="Vehicles icon">
-    </button>
-    <button onclick="showServices()" title="Shows Services Page">
-        <img src="img/links-icons/services.svg" alt="Services icon">
-    </button>
-    <button onclick="showFare()" title="Shows Fare Page">
-        <img src="img/links-icons/fare.svg" alt="Fare icon">
-    </button>
-    <button onclick="showAbout()" title="Shows About Page">
-        <img src="img/links-icons/about.svg" alt="About icon">
-    </button>
-    <button onclick="showTechnicalDetails()" title="Shows Technical Details Page">
-        <img src="img/links-icons/technical-details.svg" alt="Technical Details icon">
-    </button>
-`)
+const maindb = await fetch("json/pages.json").then(r => r.json());
+
+await setContentOfFooter(
+    `<button onclick="showHome()" title="shows home page">
+        <img src="img/icons/logo.svg" alt="home page link icon">
+    </button>` 
+    +
+    maindb.map(element => `
+        <button onclick="${element.func}()" title="shows ${element.name} page">
+            <img src="img/links-icons/${element.techname}.svg" alt="${element.name} page link icon">
+        </button>
+    `).join("")
+);
 
 window.showHome = showHome;
 window.showConnectionTypes = showConnectionTypes;
@@ -93,7 +83,7 @@ async function showHome() {
         <div class="cards"></div>
     `)
 
-    const db = await fetch("json/home.json").then(r => r.json());
+    const db = await fetch("json/pages.json").then(r => r.json());
 
     const cards = document.querySelector(".cards");
 
@@ -104,7 +94,7 @@ async function showHome() {
         card.innerHTML = `
             <div class="header">
                 <img src="img/links-icons/${element.techname}.svg" alt="${element.name} page link icon">
-                ${element.name}
+                <span class="heading">${element.name}</span>
             </div>
             <div class="body">
                 <span>${element.desc}</span>
@@ -437,12 +427,11 @@ function showFare() {
     `)
 }
 
-function showAbout() {
+async function showAbout() {
     scrollUp();
-    setTitle("About - Nether Republic Transport");
+    setTitle("About - Nether Republic Transport")
     setContentOfMain(`
-    <h1>About</h1>
-    <section>
+        <h1>About</h1>
         <div class="tabs-switching">
             <div class="tabs">
                 <button class="tab active" onclick="showTab('what_is_nether_republic_transport')" data-tab="what_is_nether_republic_transport">What is Nether Republic Transport</button>
@@ -451,97 +440,39 @@ function showAbout() {
             </div>
             <div class="tab-content active" id="what_is_nether_republic_transport">
                 <h2>What is Nether Republic Transport</h2>
-                <p>The backbone of transportation in the Nether Republic.</p>
-                <ul>
-                    <li>National operator of train, metro and tram tracks</li>
-                    <li>National carrier of trains, metro and trams</li>
-                    <li>Public roads operator</li>
-                    <li>Only NRT-operated vehicles are considered official</li>
-                </ul>
+                <ul></ul>
             </div>
             <div class="tab-content" id="build_on">
                 <h2>Build On</h2>
-                <div class="grouped-list">
-                    <button class="item" onclick="window.location.href = 'https://html.spec.whatwg.org'">
-                        <img src="img/brands/html-logo.png" alt="HTML5 Logo">
-                        HTML
-                    </button>
-                    <button class="item" onclick="window.location.href = 'https://www.w3.org/Style/CSS/'">
-                        <img src="img/brands/css-logo.png" alt="CSS3 Logo">
-                        CSS
-                    </button>
-                    <button class="item" onclick="window.location.href = 'https://www.ecma-international.org/publications-and-standards/standards/ecma-262/'">
-                        <img src="img/brands/js-logo.png" alt="JS Logo">
-                        JS
-                    </button>
-                    <button class="item" onclick="window.location.href = 'https://js.nether.click'">
-                        <img src="img/brands/nether-js-logo.png" alt="Nether.js Logo">
-                        Nether.js
-                    </button>
-                    <button class="item" onclick="window.location.href = 'https://python.org'">
-                        <img src="img/brands/python-logo.png" alt="Python Logo">
-                        Python (future backend)
-                    </button>
-                </div>
+                <ul></ul>
             </div>
             <div class="tab-content" id="history">
-                <h2>History</h2>
-                <div class="timeline">
-                    <div class="event">
-                        <span class="marker"></span>
-                        <span class="date">November 2024</span>
-                        <span class="description">Created</span>
-                    </div>
-                    <div class="event">
-                        <span class="marker"></span>
-                        <span class="date">April 2025</span>
-                        <span class="description">Created Website on google sites</span>
-                    </div>
-                    <div class="event">
-                        <span class="marker"></span>
-                        <span class="date">July 2025</span>
-                        <span class="description">Rebuilt the entire website from scratch using custom HTML and CSS
-                            and
-                            publishing to netlify, replacing the Google Sites</span>
-                    </div>
-                    <div class="event">
-                        <span class="marker"></span>
-                        <span class="date">August 2025</span>
-                        <span class="description">Added support for phones</span>
-                    </div>
-                    <div class="event">
-                        <span class="marker"></span>
-                        <span class="date">April 2026</span>
-                        <span class="description">Changed url from srt0.netlify.app to
-                            sigma-republic-transport.netlify.app</span>
-                    </div>
-                    <div class="event">
-                        <span class="marker"></span>
-                        <span class="date">16 May 2026</span>
-                        <span class="description">Joined nether ecosystem and changed domain from
-                            sigma-republic-transport.netlify.app to srt.nether.click</span>
-                    </div>
-                    <div class="event">
-                        <span class="marker"></span>
-                        <span class="date">30 May 2026</span>
-                        <span class="description"></span>
-                    </div>
-                    <div class="event">
-                        <span class="marker"></span>
-                        <span class="date">20 June 2026</span>
-                        <span class="description">Changed name from Sigma Republic Transport to Nether Republic
-                            Transport</span>
-                    </div>
-                    <div class="event">
-                        <span class="marker"></span>
-                        <span class="date">June 2026</span>
-                        <span class="description">Started using Nether.js as page main and only framework</span>
-                    </div>
-                </div>
+                <div class="timeline"></div>
             </div>
         </div>
-    </section>
-    `)
+    `);
+    
+    const db = await fetch("json/about.json").then(r => r.json());
+
+    const what_is = document.querySelector("#what_is_nether_republic_transport ul");
+    const build_on = document.querySelector("#build_on ul");
+    const history = document.querySelector("#history .timeline");
+
+    what_is.innerHTML = db.what_is_nrt.data.map(element => `
+        <li>${element}</li>
+    `).join("")
+
+    build_on.innerHTML = db.build_on.data.map(element => `
+        <li>${element}</li>
+    `).join("")
+
+    history.innerHTML = db.history.map(element => `
+        <div class="event">
+            <span class="marker"></span>
+            <span class="date">${element.date}</span>
+            <span class="description">${element.description}</span>
+        </div>
+    `).join("")
 }
 
 function showTechnicalDetails() {
