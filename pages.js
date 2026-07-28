@@ -141,8 +141,9 @@ async function showConnectionTypes(tab = 'regional_bahn_train') {
         tab_content.id = element.techname
         tab_content.innerHTML = `
             <h2>${element.name}</h2>
-            <p>Stops at: ${element.stops_at}
-            <p>Route Type: ${element.route_type}
+            <p>Stops at: ${element.stops_at}</p>
+            <p>Route Type: ${element.route_type}</p>
+            <p>Frequency: ${element.frequency}</p>
         `
         section.appendChild(tab_content)
     });
