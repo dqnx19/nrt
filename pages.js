@@ -1,4 +1,4 @@
-import { importCSSFromList, importJSFromList, getURLParam, setTitle, setFavicon, setAttribute, scrollUp, setContentOfHeader, setContentOfMain, setContentOfFooter } from "https://js.nether.click/nether.js";
+import { importCSSFromList, redirect, importJSFromList, getURLParam, setTitle, setFavicon, setAttribute, scrollUp, setContentOfHeader, setContentOfMain, setContentOfFooter } from "https://js.nether.click/nether.js";
 
 setAttribute("html", "lang", "en")
 
@@ -58,7 +58,7 @@ const maindb = await fetch("json/pages.json").then(r => r.json());
 await setContentOfFooter(
     `<button onclick="showHome()" title="shows home page">
         <img src="img/icons/logo.svg" alt="home page link icon">
-    </button>` 
+    </button>`
     +
     maindb.map(element => `
         <button onclick="${element.func}()" title="shows ${element.name} page">
@@ -74,6 +74,7 @@ window.showServices = showServices;
 window.showFare = showFare;
 window.showAbout = showAbout;
 window.showTechnicalDetails = showTechnicalDetails;
+window.redirect = redirect;
 
 async function showHome() {
     scrollUp();
@@ -140,10 +141,20 @@ async function showConnectionTypes(tab = 'regional_bahn_train') {
         tab_content.className = "tab-content"
         tab_content.id = element.techname
         tab_content.innerHTML = `
-            <h2>${element.name}</h2>
-            <p>Stops at: ${element.stops_at}</p>
-            <p>Route Type: ${element.route_type}</p>
-            <p>Frequency: ${element.frequency}</p>
+            <div class="details-panel">
+                <p class="detail">
+                    <img src="img/connection-icons/stops-at.svg">
+                    <span>Stops at: ${element.stops_at}</span>
+                </p>
+                <p class="detail">
+                    <img src="img/connection-icons/route-type.svg">
+                    <span>Route Type: ${element.route_type}</span>
+                </p>
+                <p class="detail">
+                    <img src="img/connection-icons/frequency.svg">
+                    <span>Frequency: ${element.frequency}</span>
+                </p>
+            </div>
         `
         section.appendChild(tab_content)
     });
@@ -183,8 +194,16 @@ async function showVehicles(tab = 'skoda_18ev_2_cars') {
         tab_content.id = element.techname;
 
         tab_content.innerHTML = `
-            <p>Vehicles class: ${element.vehicles_class}</p>
-            <p>Maximum speed: ${element.maximum_speed}</p>
+            <div class="details-panel">
+                <p class="detail">
+                    <img src"">
+                    <span>Vehicles class: ${element.vehicles_class}</span>
+                </p>
+                <p class="detail">
+                    <img src="">
+                    <span>Maximum speed: ${element.maximum_speed}</span>
+                </p>
+            </div>
             <br>
             <div class="services-icons"></div>
             <br>
@@ -264,18 +283,27 @@ async function showServices(tab = 'second_class') {
         element.description.forEach(element => {
             const list_item = document.createElement("li")
             list_item.innerText = element
-
             list.appendChild(list_item)
         })
         tab_content.appendChild(list)
-
         tabs_switching.appendChild(tab_content)
     })
+
+    const formats = ["docx", "pdf"]
+    const dining_car = document.querySelector(".tab-content#dining_car");
+
+    formats.forEach(element => {
+        const button = document.createElement("button");
+        button.innerText = `Display dining car menu (${element})`;
+        button.onclick = () => { redirect(`documents/dining-car-menu.${element}`) }
+
+        dining_car.appendChild(button)
+    });
 
     showTab(tab)
 }
 
-function showFare() {
+async function showFare() {
     scrollUp();
     setTitle("Fare - Nether Republic Transport");
     setContentOfMain(`
@@ -299,83 +327,6 @@ function showFare() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1 zone / 30 min</td>
-                                <td>0,10€</td>
-                                <td>0,30€</td>
-                                <td>0,05€</td>
-                                <td>0,15€</td>
-                            </tr>
-                            <tr>
-                                <td>2 zones / 1 h</td>
-                                <td>0,20€</td>
-                                <td>0,60€</td>
-                                <td>0,10€</td>
-                                <td>0,30€</td>
-                            </tr>
-                            <tr>
-                                <td>3 zones / 1.5 h</td>
-                                <td>0,30€</td>
-                                <td>0,90€</td>
-                                <td>0,15€</td>
-                                <td>0,45€</td>
-                            </tr>
-                            <tr>
-                                <td>4 zones / 2 h</td>
-                                <td>0,40€</td>
-                                <td>1,20€</td>
-                                <td>0,20€</td>
-                                <td>0,60€</td>
-                            </tr>
-                            <tr>
-                                <td>5 zones / 2.5 h</td>
-                                <td>0,50€</td>
-                                <td>1,50€</td>
-                                <td>0,25€</td>
-                                <td>0,75€</td>
-                            </tr>
-                            <tr>
-                                <td>6 zones / 3 h</td>
-                                <td>0,60€</td>
-                                <td>1,80€</td>
-                                <td>0,30€</td>
-                                <td>0,90€</td>
-                            </tr>
-                            <tr>
-                                <td>7 zones / 3.5 h</td>
-                                <td>0,70€</td>
-                                <td>2,10€</td>
-                                <td>0,35€</td>
-                                <td>1,05€</td>
-                            </tr>
-                            <tr>
-                                <td>8 zones / 4 h</td>
-                                <td>0,80€</td>
-                                <td>2,40€</td>
-                                <td>0,40€</td>
-                                <td>1,20€</td>
-                            </tr>
-                            <tr>
-                                <td>9 zones / 4.5 h</td>
-                                <td>0,90€</td>
-                                <td>2,70€</td>
-                                <td>0,45€</td>
-                                <td>1,35€</td>
-                            </tr>
-                            <tr>
-                                <td>10 zones / 5 h</td>
-                                <td>1,00€</td>
-                                <td>3,00€</td>
-                                <td>0,50€</td>
-                                <td>1,50€</td>
-                            </tr>
-                            <tr>
-                                <td>All zones / 24 h</td>
-                                <td>2,00€</td>
-                                <td>6,00€</td>
-                                <td>1,00€</td>
-                                <td>3,00€</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -390,42 +341,51 @@ function showFare() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Kid</td>
-                                <td>Free</td>
-                                <td>ID card needed</td>
-                            </tr>
-                            <tr>
-                                <td>Senior</td>
-                                <td>Free</td>
-                                <td>ID card needed</td>
-                            </tr>
-                            <tr>
-                                <td>Adult</td>
-                                <td>Full</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Student</td>
-                                <td>Discounted</td>
-                                <td>ISIC card required</td>
-                            </tr>
-                            <tr>
-                                <td>EDC</td>
-                                <td>Discounted</td>
-                                <td>EDC card required</td>
-                            </tr>
-                            <tr>
-                                <td>EDC Guide</td>
-                                <td>Free</td>
-                                <td>EDC guide note</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </section>
     `)
+
+    const prices = document.querySelector("#tickets table tbody")
+
+    for (let row = 1; row < 16; row++) {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${row} zones / ${(row * 0.5).toFixed(1)} h</td>
+            <td>${(row * 0.1).toFixed(2)}€</td>
+            <td>${(row * 0.3).toFixed(2)}€</td>
+            <td>${(row * 0.05).toFixed(2)}€</td>
+            <td>${(row * 0.15).toFixed(2)}€</td>
+        `;
+        prices.appendChild(tr);
+    }
+
+    const all_zones = document.createElement("tr");
+    all_zones.innerHTML = `
+        <td>All zones / 24 h</td>
+        <td>2,00€</td>
+        <td>6,00€</td>
+        <td>1,00€</td>
+        <td>3,00€</td>
+    `;
+
+    prices.appendChild(all_zones)
+
+    const db = await fetch("json/fare.json").then(r => r.json());
+
+    const types = document.querySelector("#tickets_types table tbody");
+    db.tickets_types.forEach(element => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${element.passenger}</td>
+            <td>${element.type}</td>
+            <td>${element.note}</td>
+        `;
+
+        types.appendChild(tr)
+    });
 }
 
 async function showAbout() {

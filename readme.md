@@ -1,15 +1,12 @@
 # Nether Republic Transport
 
-
 ## 🚀 Project Overview
-
 Nether Republic Transport (NRT) is a fictional transportation system founded in november 2024.
 
 ## 📸 Preview (Screenshots)
 <img src="img/screenshots/home-page.png">
 
 ## Used Technologies
-
 <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" width="16px" height="16px">
 <span>HTML5</span>
 <br>

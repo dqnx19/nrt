@@ -1,0 +1,34 @@
+{
+    "tickets_types": [
+        {
+            "passenger": "Kid",
+            "type": "Free",
+            "note": "ID card needed"
+        },
+        {
+            "passenger": "Senior",
+            "type": "Free",
+            "note": "ID card needed"
+        },
+        {
+            "passenger": "Adult",
+            "type": "Full",
+            "note": ""
+        },
+        {
+            "passenger": "Student",
+            "type": "Discounted",
+            "note": "ISIC card required"
+        },
+        {
+            "passenger": "EDC",
+            "type": "Discounted",
+            "note": "EDC card required"
+        },
+        {
+            "passenger": "EDC Guide",
+            "type": "Free",
+            "note": "EDC guide note"
+        }
+    ]
+}

@@ -19,8 +19,9 @@
         "name": "Dining car",
         "techname": "dining_car",
         "description": [
-            "Delicious meals",
-            "Refreshments"
+            "Coffee",
+            "Soft Drinks",
+            "Cakes"
         ]
     },
     {
@@ -73,16 +74,8 @@
         "description": [
             "Available for passengers",
             "Basic hygiene facilities",
-            "Convenient during longer journeys"
-        ]
-    },
-    {
-        "name": "Accessible toilet",
-        "techname": "accessible_toilet",
-        "description": [
-            "Wheelchair accessible",
-            "Extra space for mobility aids",
-            "Designed for passengers with disabilities"
+            "Convenient during longer journeys",
+            "Standard and accessible toilets"
         ]
     },
     {
