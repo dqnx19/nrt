@@ -15,6 +15,8 @@ await importCSSFromList([
 
     "https://web-ui.nether.click/components/css/cards.css",
 
+    "https://web-ui.nether.click/components/css/details-panel.css",
+
     "https://web-ui.nether.click/components/css/footer.css",
     "https://web-ui.nether.click/components/css/form.css",
 
@@ -175,6 +177,7 @@ async function showVehicles(tab = 'skoda_18ev_2_cars') {
     const section = document.querySelector("section")
 
     const db = await fetch("json/vehicles.json").then(r => r.json());
+    const services = await fetch("json/services.json").then(r => r.json());
 
     db.forEach(element => {
         const tab_button = document.createElement("button")
@@ -192,35 +195,40 @@ async function showVehicles(tab = 'skoda_18ev_2_cars') {
         const tab_content = document.createElement("div");
         tab_content.className = "tab-content";
         tab_content.id = element.techname;
-
         tab_content.innerHTML = `
             <div class="details-panel">
                 <p class="detail">
-                    <img src"">
+                    <img src="img/vehicles-icons/vehicle-class.svg">
                     <span>Vehicles class: ${element.vehicles_class}</span>
                 </p>
                 <p class="detail">
-                    <img src="">
+                    <img src="img/vehicles-icons/maximum-speed.svg">
                     <span>Maximum speed: ${element.maximum_speed}</span>
                 </p>
             </div>
             <br>
-            <div class="services-icons"></div>
+            <div class="details-panel" id="services"></div>
             <br>
-            <div class="formation"></div>
+            <div class="details-panel formation" ></div>
     `;
 
         section.appendChild(tab_content);
 
-        const iconsDiv = tab_content.querySelector(".services-icons");
+        const iconsDiv = tab_content.querySelector(".details-panel#services");
 
         element.services.forEach(service => {
-            const img = document.createElement("img");
-            img.src = `img/services/${service}.svg`;
-            img.alt = service;
-            img.dataset.service = service;
-            img.onclick = () => showServices(service);
-            iconsDiv.appendChild(img);
+            const serviceData = services.find(s => s.techname === service);
+
+            const p = document.createElement("p");
+            p.innerHTML = `
+                <img src="img/services/${service}.svg">
+                <span>${serviceData ? serviceData.name : service}</span>
+            `;
+            p.className = "detail"
+            p.dataset.service = service;
+            p.onclick = () => showServices(service);
+
+            iconsDiv.appendChild(p);
         });
 
         const formationDiv = tab_content.querySelector(".formation")
@@ -412,7 +420,7 @@ async function showAbout() {
             </div>
         </div>
     `);
-    
+
     const db = await fetch("json/about.json").then(r => r.json());
 
     const what_is = document.querySelector("#what_is_nether_republic_transport ul");
