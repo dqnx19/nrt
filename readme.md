@@ -1,9 +1,11 @@
 # Nether Republic Transport
 
-## 🚀 Project Overview
-Nether Republic Transport (NRT) is a fictional transportation system founded in november 2024.
+## Project Overview
+- Fictional transportation system
+- Created in November 2024
 
-## 📸 Preview (Screenshots)
+
+## Preview (Screenshots)
 <img src="img/screenshots/home-page.png">
 
 ## Used Technologies
@@ -19,19 +21,18 @@ Nether Republic Transport (NRT) is a fictional transportation system founded in 
 <img src="https://js.nether.click/img/icons/favicon.png" width="16px" height="16px">
 <span>Nether.js</span>
 
-## 💻 How to Try It on Your PC
+## Requirements
+- Git
+- Python
+- Python Flask
 
-### 1. Clone the repository
+## How to Try It on Your PC
 ```bash
 git clone https://github.com/dqnx19/nrt.git
-```
-
-### 2. Run Server
-```bash
+cd nrt
+python3 -m venv .venv --copies
+source .venv/bin/activate
+pip install -r requirements.txt
 python server.py
-```
-
-### 3. Open your browser
-```bash
-http://localhost:5000
+firefox http://localhost:5000
 ```

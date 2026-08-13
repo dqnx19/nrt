@@ -1,4 +1,4 @@
-import { importCSSFromList, redirect, importJSFromList, getURLParam, setTitle, setFavicon, setAttribute, scrollUp, setContentOfHeader, setContentOfMain, setContentOfFooter } from "https://js.nether.click/nether.js";
+import { importCSSFromList, setClass, setId, setHTML, setText, redirect, importJSFromList, getURLParam, setTitle, setFavicon, setAttribute, scrollUp, setContentOfHeader, setContentOfMain, setContentOfFooter } from "https://js.nether.click/nether.js";
 
 setAttribute("html", "lang", "en")
 
@@ -93,8 +93,8 @@ async function showHome() {
     db.forEach(element => {
         const card = document.createElement("div");
 
-        card.className = "card"
-        card.innerHTML = `
+        setClass(card, "card");
+        setHTML(card, `
             <div class="header">
                 <img src="img/links-icons/${element.techname}.svg" alt="${element.name} page link icon">
                 <span class="heading">${element.name}</span>
@@ -103,7 +103,7 @@ async function showHome() {
                 <span>${element.desc}</span>
                 <button onclick="${element.func}()">Open link</button>
             </div>
-        `
+        `)
 
         cards.appendChild(card)
     });
@@ -125,39 +125,40 @@ async function showConnectionTypes(tab = 'regional_bahn_train') {
 
     db.forEach(element => {
         const tab = document.createElement("button")
-        tab.className = "tab"
+        setClass(tab, "tab");
         tab.onclick = () => {
             showTab(element.techname);
         };
         tab.dataset.tab = element.techname
-        tab.innerText = element.name
-        tab.innerHTML = `
+        setHTML(tab, `
             <img src="img/connections/${element.techname}.svg">
-            <span>${element.name}</span>`
+            <span>${element.name}</span>
+        `)
 
         document.querySelector(".tabs").appendChild(tab)
     });
 
     db.forEach(element => {
-        const tab_content = document.createElement("div")
-        tab_content.className = "tab-content"
-        tab_content.id = element.techname
-        tab_content.innerHTML = `
+        const tab_content = document.createElement("div");
+        
+        setClass(tab_content, "tab-content");
+        setId(tab_content, element.techname);
+        setHTML(tab_content, `
             <div class="details-panel">
                 <p class="detail">
                     <img src="img/connection-icons/stops-at.svg">
-                    <span>Stops at: ${element.stops_at}</span>
+                    <span>${element.stops_at}</span>
                 </p>
                 <p class="detail">
                     <img src="img/connection-icons/route-type.svg">
-                    <span>Route Type: ${element.route_type}</span>
+                    <span>${element.route_type}</span>
                 </p>
                 <p class="detail">
                     <img src="img/connection-icons/frequency.svg">
-                    <span>Frequency: ${element.frequency}</span>
+                    <span>${element.frequency}</span>
                 </p>
             </div>
-        `
+        `)
         section.appendChild(tab_content)
     });
 
@@ -180,37 +181,37 @@ async function showVehicles(tab = 'skoda_18ev_2_cars') {
     const services = await fetch("json/services.json").then(r => r.json());
 
     db.forEach(element => {
-        const tab_button = document.createElement("button")
-        tab_button.className = "tab"
+        const tab_button = document.createElement("button");
+        setClass(tab_button, "tab");
         tab_button.onclick = () => {
             showTab(element.techname);
         };
         tab_button.dataset.tab = element.techname
-        tab_button.innerText = element.name
+        setText(tab_button, element.name);
 
         document.querySelector(".tabs").appendChild(tab_button)
     });
 
     db.forEach(element => {
         const tab_content = document.createElement("div");
-        tab_content.className = "tab-content";
-        tab_content.id = element.techname;
-        tab_content.innerHTML = `
+        setClass(tab_content, "tab-content");
+        setId(tab_content, element.techname);
+        setHTML(tab_content, `
             <div class="details-panel">
                 <p class="detail">
                     <img src="img/vehicles-icons/vehicle-class.svg">
-                    <span>Vehicles class: ${element.vehicles_class}</span>
+                    <span>${element.vehicles_class}</span>
                 </p>
                 <p class="detail">
                     <img src="img/vehicles-icons/maximum-speed.svg">
-                    <span>Maximum speed: ${element.maximum_speed}</span>
+                    <span>${element.maximum_speed}</span>
                 </p>
             </div>
             <br>
             <div class="details-panel" id="services"></div>
             <br>
             <div class="details-panel formation" ></div>
-    `;
+    `);
 
         section.appendChild(tab_content);
 
@@ -241,7 +242,7 @@ async function showVehicles(tab = 'skoda_18ev_2_cars') {
         })
     });
 
-    showTab(tab)
+    showTab(tab);
 }
 
 async function showServices(tab = 'second_class') {
@@ -282,9 +283,6 @@ async function showServices(tab = 'second_class') {
         const tab_content = document.createElement("div");
         tab_content.id = element.techname
         tab_content.className = "tab-content"
-        tab_content.innerHTML = `
-            <h2>${element.name}</h2>
-        `
 
         const list = document.createElement("ul");
 
@@ -323,7 +321,6 @@ async function showFare() {
                     <button class="tab" onclick="showTab('tickets_types')" data-tab="tickets_types">Tickets Types</button>
                 </div>
                 <div class="tab-content active" id="tickets">
-                    <h2>Tickets</h2>
                     <table>
                         <thead>
                             <tr>
@@ -339,7 +336,6 @@ async function showFare() {
                     </table>
                 </div>
                 <div class="tab-content" id="tickets_types">
-                    <h2>Ticket Types</h2>
                     <table>
                         <thead>
                             <tr>
@@ -408,11 +404,9 @@ async function showAbout() {
                 <button class="tab" onclick="showTab('history')" data-tab="history">History</button>
             </div>
             <div class="tab-content active" id="what_is_nether_republic_transport">
-                <h2>What is Nether Republic Transport</h2>
                 <ul></ul>
             </div>
             <div class="tab-content" id="build_on">
-                <h2>Build On</h2>
                 <ul></ul>
             </div>
             <div class="tab-content" id="history">
@@ -457,7 +451,6 @@ function showTechnicalDetails() {
                     <button class="tab" onclick="showTab('announcements')" data-tab="announcements">Announcements</button>
                 </div>
                 <div class="tab-content active" id="rolling_stock_classes">
-                    <h2>Rolling Stock Classes</h2>
                     <table>
                         <thead>
                             <th>Type of Vehicle</th>
@@ -484,7 +477,6 @@ function showTechnicalDetails() {
                     </table>
                 </div>
                 <div class="tab-content" id="announcements">
-                    <h2>Announcements</h2>
                     <p>Next station</p>
                     <li>{gong} Next station {station name}.</li>
                     <br>
