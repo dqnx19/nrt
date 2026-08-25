@@ -23,16 +23,14 @@
 
 ## Requirements
 - Git
-- Python
-- Python Flask
+- Node.js
+- 
 
 ## How to Try It on Your PC
 ```bash
 git clone https://github.com/dqnx19/nrt.git
 cd nrt
-python3 -m venv .venv --copies
-source .venv/bin/activate
-pip install -r requirements.txt
-python server.py
+npm init
+npm install express better-sqlite3 bcryptjs --no-bin-links
 firefox http://localhost:5000
 ```

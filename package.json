@@ -1,0 +1,26 @@
+{
+  "name": "nrt",
+  "version": "1.0.0",
+  "description": "- Fictional transportation system\r - Created in November 2024",
+  "main": "pages.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dqnx19/srt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dqnx19/srt/issues"
+  },
+  "homepage": "https://github.com/dqnx19/srt#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.0.3",
+    "express": "^5.2.1"
+  }
+}

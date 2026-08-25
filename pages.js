@@ -93,20 +93,20 @@ async function showHome() {
     db.forEach(element => {
         const card = document.createElement("div");
 
+        setAttribute(card, "onclick", element.func)
         setClass(card, "card");
         setHTML(card, `
-            <div class="header">
-                <img src="img/links-icons/${element.techname}.svg" alt="${element.name} page link icon">
-                <span class="heading">${element.name}</span>
-            </div>
-            <div class="body">
-                <span>${element.desc}</span>
-                <button onclick="${element.func}()">Open link</button>
-            </div>
+            <img src="img/links-icons/${element.techname}.svg" alt="${element.name} page link icon">
+            <span class="heading">${element.name}</span>
         `)
 
         cards.appendChild(card)
     });
+}
+
+function showAccount() {
+    scrollUp();
+    setTitle("Account - Nether Republic Transport")
 }
 
 async function showConnectionTypes(tab = 'regional_bahn_train') {

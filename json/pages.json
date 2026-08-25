@@ -1,38 +1,37 @@
 [
     {
+        "techname": "account",
+        "name": "Account",
+        "func": "showAccount"
+    },
+    {
         "techname": "connection-types",
         "name": "Connection Types",
-        "desc": "List of all connection types",
         "func": "showConnectionTypes"
     },
     {
         "techname": "vehicles",
         "name": "Vehicles",
-        "desc": "List of all vehicles",
         "func": "showVehicles"
     },
     {
         "techname": "services",
         "name": "Services",
-        "desc": "List of all services",
         "func": "showServices"
     },
     {
         "techname": "fare",
         "name": "Fare",
-        "desc": "Information about fares and ticket prices",
         "func": "showFare"
     },
     {
         "techname": "about",
         "name": "About",
-        "desc": "Information about this project",
         "func": "showAbout"
     },
     {
         "techname": "technical-details",
         "name": "Technical Details",
-        "desc": "Technical information and implementation details",
         "func": "showTechnicalDetails"
     }
 ]
