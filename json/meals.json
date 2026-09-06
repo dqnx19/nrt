@@ -1,0 +1,93 @@
+[
+    {
+        "name": "Coffee",
+        "meals": [
+            {
+                "name": "Espresso",
+                "price": 1.40
+            },
+            {
+                "name": "Double Espresso",
+                "price": 1.90
+            },
+            {
+                "name": "Americano",
+                "price": 1.60
+            },
+            {
+                "name": "Cappuccino",
+                "price": 1.90
+            },
+            {
+                "name": "Caffè Latte",
+                "price": 2.10
+            },
+            {
+                "name": "Flat White",
+                "price": 2.30
+            },
+            {
+                "name": "Mocha",
+                "price": 2.40
+            },
+            {
+                "name": "Iced Latte",
+                "price": 2.20
+            },
+            {
+                "name": "Macchiato",
+                "price": 1.70
+            },
+            {
+                "name": "Cortado",
+                "price": 1.80
+            },
+            {
+                "name": "Decaf Coffee",
+                "price": 1.60
+            }
+        ]
+    },
+    {
+        "name": "Soft drinks",
+        "meals": [
+            {
+                "name": "Coca-Cola / Coca-Cola Zero (500 ml bottle)",
+                "price": 1.40
+            },
+            {
+                "name": "Fanta Orange (500 ml bottle)",
+                "price": 1.60
+            },
+            {
+                "name": "Sprite",
+                "price": 1.70
+            },
+            {
+                "name": "7up",
+                "price": 1.40
+            },
+            {
+                "name": "Lipton Green Tea",
+                "price": 1.40
+            },
+            {
+                "name": "Lipton Lemon Tea",
+                "price": 0.80
+            }
+        ]
+    },
+    {
+        "name": "Cakes",
+        "meals": [
+            {
+                "name": "Chocolate Cake",
+                "price": 0.50
+            },
+            {
+                "name": "Apples Cake",
+                "price": 0.50
+            }
+        ]
+    }
+]

@@ -2,36 +2,36 @@
     {
         "techname": "account",
         "name": "Account",
-        "func": "showAccount"
+        "func": "showAccount()"
     },
     {
         "techname": "connection-types",
         "name": "Connection Types",
-        "func": "showConnectionTypes"
+        "func": "showConnectionTypes()"
     },
     {
         "techname": "vehicles",
         "name": "Vehicles",
-        "func": "showVehicles"
+        "func": "showVehicles()"
     },
     {
         "techname": "services",
         "name": "Services",
-        "func": "showServices"
+        "func": "showServices()"
     },
     {
         "techname": "fare",
         "name": "Fare",
-        "func": "showFare"
+        "func": "showFare()"
     },
     {
         "techname": "about",
         "name": "About",
-        "func": "showAbout"
+        "func": "showAbout()"
     },
     {
         "techname": "technical-details",
         "name": "Technical Details",
-        "func": "showTechnicalDetails"
+        "func": "showTechnicalDetails()"
     }
 ]

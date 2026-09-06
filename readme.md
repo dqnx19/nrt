@@ -24,13 +24,13 @@
 ## Requirements
 - Git
 - Node.js
-- 
+- npm
 
 ## How to Try It on Your PC
 ```bash
 git clone https://github.com/dqnx19/nrt.git
 cd nrt
 npm init
-npm install express better-sqlite3 bcryptjs --no-bin-links
-firefox http://localhost:5000
+npm install
+firefox http://localhost:3000
 ```

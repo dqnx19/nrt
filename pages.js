@@ -34,7 +34,7 @@ await importCSSFromList([
 
     "https://web-ui.nether.click/components/css/table.css",
 
-    "https://web-ui.nether.click/components/css/tabs-switching.css",
+    "https://web-ui.nether.click/components/css/tabs.css",
     "https://web-ui.nether.click/components/css/timeline.css",
 
     "https://web-ui.nether.click/components/css/train-formation.css",
@@ -45,7 +45,10 @@ await importJSFromList([
     "https://nether.click/js/import-app-check.js",
 
     "https://web-ui.nether.click/components/js/app-drawer.js",
-    "https://web-ui.nether.click/components/js/tabs-switching.js"
+    "details-panel.js",
+    "https://web-ui.nether.click/components/js/tabs.js",
+    "https://web-ui.nether.click/components/js/headings.js",
+    "https://web-ui.nether.click/components/js/cards.js",
 ])
 
 setContentOfHeader(`
@@ -63,13 +66,14 @@ await setContentOfFooter(
     </button>`
     +
     maindb.map(element => `
-        <button onclick="${element.func}()" title="shows ${element.name} page">
+        <button onclick="${element.func}" title="shows ${element.name} page">
             <img src="img/links-icons/${element.techname}.svg" alt="${element.name} page link icon">
         </button>
     `).join("")
 );
 
 window.showHome = showHome;
+window.showAccount = showAccount;
 window.showConnectionTypes = showConnectionTypes;
 window.showVehicles = showVehicles;
 window.showServices = showServices;
@@ -81,158 +85,162 @@ window.redirect = redirect;
 async function showHome() {
     scrollUp();
     setTitle("Nether Republic Transport");
-    setContentOfMain(`
-        <h1>Welcome to NRT!</h1>
-        <div class="cards"></div>
-    `)
+    setContentOfMain("");
+
+    nwui.headings.create({
+        level: 1,
+        parent: "main",
+        content: "Welcome to NRT!"
+    })
+
+    nwui.cards.create({
+        parent: "main",
+        id: "links"
+    })
 
     const db = await fetch("json/pages.json").then(r => r.json());
 
-    const cards = document.querySelector(".cards");
-
     db.forEach(element => {
-        const card = document.createElement("div");
-
-        setAttribute(card, "onclick", element.func)
-        setClass(card, "card");
-        setHTML(card, `
-            <img src="img/links-icons/${element.techname}.svg" alt="${element.name} page link icon">
-            <span class="heading">${element.name}</span>
-        `)
-
-        cards.appendChild(card)
+        nwui.cards.addCard({
+            onclick: element.func,
+            image: `img/links-icons/${element.techname}.svg`,
+            heading: `${element.name}`,
+            parent: "#links"
+        })
     });
 }
 
-function showAccount() {
+async function showAccount() {
     scrollUp();
-    setTitle("Account - Nether Republic Transport")
+    setTitle("Account - Nether Republic Transport");
+    setContentOfMain("");
+
+    nwui.headings.create({
+        level: 1,
+        parent: "main",
+        content: "Account"
+    })
 }
 
 async function showConnectionTypes(tab = 'regional_bahn_train') {
     scrollUp();
     setTitle("Connection Types - Nether Republic Transport");
-    setContentOfMain(`
-        <h1>Connection Types</h1>
-        <section>
-            <div class="tabs"></div>
-        </section>
-    `)
+    setContentOfMain("");
 
-    const section = document.querySelector("section")
+    nwui.headings.create({
+        level: 1,
+        parent: "main",
+        content: "Connection Types"
+    });
+
+    nwui.tabs.create({
+        id: "connection-types",
+        parent: "main"
+    });
 
     const db = await fetch("json/connection-types.json").then(r => r.json());
 
     db.forEach(element => {
-        const tab = document.createElement("button")
-        setClass(tab, "tab");
-        tab.onclick = () => {
-            showTab(element.techname);
-        };
-        tab.dataset.tab = element.techname
-        setHTML(tab, `
-            <img src="img/connections/${element.techname}.svg">
-            <span>${element.name}</span>
-        `)
-
-        document.querySelector(".tabs").appendChild(tab)
+        nwui.tabs.addTab({
+            id: element.techname,
+            title: element.name,
+            image: `img/connections/${element.techname}.svg`,
+            parent: "#connection-types",
+            innerHTML: ""
+        });
     });
 
     db.forEach(element => {
-        const tab_content = document.createElement("div");
-        
-        setClass(tab_content, "tab-content");
-        setId(tab_content, element.techname);
-        setHTML(tab_content, `
-            <div class="details-panel">
-                <p class="detail">
-                    <img src="img/connection-icons/stops-at.svg">
-                    <span>${element.stops_at}</span>
-                </p>
-                <p class="detail">
-                    <img src="img/connection-icons/route-type.svg">
-                    <span>${element.route_type}</span>
-                </p>
-                <p class="detail">
-                    <img src="img/connection-icons/frequency.svg">
-                    <span>${element.frequency}</span>
-                </p>
-            </div>
-        `)
-        section.appendChild(tab_content)
+        nwui.detailsPanel.create({
+            parent: `#${element.techname}`,
+            details: [
+                {
+                    image: "img/connection-icons/stops-at.svg",
+                    text: element.stops_at
+                },
+                {
+                    image: "img/connection-icons/route-type.svg",
+                    text: element.route_type
+                },
+                {
+                    image: "img/connection-icons/frequency.svg",
+                    text: element.frequency
+                }
+            ]
+        });
     });
 
-    showTab(tab)
+    nwui.tabs.displayTab({
+        selector: `#${db[0].techname}`
+    });
 }
 
 async function showVehicles(tab = 'skoda_18ev_2_cars') {
     scrollUp();
     setTitle("Vehicles - Nether Republic Transport");
-    setContentOfMain(`
-        <h1>Vehicles</h1>
-        <section>
-            <div class="tabs"></div>
-        </section>
-    `)
+    setContentOfMain("");
 
-    const section = document.querySelector("section")
+    nwui.headings.create({
+        level: 1,
+        parent: "main",
+        content: "Vehicles"
+    });
 
     const db = await fetch("json/vehicles.json").then(r => r.json());
     const services = await fetch("json/services.json").then(r => r.json());
 
-    db.forEach(element => {
-        const tab_button = document.createElement("button");
-        setClass(tab_button, "tab");
-        tab_button.onclick = () => {
-            showTab(element.techname);
-        };
-        tab_button.dataset.tab = element.techname
-        setText(tab_button, element.name);
-
-        document.querySelector(".tabs").appendChild(tab_button)
+    nwui.tabs.create({
+        id: "vehicles",
+        parent: "main"
     });
 
     db.forEach(element => {
-        const tab_content = document.createElement("div");
-        setClass(tab_content, "tab-content");
-        setId(tab_content, element.techname);
-        setHTML(tab_content, `
-            <div class="details-panel">
-                <p class="detail">
-                    <img src="img/vehicles-icons/vehicle-class.svg">
-                    <span>${element.vehicles_class}</span>
-                </p>
-                <p class="detail">
-                    <img src="img/vehicles-icons/maximum-speed.svg">
-                    <span>${element.maximum_speed}</span>
-                </p>
-            </div>
-            <br>
-            <div class="details-panel" id="services"></div>
-            <br>
-            <div class="details-panel formation" ></div>
-    `);
+        nwui.tabs.addTab({
+            id: element.techname,
+            title: element.name,
+            parent: "#vehicles",
+            innerHTML: ``
+        });
+    });
 
-        section.appendChild(tab_content);
+    db.forEach(element => {
+        nwui.detailsPanel.create({
+            parent: `#${element.techname}`,
+            details: [
+                {
+                    image: "img/vehicles-icons/vehicle-class.svg",
+                    text: element.vehicles_class
+                },
+                {
+                    image: "img/vehicles-icons/maximum-speed.svg",
+                    text: element.maximum_speed
+                }
+            ]
+        });
+    });
 
-        const iconsDiv = tab_content.querySelector(".details-panel#services");
+    db.forEach(element => {
+        nwui.detailsPanel.create({
+            id: `${element.techname}-services`,
+            parent: `#${element.techname}`
+        })
 
         element.services.forEach(service => {
             const serviceData = services.find(s => s.techname === service);
 
-            const p = document.createElement("p");
-            p.innerHTML = `
-                <img src="img/services/${service}.svg">
-                <span>${serviceData ? serviceData.name : service}</span>
-            `;
-            p.className = "detail"
-            p.dataset.service = service;
-            p.onclick = () => showServices(service);
+            nwui.detailsPanel.addDetail({
+                parent: `#${element.techname}-services`,
+                image: `img/services/${service}.svg`,
+                text: serviceData ? serviceData.name : service
+            })
+        })
+    });
 
-            iconsDiv.appendChild(p);
-        });
+    db.forEach(element => {
 
-        const formationDiv = tab_content.querySelector(".formation")
+        const formationDiv = document.createElement("div");
+        formationDiv.className = "formation"
+        document.querySelector(`#${element.techname}`).appendChild(formationDiv)
 
         element.formation.forEach(unit => {
             const div = document.createElement("div");
@@ -240,9 +248,11 @@ async function showVehicles(tab = 'skoda_18ev_2_cars') {
             div.textContent = unit.text
             formationDiv.appendChild(div)
         })
-    });
+    })
 
-    showTab(tab);
+    nwui.tabs.displayTab({
+        selector: `#${db[0].techname}`
+    });
 }
 
 async function showServices(tab = 'second_class') {
