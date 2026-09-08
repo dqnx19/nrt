@@ -45,10 +45,11 @@ await importJSFromList([
     "https://nether.click/js/import-app-check.js",
 
     "https://web-ui.nether.click/components/js/app-drawer.js",
-    "details-panel.js",
     "https://web-ui.nether.click/components/js/tabs.js",
+    "https://web-ui.nether.click/components/js/timeline.js",
     "https://web-ui.nether.click/components/js/headings.js",
     "https://web-ui.nether.click/components/js/cards.js",
+    "https://web-ui.nether.click/components/js/details-panel.js",
 ])
 
 setContentOfHeader(`
@@ -122,7 +123,7 @@ async function showAccount() {
     })
 }
 
-async function showConnectionTypes(tab = 'regional_bahn_train') {
+async function showConnectionTypes() {
     scrollUp();
     setTitle("Connection Types - Nether Republic Transport");
     setContentOfMain("");
@@ -175,19 +176,19 @@ async function showConnectionTypes(tab = 'regional_bahn_train') {
     });
 }
 
-async function showVehicles(tab = 'skoda_18ev_2_cars') {
+async function showVehicles() {
     scrollUp();
     setTitle("Vehicles - Nether Republic Transport");
     setContentOfMain("");
+
+    const db = await fetch("json/vehicles.json").then(r => r.json());
+    const services = await fetch("json/services.json").then(r => r.json());
 
     nwui.headings.create({
         level: 1,
         parent: "main",
         content: "Vehicles"
     });
-
-    const db = await fetch("json/vehicles.json").then(r => r.json());
-    const services = await fetch("json/services.json").then(r => r.json());
 
     nwui.tabs.create({
         id: "vehicles",
@@ -255,82 +256,70 @@ async function showVehicles(tab = 'skoda_18ev_2_cars') {
     });
 }
 
-async function showServices(tab = 'second_class') {
+async function showServices() {
     scrollUp();
     setTitle("Services - Nether Republic Transport");
-    setContentOfMain(`
-        <h1>Services</h1>
-        <section> 
-        </section>
-    `)
-    showTab(tab)
+    setContentOfMain("");
 
-    const db = await fetch("json/services.json").then(r => r.json())
+    const services = await fetch("json/services.json").then(r => r.json());
 
-    const tabs_switching = document.createElement("div")
-    tabs_switching.className = "tabs-switching"
-    document.querySelector("section").appendChild(tabs_switching)
-
-    const tabs = document.createElement("div")
-    tabs.className = "tabs"
-    tabs_switching.appendChild(tabs)
-
-    db.forEach(element => {
-        const tab = document.createElement("button");
-        tab.classList = "tab"
-        tab.onclick = () => {
-            showTab(element.techname)
-        }
-        tab.dataset.tab = element.techname
-        tab.innerHTML = `
-            <img src="img/services/${element.techname}.svg">
-            <span>${element.name}</span>`
-
-        tabs.appendChild(tab)
+    nwui.headings.create({
+        parent: "main",
+        level: 1,
+        content: "Services"
     });
 
-    db.forEach(element => {
-        const tab_content = document.createElement("div");
-        tab_content.id = element.techname
-        tab_content.className = "tab-content"
+    nwui.tabs.create({
+        parent: "main",
+        id: "services"
+    });
+
+    services.forEach(service => {
+        nwui.tabs.addTab({
+            id: service.techname,
+            title: service.name,
+            image: `img/services/${service.techname}.svg`,
+            parent: "#services",
+            innerHTML: ""
+        })
 
         const list = document.createElement("ul");
 
-        element.description.forEach(element => {
+        service.description.forEach(element => {
             const list_item = document.createElement("li")
             list_item.innerText = element
             list.appendChild(list_item)
         })
-        tab_content.appendChild(list)
-        tabs_switching.appendChild(tab_content)
-    })
 
-    const formats = ["docx", "pdf"]
-    const dining_car = document.querySelector(".tab-content#dining_car");
-
-    formats.forEach(element => {
-        const button = document.createElement("button");
-        button.innerText = `Display dining car menu (${element})`;
-        button.onclick = () => { redirect(`documents/dining-car-menu.${element}`) }
-
-        dining_car.appendChild(button)
+        const tab = document.querySelector(`#${service.techname}`);
+        tab.appendChild(list);
     });
 
-    showTab(tab)
+
+    nwui.tabs.displayTab({
+        selector: `#${services[0].techname}`
+    });
 }
 
 async function showFare() {
     scrollUp();
     setTitle("Fare - Nether Republic Transport");
-    setContentOfMain(`
-        <h1>Fare</h1>
-        <section>
-            <div class="tabs-switching">
-                <div class="tabs">
-                    <button class="tab active" onclick="showTab('tickets')" data-tab="tickets">Tickets</button>
-                    <button class="tab" onclick="showTab('tickets_types')" data-tab="tickets_types">Tickets Types</button>
-                </div>
-                <div class="tab-content active" id="tickets">
+    setContentOfMain("");
+
+    nwui.headings.create({
+        level: 1,
+        parent: "main",
+        content: "Fare"
+    });
+
+    nwui.tabs.create({
+        parent: "main",
+        id: "fare",
+        tabs: [
+            {
+                id: "tickets",
+                title: "Tickets",
+                innerHTML: `
                     <table>
                         <thead>
                             <tr>
@@ -344,8 +333,12 @@ async function showFare() {
                         <tbody>
                         </tbody>
                     </table>
-                </div>
-                <div class="tab-content" id="tickets_types">
+                `
+            },
+            {
+                id: "tickets_types",
+                title: "Tickets Types",
+                innerHTML: `
                     <table>
                         <thead>
                             <tr>
@@ -357,12 +350,12 @@ async function showFare() {
                         <tbody>
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </section>
-    `)
+                `
+            }
+        ]
+    });
 
-    const prices = document.querySelector("#tickets table tbody")
+    const prices = document.querySelector("#tickets table tbody");
 
     for (let row = 1; row < 16; row++) {
         const tr = document.createElement("tr");
@@ -384,7 +377,6 @@ async function showFare() {
         <td>1,00€</td>
         <td>3,00€</td>
     `;
-
     prices.appendChild(all_zones)
 
     const db = await fetch("json/fare.json").then(r => r.json());
@@ -400,36 +392,56 @@ async function showFare() {
 
         types.appendChild(tr)
     });
+
+
+    nwui.tabs.displayTab({
+        selector: ""
+    })
 }
 
 async function showAbout() {
     scrollUp();
-    setTitle("About - Nether Republic Transport")
-    setContentOfMain(`
-        <h1>About</h1>
-        <div class="tabs-switching">
-            <div class="tabs">
-                <button class="tab active" onclick="showTab('what_is_nether_republic_transport')" data-tab="what_is_nether_republic_transport">What is Nether Republic Transport</button>
-                <button class="tab" onclick="showTab('build_on')" data-tab="build_on">Build On</button>
-                <button class="tab" onclick="showTab('history')" data-tab="history">History</button>
-            </div>
-            <div class="tab-content active" id="what_is_nether_republic_transport">
-                <ul></ul>
-            </div>
-            <div class="tab-content" id="build_on">
-                <ul></ul>
-            </div>
-            <div class="tab-content" id="history">
-                <div class="timeline"></div>
-            </div>
-        </div>
-    `);
+    setTitle("About - Nether Republic Transport");
+    setContentOfMain("");
+
+    nwui.headings.create({
+        level: 1,
+        parent: "main",
+        content: "About"
+    });
+
+    nwui.tabs.create({
+        id: "about",
+        parent: "main",
+        tabs: [
+            {
+                id: "what_is_nether_republic_transport",
+                title: "What is Nether Republic Transport",
+                innerHTML: `
+                    <ul></ul>
+                `
+            },
+            {
+                id: "build_on",
+                title: "Build On",
+                innerHTML: `
+                    <ul></ul>
+                `
+            },
+            {
+                id: "history",
+                title: "History",
+                innerHTML: `
+                    <div class="timeline"></div>
+                `
+            }
+        ]
+    });
 
     const db = await fetch("json/about.json").then(r => r.json());
 
     const what_is = document.querySelector("#what_is_nether_republic_transport ul");
     const build_on = document.querySelector("#build_on ul");
-    const history = document.querySelector("#history .timeline");
 
     what_is.innerHTML = db.what_is_nrt.data.map(element => `
         <li>${element}</li>
@@ -439,28 +451,39 @@ async function showAbout() {
         <li>${element}</li>
     `).join("")
 
-    history.innerHTML = db.history.map(element => `
-        <div class="event">
-            <span class="marker"></span>
-            <span class="date">${element.date}</span>
-            <span class="description">${element.description}</span>
-        </div>
-    `).join("")
+    nwui.timeline.create({
+        parent: "#history",
+        id: "timeline"
+    });
+
+    db.history.forEach(event => {
+        nwui.timeline.addEvent({
+            parent: "#timeline",
+            date: event.date,
+            description: event.description
+        })
+    });
 }
 
 function showTechnicalDetails() {
     scrollUp();
     setTitle("Technical Details - Nether Republic Transport");
-    setContentOfMain(`
-        <h1>Technical Details</h1>
-        <section>
-            <div class="tabs-switching">
-                <div class="tabs">
-                    <button class="tab active" onclick="showTab('rolling_stock_classes')" data-tab="rolling_stock_classes">Rolling stock
-                        classes</button>
-                    <button class="tab" onclick="showTab('announcements')" data-tab="announcements">Announcements</button>
-                </div>
-                <div class="tab-content active" id="rolling_stock_classes">
+    setContentOfMain("");
+
+    nwui.headings.create({
+        level: 1,
+        parent: "main",
+        content: "Technical Details"
+    });
+
+    nwui.tabs.create({
+        id: "technical_details",
+        parent: "main",
+        tabs: [
+            {
+                id: "rolling_stock_classes",
+                title: "Rolling stock classes",
+                innerHTML: `
                     <table>
                         <thead>
                             <th>Type of Vehicle</th>
@@ -485,8 +508,12 @@ function showTechnicalDetails() {
                             </tr>
                         </tbody>
                     </table>
-                </div>
-                <div class="tab-content" id="announcements">
+                `
+            },
+            {
+                id: "announcements",
+                title: "Announcements",
+                innerHTML: `
                     <p>Next station</p>
                     <li>{gong} Next station {station name}.</li>
                     <br>
@@ -504,10 +531,10 @@ function showTechnicalDetails() {
                     <br>
                     <p>This station (Terminus)</p>
                     <li>{gong} {station name} terminus station please exit the vehicle.</li>
-                </div>
-            </div>
-        </section>
-    `)
+                `
+            }
+        ]
+    })
 }
 
 showHome();
