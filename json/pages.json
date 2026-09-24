@@ -33,5 +33,10 @@
         "techname": "technical-details",
         "name": "Technical Details",
         "func": "showTechnicalDetails()"
+    },
+    {
+        "techname": "help",
+        "name": "Help",
+        "func": "showHelp()"
     }
 ]

@@ -50,6 +50,8 @@ await importJSFromList([
     "https://web-ui.nether.click/components/js/headings.js",
     "https://web-ui.nether.click/components/js/cards.js",
     "https://web-ui.nether.click/components/js/details-panel.js",
+
+    "https://web-ui.nether.click/lib/marked.js",
 ])
 
 setContentOfHeader(`
@@ -59,14 +61,14 @@ setContentOfHeader(`
     </button>
 `)
 
-const maindb = await fetch("json/pages.json").then(r => r.json());
+const pages = await fetch("json/pages.json").then(r => r.json());
 
 await setContentOfFooter(
     `<button onclick="showHome()" title="shows home page">
         <img src="img/icons/logo.svg" alt="home page link icon">
     </button>`
     +
-    maindb.map(element => `
+    pages.map(element => `
         <button onclick="${element.func}" title="shows ${element.name} page">
             <img src="img/links-icons/${element.techname}.svg" alt="${element.name} page link icon">
         </button>
@@ -81,6 +83,7 @@ window.showServices = showServices;
 window.showFare = showFare;
 window.showAbout = showAbout;
 window.showTechnicalDetails = showTechnicalDetails;
+window.showHelp = showHelp;
 window.redirect = redirect;
 
 async function showHome() {
@@ -465,76 +468,35 @@ async function showAbout() {
     });
 }
 
-function showTechnicalDetails() {
+async function showHelp() {
     scrollUp();
-    setTitle("Technical Details - Nether Republic Transport");
-    setContentOfMain("");
+    setTitle("Help - Nether Republic Transport");
+    setContentOfMain(``);
+
+    const help = await fetch("json/help.json").then(r => r.json());
 
     nwui.headings.create({
         level: 1,
         parent: "main",
-        content: "Technical Details"
+        content: "Help"
     });
 
     nwui.tabs.create({
-        id: "technical_details",
-        parent: "main",
-        tabs: [
-            {
-                id: "rolling_stock_classes",
-                title: "Rolling stock classes",
-                innerHTML: `
-                    <table>
-                        <thead>
-                            <th>Type of Vehicle</th>
-                            <th>Designation From</th>
-                            <th>Designation To</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Electric Locomotives</td>
-                                <td>EL 1000 0000-0</td>
-                                <td>EL 9999 9999-9</td>
-                            </tr>
-                            <tr>
-                                <td>Electric Units</td>
-                                <td>EU 1000 0000-0</td>
-                                <td>EU 9999 9999-9</td>
-                            </tr>
-                            <tr>
-                                <td>Non-Traction Vehicles</td>
-                                <td>0000 0000-0</td>
-                                <td>9999 9999-9</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                `
-            },
-            {
-                id: "announcements",
-                title: "Announcements",
-                innerHTML: `
-                    <p>Next station</p>
-                    <li>{gong} Next station {station name}.</li>
-                    <br>
-                    <p>Next station (Request)</p>
-                    <li>{gong} Next station {station name} request stop press button for exit.</li>
-                    <br>
-                    <p>Next stop (Requested)</p>
-                    <li>{gong} Next station {station name} the vehicle will stop.</li>
-                    <br>
-                    <p>Next station (Terminus)</p>
-                    <li>{gong} Next station {station name} terminus station.</li>
-                    <br>
-                    <p>This station</p>
-                    <li>{gong} {station name}.</li>
-                    <br>
-                    <p>This station (Terminus)</p>
-                    <li>{gong} {station name} terminus station please exit the vehicle.</li>
-                `
-            }
-        ]
-    })
+        id: "help",
+        parent: "main"
+    });
+
+    for (const helpPage of help) {
+        const file = await fetch(`help/${helpPage.techname}.md`).then(r => r.text());
+        const html = marked.parse(file);
+
+        nwui.tabs.addTab({
+            id: helpPage.techname,
+            title: helpPage.name,
+            parent: "#help",
+            innerHTML: html
+        });
+    };
 }
 
 showHome();
