@@ -82,9 +82,7 @@ window.showVehicles = showVehicles;
 window.showServices = showServices;
 window.showFare = showFare;
 window.showAbout = showAbout;
-window.showTechnicalDetails = showTechnicalDetails;
 window.showHelp = showHelp;
-window.redirect = redirect;
 
 async function showHome() {
     scrollUp();
