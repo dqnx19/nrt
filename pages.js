@@ -1,8 +1,8 @@
-import { importCSSFromList, setClass, setId, setHTML, setText, redirect, importJSFromList, getURLParam, setTitle, setFavicon, setAttribute, scrollUp, setContentOfHeader, setContentOfMain, setContentOfFooter } from "https://js.nether.click/nether.js";
+import { importCSSFromList, setClass, setId, setHTML, setText, redirect, importJSFromList, getURLParam, setTitle, setFavicon, setAttribute, scrollUp, setContentOfHeader, setContentOfMain, setContentOfFooter } from "https://vorxel.nether.click/vorxel.js";
 
 setAttribute("html", "lang", "en")
 
-setFavicon("img/icons/favicon.svg")
+// setFavicon("img/icons/favicon.svg")
 
 await importCSSFromList([
     "https://web-ui.nether.click/fonts/lexend/lexend.css",
