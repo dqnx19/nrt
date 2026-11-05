@@ -1,10 +1,10 @@
-import { importCSSFromList, setClass, setId, setHTML, setText, redirect, importJSFromList, getURLParam, setTitle, setFavicon, setAttribute, scrollUp, setContentOfHeader, setContentOfMain, setContentOfFooter } from "https://vorxel.nether.click/vorxel.js";
+import * as vorxel from "https://vorxel.nether.click/vorxel.js";
 
-setAttribute("html", "lang", "en")
+vorxel.setAttribute({ selector: "html", attribute: "lang", value: "en" })
 
-// setFavicon("img/icons/favicon.svg")
+vorxel.setFavicon({ url: "img/icons/favicon.svg" });
 
-await importCSSFromList([
+const css = [
     "https://web-ui.nether.click/fonts/lexend/lexend.css",
 
     "https://web-ui.nether.click/components/css/all.css",
@@ -38,9 +38,13 @@ await importCSSFromList([
     "https://web-ui.nether.click/components/css/timeline.css",
 
     "https://web-ui.nether.click/components/css/train-formation.css",
-])
+]
 
-await importJSFromList([
+css.forEach(async file => {
+    await vorxel.importCSS({ href: file })
+})
+
+const js = [
     "https://nether.click/js/import-app-drawer.js",
     "https://nether.click/js/import-app-check.js",
 
@@ -52,28 +56,44 @@ await importJSFromList([
     "https://web-ui.nether.click/components/js/details-panel.js",
 
     "https://web-ui.nether.click/lib/marked.js",
-])
+]
 
-setContentOfHeader(`
-    <div class="app-drawer-wrapper"></div>
-    <button onclick="showHome()" class="logo">
-        <img src="img/icons/logo.svg" alt="">
-    </button>
-`)
+js.forEach(async file => {
+    await vorxel.importJS({ src: file })
+})
 
 const pages = await fetch("json/pages.json").then(r => r.json());
 
-await setContentOfFooter(
-    `<button onclick="showHome()" title="shows home page">
-        <img src="img/icons/logo.svg" alt="home page link icon">
-    </button>`
-    +
-    pages.map(element => `
-        <button onclick="${element.func}" title="shows ${element.name} page">
-            <img src="img/links-icons/${element.techname}.svg" alt="${element.name} page link icon">
+const elements = ["header", "main", "footer"]
+elements.forEach(async element => {
+    await vorxel.createElement({
+        parent: document.body,
+        element: element
+    });
+})
+
+vorxel.setHTML({
+    selector: "header",
+    content: `
+        <div class="app-drawer-wrapper"></div>
+        <button onclick="showHome()" class="logo">
+            <img src="img/icons/logo.svg" alt="">
         </button>
-    `).join("")
-);
+`})
+
+vorxel.setHTML({
+    selector: "footer",
+    content: `
+        <button onclick="showHome()" title="shows home page">
+            <img src="img/icons/logo.svg" alt="home page link icon">
+        </button>`
+        +
+        pages.map(element => `
+            <button onclick="${element.func}" title="shows ${element.name} page">
+                <img src="img/links-icons/${element.techname}.svg" alt="${element.name} page link icon">
+            </button>
+        `).join("")
+});
 
 window.showHome = showHome;
 window.showAccount = showAccount;
@@ -85,9 +105,12 @@ window.showAbout = showAbout;
 window.showHelp = showHelp;
 
 async function showHome() {
-    scrollUp();
-    setTitle("Nether Republic Transport");
-    setContentOfMain("");
+    vorxel.scrollUp();
+    vorxel.setTitle({ title: "Nether Republic Transport" });
+    vorxel.setHTML({
+        selector: "main",
+        content: ""
+    })
 
     nwui.headings.create({
         level: 1,
@@ -113,21 +136,30 @@ async function showHome() {
 }
 
 async function showAccount() {
-    scrollUp();
-    setTitle("Account - Nether Republic Transport");
-    setContentOfMain("");
+    vorxel.scrollUp();
+    vorxel.setTitle({ title: "Account - Nether Republic Transport" });
+    vorxel.setHTML({
+        selector: "main",
+        content: ""
+    })
 
     nwui.headings.create({
         level: 1,
         parent: "main",
         content: "Account"
     })
+
+    const response = await fetch("/api/status");
+    console.log(response)
 }
 
 async function showConnectionTypes() {
-    scrollUp();
-    setTitle("Connection Types - Nether Republic Transport");
-    setContentOfMain("");
+    vorxel.scrollUp();
+    vorxel.setTitle({ title: "Connection Types - Nether Republic Transport" });
+    vorxel.setHTML({
+        selector: "main",
+        content: ""
+    })
 
     nwui.headings.create({
         level: 1,
@@ -178,9 +210,12 @@ async function showConnectionTypes() {
 }
 
 async function showVehicles() {
-    scrollUp();
-    setTitle("Vehicles - Nether Republic Transport");
-    setContentOfMain("");
+    vorxel.scrollUp();
+    vorxel.setTitle({ title: "Vehicles - Nether Republic Transport" });
+    vorxel.setHTML({
+        selector: "main",
+        content: ""
+    })
 
     const db = await fetch("json/vehicles.json").then(r => r.json());
     const services = await fetch("json/services.json").then(r => r.json());
@@ -258,9 +293,12 @@ async function showVehicles() {
 }
 
 async function showServices() {
-    scrollUp();
-    setTitle("Services - Nether Republic Transport");
-    setContentOfMain("");
+    vorxel.scrollUp();
+    vorxel.setTitle({ title: "Services - Nether Republic Transport" });
+    vorxel.setHTML({
+        selector: "main",
+        content: ""
+    })
 
     const services = await fetch("json/services.json").then(r => r.json());
 
@@ -303,9 +341,12 @@ async function showServices() {
 }
 
 async function showFare() {
-    scrollUp();
-    setTitle("Fare - Nether Republic Transport");
-    setContentOfMain("");
+    vorxel.scrollUp();
+    vorxel.setTitle({ title: "Fare - Nether Republic Transport" });
+    vorxel.setHTML({
+        selector: "main",
+        content: ""
+    })
 
     nwui.headings.create({
         level: 1,
@@ -401,9 +442,12 @@ async function showFare() {
 }
 
 async function showAbout() {
-    scrollUp();
-    setTitle("About - Nether Republic Transport");
-    setContentOfMain("");
+    vorxel.scrollUp();
+    vorxel.setTitle({ title: "About - Nether Republic Transport" });
+    vorxel.setHTML({
+        selector: "main",
+        content: ""
+    })
 
     nwui.headings.create({
         level: 1,
@@ -467,9 +511,9 @@ async function showAbout() {
 }
 
 async function showHelp() {
-    scrollUp();
-    setTitle("Help - Nether Republic Transport");
-    setContentOfMain(``);
+    vorxel.scrollUp();
+    vorxel.setTitle({ title: "Help - Nether Republic Transport" });
+    vorxel.setHTML({ selector: "main", content: "0" });
 
     const help = await fetch("json/help.json").then(r => r.json());
 
